@@ -17,8 +17,6 @@ public class BeetleCameraFollow : MonoBehaviour {
     [SerializeField]
     private float zoomRatio;
 
-    private float defaultFOV = 60;
-
     private float rotationVector;
 
     private void FixedUpdate() {
@@ -31,7 +29,6 @@ public class BeetleCameraFollow : MonoBehaviour {
         }
 
         float acceleration = target.GetComponent<Rigidbody>().velocity.magnitude;
-        //Camera.main.fieldOfView = defaultFOV + acceleration + zoomRatio + Time.deltaTime;
 
     }
 
