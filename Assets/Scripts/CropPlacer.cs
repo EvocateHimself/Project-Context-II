@@ -31,7 +31,7 @@ public class CropPlacer : MonoBehaviour {
     [SerializeField]
     private Image carrotTexture;
     [SerializeField]
-    private Texture carrotTextureSelected;
+    private Sprite carrotTextureSelected;
     [SerializeField]
     private GameObject carrotPrefab;
     [SerializeField]
@@ -45,7 +45,7 @@ public class CropPlacer : MonoBehaviour {
     [SerializeField]
     private Image appleTexture;
     [SerializeField]
-    private Texture2D appleTextureSelected;
+    private Sprite appleTextureSelected;
     [SerializeField]
     private GameObject applePrefab;
     [SerializeField]
@@ -59,7 +59,7 @@ public class CropPlacer : MonoBehaviour {
     [SerializeField]
     private Image poisonTexture;
     [SerializeField]
-    private Texture poisonTextureSelected;
+    private Sprite poisonTextureSelected;
     public GameObject poisonPrefab;
     [SerializeField]
     private float poisonDuration = 10f;
@@ -71,7 +71,7 @@ public class CropPlacer : MonoBehaviour {
     bool selectedApple = false;
     bool selectedPoison = false;
 
-    private Sprite defaultCabbageTexture, defaultCarrotTexture, defaultAppleTexture;
+    private Sprite defaultCabbageTexture, defaultCarrotTexture, defaultAppleTexture, defaultPoisonTexture;
 
     GameObject poisonObj;
     GameManager gameManager;
@@ -83,6 +83,7 @@ public class CropPlacer : MonoBehaviour {
         defaultCabbageTexture = cabbageTexture.sprite;
         defaultCarrotTexture = carrotTexture.sprite;
         defaultAppleTexture = appleTexture.sprite;
+        defaultPoisonTexture = poisonTexture.sprite;
     }
 
     private void Update() {
