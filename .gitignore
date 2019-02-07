@@ -25,11 +25,17 @@ ExportedObj/
 *.opendb
 
 # Unity3D generated meta files
+*.pidb.meta
+*.pdb.meta
 
 # Unity3D Generated File On Crash Reports
 sysinfo.txt
 
 # Builds
 *.apk
+<<<<<<< HEAD
 *.unitypackage
+=======
+*.unitypackage
+>>>>>>> parent of a5a2b98... Hekjes eindelijk
 *.meta
