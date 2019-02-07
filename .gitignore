@@ -34,7 +34,11 @@ sysinfo.txt
 # Builds
 *.apk
 <<<<<<< HEAD
+<<<<<<< HEAD
 *.unitypackage
+=======
+*.unitypackage
+>>>>>>> parent of a5a2b98... Hekjes eindelijk
 =======
 *.unitypackage
 >>>>>>> parent of a5a2b98... Hekjes eindelijk
