@@ -58,21 +58,24 @@ MonoBehaviour:
   cabbageGrowCost: 10
   cabbageSellCost: 20
   carrotTexture: {fileID: 0}
-  carrotTextureSelected: {fileID: 0}
+  carrotTextureSelected: {fileID: 21300000, guid: 32f23fac02de11841a83bf0d7477ef50,
+    type: 3}
   carrotPrefab: {fileID: 7771536404584503892, guid: c70d7a7df8ef9a440b10c735a6f7104e,
     type: 3}
   carrotHealthImpact: 10
   carrotGrowCost: 25
   carrotSellCost: 40
   appleTexture: {fileID: 0}
-  appleTextureSelected: {fileID: 0}
+  appleTextureSelected: {fileID: 21300000, guid: 34d264833112b994988a407cdb13b528,
+    type: 3}
   applePrefab: {fileID: 5872757744085482517, guid: 7dfe03f34fc8b7545906510ef8880db8,
     type: 3}
   appleHealthImpact: 20
   appleGrowCost: 60
   appleSellCost: 75
   poisonTexture: {fileID: 0}
-  poisonTextureSelected: {fileID: 0}
+  poisonTextureSelected: {fileID: 21300000, guid: 826955a46e1eaad49925b828d24202ab,
+    type: 3}
   poisonPrefab: {fileID: 0}
   poisonDuration: 10
   poisonGrowCost: 100

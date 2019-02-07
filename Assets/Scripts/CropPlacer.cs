@@ -31,7 +31,7 @@ public class CropPlacer : MonoBehaviour {
     [SerializeField]
     private Image carrotTexture;
     [SerializeField]
-    private Texture carrotTextureSelected;
+    private Sprite carrotTextureSelected;
     [SerializeField]
     private GameObject carrotPrefab;
     [SerializeField]
@@ -45,7 +45,7 @@ public class CropPlacer : MonoBehaviour {
     [SerializeField]
     private Image appleTexture;
     [SerializeField]
-    private Texture2D appleTextureSelected;
+    private Sprite appleTextureSelected;
     [SerializeField]
     private GameObject applePrefab;
     [SerializeField]
@@ -59,7 +59,7 @@ public class CropPlacer : MonoBehaviour {
     [SerializeField]
     private Image poisonTexture;
     [SerializeField]
-    private Texture poisonTextureSelected;
+    private Sprite poisonTextureSelected;
     public GameObject poisonPrefab;
     [SerializeField]
     private float poisonDuration = 10f;
@@ -71,7 +71,7 @@ public class CropPlacer : MonoBehaviour {
     bool selectedApple = false;
     bool selectedPoison = false;
 
-    private Sprite defaultCabbageTexture, defaultCarrotTexture, defaultAppleTexture;
+    private Sprite defaultCabbageTexture, defaultCarrotTexture, defaultAppleTexture, defaultPoisonTexture;
 
     GameObject poisonObj;
     GameManager gameManager;
@@ -83,6 +83,7 @@ public class CropPlacer : MonoBehaviour {
         defaultCabbageTexture = cabbageTexture.sprite;
         defaultCarrotTexture = carrotTexture.sprite;
         defaultAppleTexture = appleTexture.sprite;
+        defaultPoisonTexture = poisonTexture.sprite;
     }
 
     private void Update() {
@@ -134,7 +135,9 @@ public class CropPlacer : MonoBehaviour {
                     }
                 }
                 cabbageTexture.sprite = cabbageTextureSelected;
-                carrotTexture.sprite = carrotTextureSelected;
+                carrotTexture.sprite = defaultCarrotTexture;
+                appleTexture.sprite = defaultAppleTexture;
+                poisonTexture.sprite = defaultPoisonTexture;
             }
 
             if (selectedCarrot) {
@@ -147,10 +150,10 @@ public class CropPlacer : MonoBehaviour {
                         }
                     }
                 }
-                poisonTexture.color = new Color32(255, 255, 255, 255);
-                carrotTexture.color = new Color32(0, 0, 0, 50);
-                cabbageTexture.color = new Color32(255, 255, 255, 255);
-                appleTexture.color = new Color32(255, 255, 255, 255);
+                cabbageTexture.sprite = defaultCabbageTexture;
+                carrotTexture.sprite = carrotTextureSelected;
+                appleTexture.sprite = defaultAppleTexture;
+                poisonTexture.sprite = defaultPoisonTexture;
             }
 
             if (selectedApple) {
@@ -163,10 +166,10 @@ public class CropPlacer : MonoBehaviour {
                         }
                     }
                 }
-                poisonTexture.color = new Color32(255, 255, 255, 255);
-                appleTexture.color = new Color32(0, 0, 0, 50);
-                carrotTexture.color = new Color32(255, 255, 255, 255);
-                cabbageTexture.color = new Color32(255, 255, 255, 255);
+                cabbageTexture.sprite = defaultCabbageTexture;
+                carrotTexture.sprite = defaultCarrotTexture;
+                appleTexture.sprite = appleTextureSelected;
+                poisonTexture.sprite = defaultPoisonTexture;
             }
 
             if (selectedPoison) {
@@ -179,10 +182,10 @@ public class CropPlacer : MonoBehaviour {
                         }
                     }
                 }
-                poisonTexture.color = new Color32(0, 0, 100, 50);
-                appleTexture.color = new Color32(255, 255, 255, 255);
-                carrotTexture.color = new Color32(255, 255, 255, 255);
-                cabbageTexture.color = new Color32(255, 255, 255, 255);
+                cabbageTexture.sprite = defaultCabbageTexture;
+                carrotTexture.sprite = defaultCarrotTexture;
+                appleTexture.sprite = defaultAppleTexture;
+                poisonTexture.sprite = poisonTextureSelected;
             }
         }
     }
