@@ -23,6 +23,10 @@ public class FarmerStats : MonoBehaviour {
     [SerializeField]
     private Text healthText;
 
+    [Header("Pesticide")]
+    public float pesticideAmount;
+    public Text pesticideAmountText;
+
     private float currentHealthValue;
 
     public float CurrentMoney {
@@ -76,6 +80,7 @@ public class FarmerStats : MonoBehaviour {
     public virtual void Update() {
         HandleHealthbar();
         HandleMoneybar();
+        HandlePesticidebar();
     }
 
 
@@ -111,6 +116,10 @@ public class FarmerStats : MonoBehaviour {
         //currentHealthValue = Map(CurrentHealth, 0, MaxHealth, 0, 1);
     }
 
+    public void HandlePesticidebar() {
+        pesticideAmountText.text = pesticideAmount.ToString();
+        //currentHealthValue = Map(CurrentHealth, 0, MaxHealth, 0, 1);
+    }
 
     // This method maps a range of numbers into another range
     public float Map(float x, float in_min, float in_max, float out_min, float out_max) {

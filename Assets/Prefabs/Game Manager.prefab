@@ -49,6 +49,7 @@ MonoBehaviour:
   groundLayer:
     serializedVersion: 2
     m_Bits: 512
+  placeRadius: 100
   cabbageTexture: {fileID: 0}
   cabbagePrefab: {fileID: 628592671, guid: bf04595713355ca4f9f1957afcbcccc8, type: 3}
   cabbageHealthImpact: 5
@@ -57,9 +58,19 @@ MonoBehaviour:
   carrotTexture: {fileID: 0}
   carrotPrefab: {fileID: 7771536404584503892, guid: c70d7a7df8ef9a440b10c735a6f7104e,
     type: 3}
+  carrotHealthImpact: 10
+  carrotGrowCost: 25
+  carrotSellCost: 40
   appleTexture: {fileID: 0}
   applePrefab: {fileID: 5872757744085482517, guid: 7dfe03f34fc8b7545906510ef8880db8,
     type: 3}
+  appleHealthImpact: 20
+  appleGrowCost: 60
+  appleSellCost: 75
+  poisonTexture: {fileID: 0}
+  poisonPrefab: {fileID: 0}
+  poisonDuration: 10
+  poisonGrowCost: 100
 --- !u!114 &1466798050
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -72,12 +83,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 19eca8e13ea42284f9bf22038691b3ee, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  currentMoney: 50
+  currentMoney: 1000
   moneyText: {fileID: 0}
   maxHealth: 100
   lerpSpeed: 2
   healthBar: {fileID: 0}
   healthText: {fileID: 0}
+  pesticideAmount: 0
+  pesticideAmountText: {fileID: 0}
 --- !u!114 &1466798053
 MonoBehaviour:
   m_ObjectHideFlags: 0

@@ -13,8 +13,8 @@ GameObject:
   - component: {fileID: 5872757744085482539}
   - component: {fileID: 5872757744085482538}
   - component: {fileID: 5872757744085482516}
-  m_Layer: 0
-  m_Name: Apple 1
+  m_Layer: 10
+  m_Name: Apple
   m_TagString: Interactable
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

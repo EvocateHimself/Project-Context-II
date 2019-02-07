@@ -13,8 +13,8 @@ GameObject:
   - component: {fileID: 7771536404584503914}
   - component: {fileID: 7771536404584503915}
   - component: {fileID: 7771536404584503893}
-  m_Layer: 0
-  m_Name: Carrot 1
+  m_Layer: 10
+  m_Name: Carrot
   m_TagString: Interactable
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
