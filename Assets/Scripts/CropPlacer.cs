@@ -135,7 +135,9 @@ public class CropPlacer : MonoBehaviour {
                     }
                 }
                 cabbageTexture.sprite = cabbageTextureSelected;
-                carrotTexture.sprite = carrotTextureSelected;
+                carrotTexture.sprite = defaultCarrotTexture;
+                appleTexture.sprite = defaultAppleTexture;
+                poisonTexture.sprite = defaultPoisonTexture;
             }
 
             if (selectedCarrot) {
@@ -148,10 +150,10 @@ public class CropPlacer : MonoBehaviour {
                         }
                     }
                 }
-                poisonTexture.color = new Color32(255, 255, 255, 255);
-                carrotTexture.color = new Color32(0, 0, 0, 50);
-                cabbageTexture.color = new Color32(255, 255, 255, 255);
-                appleTexture.color = new Color32(255, 255, 255, 255);
+                cabbageTexture.sprite = defaultCabbageTexture;
+                carrotTexture.sprite = carrotTextureSelected;
+                appleTexture.sprite = defaultAppleTexture;
+                poisonTexture.sprite = defaultPoisonTexture;
             }
 
             if (selectedApple) {
@@ -164,10 +166,10 @@ public class CropPlacer : MonoBehaviour {
                         }
                     }
                 }
-                poisonTexture.color = new Color32(255, 255, 255, 255);
-                appleTexture.color = new Color32(0, 0, 0, 50);
-                carrotTexture.color = new Color32(255, 255, 255, 255);
-                cabbageTexture.color = new Color32(255, 255, 255, 255);
+                cabbageTexture.sprite = defaultCabbageTexture;
+                carrotTexture.sprite = defaultCarrotTexture;
+                appleTexture.sprite = appleTextureSelected;
+                poisonTexture.sprite = defaultPoisonTexture;
             }
 
             if (selectedPoison) {
@@ -180,10 +182,10 @@ public class CropPlacer : MonoBehaviour {
                         }
                     }
                 }
-                poisonTexture.color = new Color32(0, 0, 100, 50);
-                appleTexture.color = new Color32(255, 255, 255, 255);
-                carrotTexture.color = new Color32(255, 255, 255, 255);
-                cabbageTexture.color = new Color32(255, 255, 255, 255);
+                cabbageTexture.sprite = defaultCabbageTexture;
+                carrotTexture.sprite = defaultCarrotTexture;
+                appleTexture.sprite = defaultAppleTexture;
+                poisonTexture.sprite = poisonTextureSelected;
             }
         }
     }
