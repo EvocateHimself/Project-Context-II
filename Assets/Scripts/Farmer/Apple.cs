@@ -2,9 +2,9 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Crop : Interactable {
+public class Apple : Interactable {
 
     public override void Interact() {
-        Debug.Log("Interacting!");
+        Debug.Log("Interacting! " + transform.name);
     }
 }

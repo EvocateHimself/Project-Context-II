@@ -20,13 +20,13 @@ public class BeetleController : MonoBehaviour {
 	
 	// Update is called once per frame
 	private void FixedUpdate () {
-        Fly();
+        Move();
     }
 
-    private void Fly() {
-        float translation = Input.GetAxis("Vertical") * accelerationSpeed * Time.deltaTime;
-        float rotation = Input.GetAxis("Horizontal") * rotateSpeed * Time.deltaTime;
-        float ascension = Input.GetAxis("Ascend") * ascendSpeed;
+    private void Move() {
+        float translation = Input.GetAxis("Vertical_joy") * accelerationSpeed * Time.deltaTime;
+        float rotation = Input.GetAxis("Horizontal_joy") * rotateSpeed * Time.deltaTime;
+        float ascension = Input.GetAxis("Ascend_joy") * ascendSpeed;
 
         transform.Translate(0, 0, translation);
         transform.Rotate(0, rotation, 0);

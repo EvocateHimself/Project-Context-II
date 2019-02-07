@@ -4,18 +4,24 @@ using UnityEngine;
 using UnityEngine.UI;
 using UnityEngine.EventSystems;
 
-public class PlantPlacer : MonoBehaviour {
+public class CropPlacer : MonoBehaviour {
 
     [SerializeField]
     private Camera farmerCam;
     [SerializeField]
     private LayerMask groundLayer;
 
-    [Header("Crop")]
+    [Header("Cabbage")]
     [SerializeField]
-    private Image cropTexture;
+    private Image cabbageTexture;
     [SerializeField]
-    private GameObject cropPrefab;
+    private GameObject cabbagePrefab;
+    [SerializeField]
+    private float cabbageHealthImpact;
+    [SerializeField]
+    private float cabbageGrowCost;
+    [SerializeField]
+    private float cabbageSellCost;
 
     [Header("Carrot")]
     [SerializeField]
@@ -29,25 +35,33 @@ public class PlantPlacer : MonoBehaviour {
     [SerializeField]
     private GameObject applePrefab;
 
-    bool selectedCrop = false;
+    bool selectedCabbage = false;
     bool selectedCarrot = false;
     bool selectedApple = false;
 
+    GameManager gameManager;
+    FarmerStats farmerStats;
+
+    private void Start() {
+        gameManager = GameManager.instance;
+        farmerStats = gameManager.GetComponent<FarmerStats>();
+    }
+
     private void Update() {
         if (Input.GetKeyDown(KeyCode.Alpha1)) {
-            selectedCrop = true;
+            selectedCabbage = true;
             selectedCarrot = false;
             selectedApple = false;
         }
 
         if (Input.GetKeyDown(KeyCode.Alpha2)) {
-            selectedCrop = false;
+            selectedCabbage = false;
             selectedCarrot = true;
             selectedApple = false;
         }
 
         if (Input.GetKeyDown(KeyCode.Alpha3)) {
-            selectedCrop = false;
+            selectedCabbage = false;
             selectedCarrot = false;
             selectedApple = true;
         }
@@ -61,14 +75,17 @@ public class PlantPlacer : MonoBehaviour {
             Ray ray = farmerCam.ScreenPointToRay(Input.mousePosition);
             RaycastHit hit;
 
-            if (selectedCrop) {
+            if (selectedCabbage) {
                 if (Input.GetMouseButtonDown(0)) {
                     if (Physics.Raycast(ray, out hit, 100, groundLayer) && hit.transform != null) {
-                        Instantiate(cropPrefab, new Vector3(hit.point.x, hit.point.y, hit.point.z), Quaternion.identity);
-                        //cropPrefab.transform.position = hit.point;
+                        if (farmerStats.CurrentMoney >= cabbageGrowCost) {
+                            Instantiate(cabbagePrefab, new Vector3(hit.point.x, hit.point.y, hit.point.z), Quaternion.identity);
+                            farmerStats.CurrentMoney -= cabbageGrowCost;
+                            farmerStats.CurrentHealth += cabbageHealthImpact;
+                        }
                     }
                 }
-                cropTexture.color = new Color32(0, 0, 0, 50);
+                cabbageTexture.color = new Color32(0, 0, 0, 50);
                 carrotTexture.color = new Color32(255, 255, 255, 255);
                 appleTexture.color = new Color32(255, 255, 255, 255);
             }
@@ -77,11 +94,10 @@ public class PlantPlacer : MonoBehaviour {
                 if (Input.GetMouseButtonDown(0)) {
                     if (Physics.Raycast(ray, out hit, 100, groundLayer) && hit.transform != null) {
                         Instantiate(carrotPrefab, new Vector3(hit.point.x, hit.point.y, hit.point.z), Quaternion.identity);
-                        //cropPrefab.transform.position = hit.point;
                     }
                 }
                 carrotTexture.color = new Color32(0, 0, 0, 50);
-                cropTexture.color = new Color32(255, 255, 255, 255);
+                cabbageTexture.color = new Color32(255, 255, 255, 255);
                 appleTexture.color = new Color32(255, 255, 255, 255);
             }
 
@@ -89,23 +105,12 @@ public class PlantPlacer : MonoBehaviour {
                 if (Input.GetMouseButtonDown(0)) {
                     if (Physics.Raycast(ray, out hit, 100, groundLayer) && hit.transform != null) {
                         Instantiate(applePrefab, new Vector3(hit.point.x, hit.point.y, hit.point.z), Quaternion.identity);
-                        //cropPrefab.transform.position = hit.point;
                     }
                 }
                 appleTexture.color = new Color32(0, 0, 0, 50);
                 carrotTexture.color = new Color32(255, 255, 255, 255);
-                cropTexture.color = new Color32(255, 255, 255, 255);
+                cabbageTexture.color = new Color32(255, 255, 255, 255);
             }
         }
     }
-
-        /*
-    public void PlacePlant() {
-        Ray ray = farmerCam.ScreenPointToRay(Input.mousePosition);
-        RaycastHit hit;
-        if (Physics.Raycast(ray, out hit, 100, groundLayer) && hit.collider != null) {
-            //Instantiate(plantPrefab, new Vector3(hit.point.x, hit.point.y, hit.point.z), Quaternion.identity);
-        }
-    }
-    */
 }
