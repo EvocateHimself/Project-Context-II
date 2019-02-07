@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class InfectCrop : MonoBehaviour {
 
-    public GameObject pesticidePrefab;
+    public GameObject plaguePrefab;
     [SerializeField]
     private float spawnHeight = 3f;
     [SerializeField]
@@ -38,13 +38,13 @@ public class InfectCrop : MonoBehaviour {
         crops = GameObject.FindGameObjectsWithTag("Interactable");
         index = Random.Range(0, crops.Length);
 
-        Vector3 pesticidePos = pesticidePrefab.transform.position;
-        pesticidePos.y = spawnHeight;
-        pesticidePos = new Vector3(crops[index].transform.position.x, pesticidePos.y, crops[index].transform.position.z);
+        Vector3 plaguePos = plaguePrefab.transform.position;
+        plaguePos.y = spawnHeight;
+        plaguePos = new Vector3(crops[index].transform.position.x, plaguePos.y, crops[index].transform.position.z);
 
         // If parent does not have a pesticide already, instantiate one
         if (crops[index].transform.childCount <= 0) {
-            GameObject GO = Instantiate(pesticidePrefab, pesticidePos, pesticidePrefab.transform.rotation);
+            GameObject GO = Instantiate(plaguePrefab, plaguePos, plaguePrefab.transform.rotation);
             GO.transform.parent = crops[index].transform;
             farmerStats.pesticideAmount += 1;
         }
@@ -52,10 +52,11 @@ public class InfectCrop : MonoBehaviour {
         // Start a new timer for the next random spawn
         Invoke("Infect", Random.Range(minTime, maxTime));
 
+        /*
         if (Input.GetMouseButtonDown(1)) {
             pesticidePrefab.transform.position = new Vector3(crops[index].transform.position.x, pesticidePos.y, crops[index].transform.position.z);
             farmerStats.pesticideAmount += 1;
-        }
+        }*/
     }
 
 }

@@ -13,7 +13,7 @@ public class KillPesticide : MonoBehaviour {
     }
 
     private void OnTriggerEnter(Collider other) {
-        if (other.tag == "Pesticide") {
+        if (other.tag == "Plague") {
             Destroy(other.gameObject);
             farmerStats.pesticideAmount -= 1;
         }

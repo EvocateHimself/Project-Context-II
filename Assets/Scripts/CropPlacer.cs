@@ -17,6 +17,8 @@ public class CropPlacer : MonoBehaviour {
     [SerializeField]
     private Image cabbageTexture;
     [SerializeField]
+    private Sprite cabbageTextureSelected;
+    [SerializeField]
     private GameObject cabbagePrefab;
     [SerializeField]
     private float cabbageHealthImpact;
@@ -28,6 +30,8 @@ public class CropPlacer : MonoBehaviour {
     [Header("Carrot")]
     [SerializeField]
     private Image carrotTexture;
+    [SerializeField]
+    private Texture carrotTextureSelected;
     [SerializeField]
     private GameObject carrotPrefab;
     [SerializeField]
@@ -41,6 +45,8 @@ public class CropPlacer : MonoBehaviour {
     [SerializeField]
     private Image appleTexture;
     [SerializeField]
+    private Texture2D appleTextureSelected;
+    [SerializeField]
     private GameObject applePrefab;
     [SerializeField]
     private float appleHealthImpact;
@@ -52,6 +58,8 @@ public class CropPlacer : MonoBehaviour {
     [Header("Poison")]
     [SerializeField]
     private Image poisonTexture;
+    [SerializeField]
+    private Texture poisonTextureSelected;
     public GameObject poisonPrefab;
     [SerializeField]
     private float poisonDuration = 10f;
@@ -63,6 +71,8 @@ public class CropPlacer : MonoBehaviour {
     bool selectedApple = false;
     bool selectedPoison = false;
 
+    private Sprite defaultCabbageTexture, defaultCarrotTexture, defaultAppleTexture;
+
     GameObject poisonObj;
     GameManager gameManager;
     FarmerStats farmerStats;
@@ -70,6 +80,9 @@ public class CropPlacer : MonoBehaviour {
     private void Start() {
         gameManager = GameManager.instance;
         farmerStats = gameManager.GetComponent<FarmerStats>();
+        defaultCabbageTexture = cabbageTexture.sprite;
+        defaultCarrotTexture = carrotTexture.sprite;
+        defaultAppleTexture = appleTexture.sprite;
     }
 
     private void Update() {
@@ -120,10 +133,8 @@ public class CropPlacer : MonoBehaviour {
                         }
                     }
                 }
-                poisonTexture.color = new Color32(255, 255, 255, 255);
-                cabbageTexture.color = new Color32(0, 0, 0, 50);
-                carrotTexture.color = new Color32(255, 255, 255, 255);
-                appleTexture.color = new Color32(255, 255, 255, 255);
+                cabbageTexture.sprite = cabbageTextureSelected;
+                carrotTexture.sprite = carrotTextureSelected;
             }
 
             if (selectedCarrot) {

@@ -15,7 +15,7 @@ GameObject:
   - component: {fileID: 922961632980222159}
   m_Layer: 10
   m_Name: Insect
-  m_TagString: Pesticide
+  m_TagString: Plague
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -104,7 +104,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0842817ff873aa84a8acaa9b5fd66284, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  pesticidePrefab: {fileID: 5595355807967290370}
+  plaguePrefab: {fileID: 5595355807967290370}
   spawnHeight: 5
   minTime: 10
   maxTime: 60
