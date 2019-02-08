@@ -10,7 +10,6 @@ public class CropPlacer : MonoBehaviour {
     public LayerMask groundLayer;
     public float placeRadius = 100f;
 
-<<<<<<< HEAD
     [SerializeField]
     private AudioSource interactSound;
     [SerializeField]
@@ -124,6 +123,7 @@ public class CropPlacer : MonoBehaviour {
                             Instantiate(cabbagePrefab, new Vector3(hit.point.x, hit.point.y, hit.point.z), Quaternion.identity);
                             farmerStats.CurrentMoney -= cabbageGrowCost;
                             farmerStats.CurrentHealth += cabbageHealthImpact;
+                            interactSound.Play();
                         }
                     }
                 }
@@ -140,6 +140,7 @@ public class CropPlacer : MonoBehaviour {
                             Instantiate(carrotPrefab, new Vector3(hit.point.x, hit.point.y, hit.point.z), Quaternion.identity);
                             farmerStats.CurrentMoney -= carrotGrowCost;
                             farmerStats.CurrentHealth += carrotHealthImpact;
+                            interactSound.Play();
                         }
                     }
                 }
@@ -156,6 +157,7 @@ public class CropPlacer : MonoBehaviour {
                             Instantiate(applePrefab, new Vector3(hit.point.x, hit.point.y, hit.point.z), Quaternion.identity);
                             farmerStats.CurrentMoney -= appleGrowCost;
                             farmerStats.CurrentHealth += appleHealthImpact;
+                            interactSound.Play();
                         }
                     }
                 }

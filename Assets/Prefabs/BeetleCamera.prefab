@@ -12,6 +12,7 @@ GameObject:
   - component: {fileID: 5290645398610769633}
   - component: {fileID: 5290645398610769662}
   - component: {fileID: 5290645398610769635}
+  - component: {fileID: 1318365841}
   m_Layer: 2
   m_Name: BeetleCamera
   m_TagString: MainCamera
@@ -82,7 +83,7 @@ AudioListener:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 5290645398610769663}
-  m_Enabled: 1
+  m_Enabled: 0
 --- !u!114 &5290645398610769635
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -96,8 +97,21 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   target: {fileID: 0}
-  distance: 10
-  height: 5
+  distance: 3.19
+  height: 1.5
   rotationDamping: 2
   heightDamping: 2
   zoomRatio: 4
+--- !u!114 &1318365841
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5290645398610769663}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ff26db721962cdf4a8edcdfa9a767d2a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  profile: {fileID: 11400000, guid: dcff1b5bcf8a5b54480919369d4b4874, type: 2}
