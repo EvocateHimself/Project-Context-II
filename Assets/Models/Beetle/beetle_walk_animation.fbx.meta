@@ -1,0 +1,223 @@
+fileFormatVersion: 2
+guid: 124f756f36f40ca4fa0999b097262568
+ModelImporter:
+  serializedVersion: 23
+  fileIDToRecycleName:
+    100000: //RootNode
+    100002: Head_joint1
+    100004: Head_joint2
+    100006: ikHandle1
+    100008: ikHandle2
+    100010: ikHandle3
+    100012: ikHandle4
+    100014: ikHandle5
+    100016: ikHandle6
+    100018: L_frontjoint1
+    100020: L_frontjoint2
+    100022: L_frontjoint3
+    100024: L_midjoint1
+    100026: L_midjoint2
+    100028: L_midjoint3
+    100030: L_rearjoint1
+    100032: L_rearjoint2
+    100034: L_rearjoint3
+    100036: Mid_joint
+    100038: Mid_joint2
+    100040: nurbsCircle1
+    100042: pasted__nurbsCircle1
+    100044: pasted__nurbsCircle2
+    100046: pasted__nurbsCircle3
+    100048: pasted__pasted__nurbsCircle1
+    100050: pasted__pasted__nurbsCircle2
+    100052: pasted__shield_1
+    100054: pasted__shield_2
+    100056: pCube1
+    100058: R_frontjoint1
+    100060: R_frontjoint2
+    100062: R_frontjoint3
+    100064: R_midjoint1
+    100066: R_midjoint2
+    100068: R_midjoint3
+    100070: R_rearjoint1
+    100072: R_rearjoint2
+    100074: R_rearjoint3
+    100076: Rear_joint1
+    100078: Rear_joint2
+    100080: Rear_joint3
+    100082: shield_1
+    100084: shield_2
+    400000: //RootNode
+    400002: Head_joint1
+    400004: Head_joint2
+    400006: ikHandle1
+    400008: ikHandle2
+    400010: ikHandle3
+    400012: ikHandle4
+    400014: ikHandle5
+    400016: ikHandle6
+    400018: L_frontjoint1
+    400020: L_frontjoint2
+    400022: L_frontjoint3
+    400024: L_midjoint1
+    400026: L_midjoint2
+    400028: L_midjoint3
+    400030: L_rearjoint1
+    400032: L_rearjoint2
+    400034: L_rearjoint3
+    400036: Mid_joint
+    400038: Mid_joint2
+    400040: nurbsCircle1
+    400042: pasted__nurbsCircle1
+    400044: pasted__nurbsCircle2
+    400046: pasted__nurbsCircle3
+    400048: pasted__pasted__nurbsCircle1
+    400050: pasted__pasted__nurbsCircle2
+    400052: pasted__shield_1
+    400054: pasted__shield_2
+    400056: pCube1
+    400058: R_frontjoint1
+    400060: R_frontjoint2
+    400062: R_frontjoint3
+    400064: R_midjoint1
+    400066: R_midjoint2
+    400068: R_midjoint3
+    400070: R_rearjoint1
+    400072: R_rearjoint2
+    400074: R_rearjoint3
+    400076: Rear_joint1
+    400078: Rear_joint2
+    400080: Rear_joint3
+    400082: shield_1
+    400084: shield_2
+    2100000: lambert1
+    2100002: phong1
+    2300000: pasted__shield_1
+    2300002: pasted__shield_2
+    2300004: shield_1
+    2300006: shield_2
+    3300000: pasted__shield_1
+    3300002: pasted__shield_2
+    3300004: shield_1
+    3300006: shield_2
+    4300000: pCube1
+    4300002: shield_1
+    4300004: shield_2
+    4300006: pasted__shield_2
+    4300008: pasted__shield_1
+    7400000: Take 001
+    9500000: //RootNode
+    13700000: pCube1
+  externalObjects: {}
+  materials:
+    importMaterials: 1
+    materialName: 0
+    materialSearch: 1
+    materialLocation: 1
+  animations:
+    legacyGenerateAnimations: 4
+    bakeSimulation: 0
+    resampleCurves: 1
+    optimizeGameObjects: 0
+    motionNodeName: 
+    rigImportErrors: 
+    rigImportWarnings: 
+    animationImportErrors: 
+    animationImportWarnings: 
+    animationRetargetingWarnings: 
+    animationDoRetargetingWarnings: 0
+    importAnimatedCustomProperties: 0
+    importConstraints: 0
+    animationCompression: 1
+    animationRotationError: 0.5
+    animationPositionError: 0.5
+    animationScaleError: 0.5
+    animationWrapMode: 0
+    extraExposedTransformPaths: []
+    extraUserProperties: []
+    clipAnimations:
+    - serializedVersion: 16
+      name: Take 001
+      takeName: Take 001
+      firstFrame: 25
+      lastFrame: 46
+      wrapMode: 0
+      orientationOffsetY: 0
+      level: 0
+      cycleOffset: 0
+      loop: 0
+      hasAdditiveReferencePose: 0
+      loopTime: 1
+      loopBlend: 0
+      loopBlendOrientation: 0
+      loopBlendPositionY: 0
+      loopBlendPositionXZ: 0
+      keepOriginalOrientation: 0
+      keepOriginalPositionY: 1
+      keepOriginalPositionXZ: 0
+      heightFromFeet: 0
+      mirror: 0
+      bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
+      curves: []
+      events: []
+      transformMask: []
+      maskType: 3
+      maskSource: {instanceID: 0}
+      additiveReferencePoseFrame: 0
+    isReadable: 1
+  meshes:
+    lODScreenPercentages: []
+    globalScale: 1
+    meshCompression: 0
+    addColliders: 0
+    useSRGBMaterialColor: 1
+    importVisibility: 1
+    importBlendShapes: 1
+    importCameras: 1
+    importLights: 1
+    swapUVChannels: 0
+    generateSecondaryUV: 0
+    useFileUnits: 1
+    optimizeMeshForGPU: 1
+    keepQuads: 0
+    weldVertices: 1
+    preserveHierarchy: 0
+    indexFormat: 0
+    secondaryUVAngleDistortion: 8
+    secondaryUVAreaDistortion: 15.000001
+    secondaryUVHardAngle: 88
+    secondaryUVPackMargin: 4
+    useFileScale: 1
+    previousCalculatedGlobalScale: 0.01
+    hasPreviousCalculatedGlobalScale: 1
+  tangentSpace:
+    normalSmoothAngle: 60
+    normalImportMode: 0
+    tangentImportMode: 3
+    normalCalculationMode: 4
+    legacyComputeAllNormalsFromSmoothingGroupsWhenMeshHasBlendShapes: 0
+    blendShapeNormalImportMode: 1
+    normalSmoothingSource: 0
+  importAnimation: 1
+  copyAvatar: 0
+  humanDescription:
+    serializedVersion: 2
+    human: []
+    skeleton: []
+    armTwist: 0.5
+    foreArmTwist: 0.5
+    upperLegTwist: 0.5
+    legTwist: 0.5
+    armStretch: 0.05
+    legStretch: 0.05
+    feetSpacing: 0
+    rootMotionBoneName: 
+    hasTranslationDoF: 0
+    hasExtraRoot: 0
+    skeletonHasParents: 1
+  lastHumanDescriptionAvatarSource: {instanceID: 0}
+  animationType: 2
+  humanoidOversampling: 1
+  additionalBone: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

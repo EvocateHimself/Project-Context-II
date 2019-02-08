@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 3261768410039632472}
   - component: {fileID: 1486478810711997867}
   - component: {fileID: 5396131455672447486}
-  m_Layer: 10
+  m_Layer: 2
   m_Name: Posion_Particle
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -88,7 +88,7 @@ GameObject:
   - component: {fileID: 7721502109953617769}
   - component: {fileID: 2893321292616619468}
   - component: {fileID: 8266345815869559072}
-  m_Layer: 10
+  m_Layer: 2
   m_Name: Posion_Burst_Purple
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -4786,7 +4786,7 @@ GameObject:
   - component: {fileID: 7218161090607633666}
   - component: {fileID: 8568144215976553868}
   - component: {fileID: 4452867974878629802}
-  m_Layer: 10
+  m_Layer: 2
   m_Name: Posion_Burst_Green
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -9484,7 +9484,7 @@ GameObject:
   - component: {fileID: 1791431073529695035}
   - component: {fileID: 2308797086372428855}
   - component: {fileID: 6089082383318483410}
-  m_Layer: 10
+  m_Layer: 2
   m_Name: Posion_Center
   m_TagString: Untagged
   m_Icon: {fileID: 0}
