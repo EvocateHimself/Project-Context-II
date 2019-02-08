@@ -12,6 +12,8 @@ public class CropPlacer : MonoBehaviour {
 
     [SerializeField]
     private AudioSource interactSound;
+    [SerializeField]
+    private AudioSource poisonSound;
     public float infectedSellCostDivider = 2;
 
     [Header("Cabbage")]
@@ -172,7 +174,7 @@ public class CropPlacer : MonoBehaviour {
                             poisonObj = (GameObject)Instantiate(poisonPrefab, new Vector3(hit.point.x, hit.point.y, hit.point.z), Quaternion.identity);
                             Destroy(poisonObj, poisonDuration);
                             farmerStats.CurrentMoney -= poisonGrowCost;
-                            interactSound.Play();
+                            poisonSound.Play();
                         }
                     }
                 }
