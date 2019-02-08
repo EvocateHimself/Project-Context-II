@@ -7,9 +7,6 @@ public class FarmerInteract : MonoBehaviour {
     GameManager gameManager;
     CropPlacer cropPlacer;
 
-    [SerializeField]
-    private AudioSource interactSound;
-
     private void Start() {
         gameManager = GameManager.instance;
         cropPlacer = gameManager.GetComponent<CropPlacer>();
@@ -24,7 +21,6 @@ public class FarmerInteract : MonoBehaviour {
 
                 if (interactable != null) {
                     interactable.Interact();
-                    interactSound.Play();
                 }
             }
         }

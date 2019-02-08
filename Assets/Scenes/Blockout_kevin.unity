@@ -853,11 +853,6 @@ PrefabInstance:
       propertyPath: m_Name
       value: BeetleCamera
       objectReference: {fileID: 0}
-    - target: {fileID: 5290645398610769663, guid: 23fc9584802bf1949b3d0d2ceb8b4eaa,
-        type: 3}
-      propertyPath: m_TagString
-      value: Untagged
-      objectReference: {fileID: 0}
     - target: {fileID: 5290645398610769632, guid: 23fc9584802bf1949b3d0d2ceb8b4eaa,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -3154,6 +3149,25 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 71ad7c19bf87f4d4baa60f111a27d4f7, type: 3}
+--- !u!1 &5947210323346141776 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 5947210323346141776, guid: e0051976eb800b54980662d0f7446c0d,
+    type: 3}
+  m_PrefabInstance: {fileID: 2068482275}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &5947210323346141777
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5947210323346141776}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ff26db721962cdf4a8edcdfa9a767d2a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  profile: {fileID: 11400000, guid: dcff1b5bcf8a5b54480919369d4b4874, type: 2}
 --- !u!1001 &8265361256820066612
 PrefabInstance:
   m_ObjectHideFlags: 0
