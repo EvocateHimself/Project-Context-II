@@ -7,9 +7,6 @@ public class BeetleInteract : MonoBehaviour {
     GameManager gameManager;
     FarmerStats farmerStats;
 
-    [SerializeField]
-    private AudioSource eatSound;
-
     private void Start() {
         gameManager = GameManager.instance;
         farmerStats = gameManager.GetComponent<FarmerStats>();
@@ -31,7 +28,6 @@ public class BeetleInteract : MonoBehaviour {
                     Debug.Log("pressed jump");
                     Destroy(other.gameObject);
                 }*/
-                eatSound.Play();
                 Destroy(other.gameObject);
 
             }

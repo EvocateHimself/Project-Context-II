@@ -13,10 +13,13 @@ public class CropPlacer : MonoBehaviour {
 <<<<<<< HEAD
     [SerializeField]
     private AudioSource interactSound;
+<<<<<<< HEAD
     [SerializeField]
     private AudioSource poisonSound;
 =======
 >>>>>>> master
+=======
+>>>>>>> parent of 48de1f7... Audio
     public float infectedSellCostDivider = 2;
 
     [Header("Cabbage")]
@@ -175,9 +178,13 @@ public class CropPlacer : MonoBehaviour {
                             Destroy(poisonObj, poisonDuration);
                             farmerStats.CurrentMoney -= poisonGrowCost;
 <<<<<<< HEAD
+<<<<<<< HEAD
                             poisonSound.Play();
 =======
 >>>>>>> master
+=======
+                            interactSound.Play();
+>>>>>>> parent of 48de1f7... Audio
                         }
                     }
                 }

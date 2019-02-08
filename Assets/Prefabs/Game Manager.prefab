@@ -14,9 +14,12 @@ GameObject:
   - component: {fileID: 1466798053}
 <<<<<<< HEAD
   - component: {fileID: 4699145250283335495}
+<<<<<<< HEAD
   - component: {fileID: 835375347}
 =======
 >>>>>>> master
+=======
+>>>>>>> parent of 48de1f7... Audio
   m_Layer: 0
   m_Name: Game Manager
   m_TagString: Untagged
@@ -57,9 +60,12 @@ MonoBehaviour:
   placeRadius: 100
 <<<<<<< HEAD
   interactSound: {fileID: 4699145250283335495}
+<<<<<<< HEAD
   poisonSound: {fileID: 835375347}
 =======
 >>>>>>> master
+=======
+>>>>>>> parent of 48de1f7... Audio
   infectedSellCostDivider: 2
   cabbageTexture: {fileID: 0}
   cabbageTextureSelected: {fileID: 21300000, guid: bfad4254f8cae3e4c8e01d9c86a36dab,
@@ -220,6 +226,7 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
+<<<<<<< HEAD
 --- !u!82 &835375347
 AudioSource:
   m_ObjectHideFlags: 0
@@ -318,3 +325,5 @@ AudioSource:
     m_RotationOrder: 4
 =======
 >>>>>>> master
+=======
+>>>>>>> parent of 48de1f7... Audio
