@@ -35,17 +35,24 @@ public class BeetleController : MonoBehaviour {
         //rb.AddRelativeForce(Vector3.up * ascension);
         rb.AddForce(transform.up * ascension, ForceMode.Acceleration);
 
-        if (Input.GetAxis("Vertical_joy") != 0 || Input.GetAxis("Horizontal_joy") != 0) {
+        if (Input.GetAxis("Vertical_joy") != 0 && Input.GetAxis("Ascend_joy") == 0 || Input.GetAxis("Horizontal_joy") != 0 && Input.GetAxis("Ascend_joy") == 0) {
             //anim.speed = translation * 20;
             anim.SetBool("isWalking", true);
             anim.SetBool("isIdle", false);
             anim.SetBool("isFlying", false);
-        } else if ((Input.GetAxis("Ascend_joy") != 0)) {
+
+            if (Input.GetAxis("Ascend_joy") != 0) {
+                anim.SetBool("isWalking", false);
+                anim.SetBool("isIdle", false);
+                anim.SetBool("isFlying", true);
+            }
+        } else if ((Input.GetAxis("Ascend_joy") != 0) || Input.GetAxis("Ascend_joy") != 0 && Input.GetAxis("Horizontal_joy") != 0) {
             //anim.speed = ascension * 5;
             anim.SetBool("isWalking", false);
             anim.SetBool("isIdle", false);
             anim.SetBool("isFlying", true);
-        } else {
+        } 
+        else {
             anim.SetBool("isWalking", false);
             anim.SetBool("isIdle", true);
             anim.SetBool("isFlying", false);
