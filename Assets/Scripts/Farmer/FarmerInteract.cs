@@ -4,18 +4,19 @@ using UnityEngine;
 
 public class FarmerInteract : MonoBehaviour {
 
-    [HideInInspector]
-    public Camera farmerCam;
+    GameManager gameManager;
+    CropPlacer cropPlacer;
 
     private void Start() {
-        farmerCam = GetComponent<Camera>();
+        gameManager = GameManager.instance;
+        cropPlacer = gameManager.GetComponent<CropPlacer>();
     }
 
     private void Update() {
-        if (Input.GetMouseButtonDown(0)) {
-            Ray ray = farmerCam.ScreenPointToRay(Input.mousePosition);
+        if (Input.GetMouseButtonDown(1)) {
+            Ray ray = cropPlacer.farmerCam.ScreenPointToRay(Input.mousePosition);
             RaycastHit hit;
-            if (Physics.Raycast(ray, out hit, 100) && hit.collider.tag == "Interactable" && hit.collider != null) {
+            if (Physics.Raycast(ray, out hit, cropPlacer.placeRadius) && hit.collider.tag == "Interactable" && hit.collider != null || hit.collider.tag == "InteractableClean" && hit.collider != null) {
                 Interactable interactable = hit.collider.GetComponent<Interactable>();
 
                 if (interactable != null) {

@@ -23,9 +23,9 @@ public class FarmerStats : MonoBehaviour {
     [SerializeField]
     private Text healthText;
 
-    [Header("Pesticide")]
-    public float pesticideAmount;
-    public Text pesticideAmountText;
+    [Header("Plague")]
+    public float plagueAmount;
+    public Text plagueAmountText;
 
     private float currentHealthValue;
 
@@ -117,7 +117,7 @@ public class FarmerStats : MonoBehaviour {
     }
 
     public void HandlePesticidebar() {
-        pesticideAmountText.text = pesticideAmount.ToString();
+        plagueAmountText.text = plagueAmount.ToString();
         //currentHealthValue = Map(CurrentHealth, 0, MaxHealth, 0, 1);
     }
 

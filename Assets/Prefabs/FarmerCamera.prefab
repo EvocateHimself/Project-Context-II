@@ -11,7 +11,6 @@ GameObject:
   - component: {fileID: 5947210323346141781}
   - component: {fileID: 5947210323346141778}
   - component: {fileID: 5947210323346141779}
-  - component: {fileID: 5947210323346141783}
   - component: {fileID: 5947210323346141782}
   m_Layer: 2
   m_Name: FarmerCamera
@@ -27,7 +26,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 5947210323346141776}
-  m_LocalRotation: {x: 0.7071068, y: -0, z: -0, w: 0.7071068}
+  m_LocalRotation: {x: 0.7071068, y: 0, z: 0, w: 0.7071068}
   m_LocalPosition: {x: 0, y: 17.6, z: 2.3}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
@@ -84,19 +83,6 @@ AudioListener:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 5947210323346141776}
   m_Enabled: 1
---- !u!114 &5947210323346141783
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5947210323346141776}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: f0cd2475e804e664fbd0c502abef3de5, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  farmerCam: {fileID: 0}
 --- !u!114 &5947210323346141782
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -110,8 +96,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   target: {fileID: 0}
-  distance: 2
+  distance: 6
   height: 20
-  rotationDamping: 2
+  rotationDamping: 5
   heightDamping: 2
   zoomRatio: 4

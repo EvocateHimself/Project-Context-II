@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 2757339495729131584}
   - component: {fileID: 2757339495729131586}
   - component: {fileID: 2757339495729131585}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: Particle System
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -4707,9 +4707,9 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 2757339497246664964}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: Plague_Particle
-  m_TagString: Untagged
+  m_TagString: Plague
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0

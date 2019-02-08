@@ -5,6 +5,10 @@ using UnityEngine;
 public class Carrot : Interactable {
 
     public override void Interact() {
-        Debug.Log("Interacting! " + transform.name);
+        Debug.Log("Greatly interacting with: " + transform.name);
+        if (transform.childCount > 1) farmerStats.CurrentMoney += cropPlacer.carrotSellCost / cropPlacer.infectedSellCostDivider;
+        else farmerStats.CurrentMoney += cropPlacer.carrotSellCost;
+        gameObject.tag = "Untagged";
+        Destroy(gameObject);
     }
 }

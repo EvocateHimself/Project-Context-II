@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class KillPesticide : MonoBehaviour {
+public class KillPlague : MonoBehaviour {
 
     GameManager gameManager;
     FarmerStats farmerStats;
@@ -14,8 +14,8 @@ public class KillPesticide : MonoBehaviour {
 
     private void OnTriggerEnter(Collider other) {
         if (other.tag == "Plague") {
+            farmerStats.plagueAmount -= 1;
             Destroy(other.gameObject);
-            farmerStats.pesticideAmount -= 1;
         }
     }
 }

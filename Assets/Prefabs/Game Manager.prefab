@@ -50,6 +50,7 @@ MonoBehaviour:
     serializedVersion: 2
     m_Bits: 512
   placeRadius: 100
+  infectedSellCostDivider: 2
   cabbageTexture: {fileID: 0}
   cabbageTextureSelected: {fileID: 21300000, guid: bfad4254f8cae3e4c8e01d9c86a36dab,
     type: 3}
@@ -74,9 +75,10 @@ MonoBehaviour:
   appleGrowCost: 60
   appleSellCost: 75
   poisonTexture: {fileID: 0}
-  poisonTextureSelected: {fileID: 21300000, guid: 826955a46e1eaad49925b828d24202ab,
+  poisonTextureSelected: {fileID: 21300000, guid: 82ab463a06ad4c843971fd569c3c8ce4,
     type: 3}
-  poisonPrefab: {fileID: 0}
+  poisonPrefab: {fileID: 2935957889742458676, guid: eedc60d2dd8d5ba4aa1e04e694fa7448,
+    type: 3}
   poisonDuration: 10
   poisonGrowCost: 100
 --- !u!114 &1466798050
@@ -97,8 +99,8 @@ MonoBehaviour:
   lerpSpeed: 2
   healthBar: {fileID: 0}
   healthText: {fileID: 0}
-  pesticideAmount: 0
-  pesticideAmountText: {fileID: 0}
+  plagueAmount: 0
+  plagueAmountText: {fileID: 0}
 --- !u!114 &1466798053
 MonoBehaviour:
   m_ObjectHideFlags: 0

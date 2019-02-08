@@ -6,12 +6,11 @@ using UnityEngine.EventSystems;
 
 public class CropPlacer : MonoBehaviour {
 
-    [SerializeField]
-    private Camera farmerCam;
-    [SerializeField]
-    private LayerMask groundLayer;
-    [SerializeField]
-    private float placeRadius = 100f;
+    public Camera farmerCam;
+    public LayerMask groundLayer;
+    public float placeRadius = 100f;
+
+    public float infectedSellCostDivider = 2;
 
     [Header("Cabbage")]
     [SerializeField]
@@ -20,12 +19,9 @@ public class CropPlacer : MonoBehaviour {
     private Sprite cabbageTextureSelected;
     [SerializeField]
     private GameObject cabbagePrefab;
-    [SerializeField]
-    private float cabbageHealthImpact;
-    [SerializeField]
-    private float cabbageGrowCost;
-    [SerializeField]
-    private float cabbageSellCost;
+    public float cabbageHealthImpact;
+    public float cabbageGrowCost;
+    public float cabbageSellCost;
 
     [Header("Carrot")]
     [SerializeField]
@@ -34,12 +30,9 @@ public class CropPlacer : MonoBehaviour {
     private Sprite carrotTextureSelected;
     [SerializeField]
     private GameObject carrotPrefab;
-    [SerializeField]
-    private float carrotHealthImpact;
-    [SerializeField]
-    private float carrotGrowCost;
-    [SerializeField]
-    private float carrotSellCost;
+    public float carrotHealthImpact;
+    public float carrotGrowCost;
+    public float carrotSellCost;
 
     [Header("Apple")]
     [SerializeField]
@@ -48,12 +41,9 @@ public class CropPlacer : MonoBehaviour {
     private Sprite appleTextureSelected;
     [SerializeField]
     private GameObject applePrefab;
-    [SerializeField]
-    private float appleHealthImpact;
-    [SerializeField]
-    private float appleGrowCost;
-    [SerializeField]
-    private float appleSellCost;
+    public float appleHealthImpact;
+    public float appleGrowCost;
+    public float appleSellCost;
 
     [Header("Poison")]
     [SerializeField]
@@ -61,10 +51,8 @@ public class CropPlacer : MonoBehaviour {
     [SerializeField]
     private Sprite poisonTextureSelected;
     public GameObject poisonPrefab;
-    [SerializeField]
-    private float poisonDuration = 10f;
-    [SerializeField]
-    private float poisonGrowCost;
+    public float poisonDuration = 10f;
+    public float poisonGrowCost;
 
     bool selectedCabbage = false;
     bool selectedCarrot = false;
