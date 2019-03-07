@@ -5,12 +5,12 @@ using UnityEngine;
 public class Interactable : MonoBehaviour {
 
     protected GameManager gameManager;
-    protected CropPlacer cropPlacer;
+    protected CropPlacement cropPlacement;
     protected FarmerStats farmerStats;
 
     private void Start() {
         gameManager = GameManager.instance;
-        cropPlacer = gameManager.GetComponent<CropPlacer>();
+        cropPlacement = gameManager.GetComponent<CropPlacement>();
         farmerStats = gameManager.GetComponent<FarmerStats>();
     }
 

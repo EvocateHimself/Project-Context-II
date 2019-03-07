@@ -5,9 +5,14 @@ using UnityEngine;
 public class Carrot : Interactable {
 
     public override void Interact() {
-        Debug.Log("Greatly interacting with: " + transform.name);
-        if (transform.childCount > 1) farmerStats.CurrentMoney += cropPlacer.carrotSellCost / cropPlacer.infectedSellCostDivider;
-        else farmerStats.CurrentMoney += cropPlacer.carrotSellCost;
+        foreach (Transform child in transform) {
+            if (child.name == "Plague") {
+                farmerStats.CurrentMoney += cropPlacement.carrotSellCost / cropPlacement.infectedSellCostDivider;
+                farmerStats.plagueAmount -= 1;
+            } else {
+                farmerStats.CurrentMoney += cropPlacement.carrotSellCost;
+            }
+        }
         gameObject.tag = "Untagged";
         Destroy(gameObject);
     }

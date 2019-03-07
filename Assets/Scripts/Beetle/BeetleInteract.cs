@@ -4,11 +4,11 @@ using UnityEngine;
 
 public class BeetleInteract : MonoBehaviour {
 
-    GameManager gameManager;
-    FarmerStats farmerStats;
-
     [SerializeField]
     private AudioSource eatSound;
+
+    GameManager gameManager;
+    FarmerStats farmerStats;
 
     private void Start() {
         gameManager = GameManager.instance;
@@ -20,20 +20,16 @@ public class BeetleInteract : MonoBehaviour {
     }
 
     private void OnTriggerStay(Collider other) {
-        if (other.tag == "Interactable") {
-            if (Input.GetButton("Jump")) {
-                /*
-                if (other.transform.childCount > 0) {
-                    farmerStats.plagueAmount -= 1;
-                    other.gameObject.tag = "InteractableClean";
-                    Destroy(other.transform.GetChild(1).gameObject);
-                } else {
-                    Debug.Log("pressed jump");
-                    Destroy(other.gameObject);
-                }*/
-                eatSound.Play();
-                Destroy(other.gameObject);
-
+        if (other.tag == "Infected") {
+            if (GlobalInputManager.TriangleButtonBeetle() == true) {
+                foreach(Transform child in other.transform) {
+                    if (child.name == "Plague") {
+                        farmerStats.plagueAmount -= 1;
+                        other.gameObject.tag = "Interactable";
+                        eatSound.Play();
+                        Destroy(child.gameObject);
+                    }
+                }
             }
         }
     }

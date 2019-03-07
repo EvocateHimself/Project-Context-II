@@ -8,6 +8,8 @@ TagManager:
   - Pesticide
   - Plague
   - InteractableClean
+  - Farm
+  - Infected
   layers:
   - Default
   - TransparentFX

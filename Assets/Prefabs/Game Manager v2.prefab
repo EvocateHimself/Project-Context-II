@@ -10,10 +10,13 @@ GameObject:
   m_Component:
   - component: {fileID: 7826075484592503769}
   - component: {fileID: 1106831262403932392}
-  - component: {fileID: 1106831262403932391}
   - component: {fileID: 3482655607187208906}
+  - component: {fileID: 5110197788201512163}
+  - component: {fileID: 7909627485060700079}
+  - component: {fileID: 3758137}
   - component: {fileID: 1106831262403932390}
   - component: {fileID: 1106831262403932389}
+  - component: {fileID: 2250565703398179619}
   m_Layer: 0
   m_Name: Game Manager v2
   m_TagString: Untagged
@@ -47,56 +50,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a716737c4280af44589133062691edae, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
---- !u!114 &1106831262403932391
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1106831262403932388}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: c256b9067d571a549b37c2f8e912cc41, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  farmerCam: {fileID: 0}
-  groundLayer:
-    serializedVersion: 2
-    m_Bits: 512
-  placeRadius: 100
-  interactSound: {fileID: 1106831262403932390}
-  poisonSound: {fileID: 1106831262403932389}
-  infectedSellCostDivider: 2
-  cabbageTexture: {fileID: 0}
-  cabbageTextureSelected: {fileID: 21300000, guid: bfad4254f8cae3e4c8e01d9c86a36dab,
-    type: 3}
-  cabbagePrefab: {fileID: 628592671, guid: bf04595713355ca4f9f1957afcbcccc8, type: 3}
-  cabbageHealthImpact: 5
-  cabbageGrowCost: 10
-  cabbageSellCost: 20
-  carrotTexture: {fileID: 0}
-  carrotTextureSelected: {fileID: 21300000, guid: 32f23fac02de11841a83bf0d7477ef50,
-    type: 3}
-  carrotPrefab: {fileID: 7771536404584503892, guid: c70d7a7df8ef9a440b10c735a6f7104e,
-    type: 3}
-  carrotHealthImpact: 10
-  carrotGrowCost: 25
-  carrotSellCost: 40
-  appleTexture: {fileID: 0}
-  appleTextureSelected: {fileID: 21300000, guid: 34d264833112b994988a407cdb13b528,
-    type: 3}
-  applePrefab: {fileID: 5872757744085482517, guid: 7dfe03f34fc8b7545906510ef8880db8,
-    type: 3}
-  appleHealthImpact: 20
-  appleGrowCost: 60
-  appleSellCost: 75
-  poisonTexture: {fileID: 0}
-  poisonTextureSelected: {fileID: 21300000, guid: 82ab463a06ad4c843971fd569c3c8ce4,
-    type: 3}
-  poisonPrefab: {fileID: 2935957889742458676, guid: eedc60d2dd8d5ba4aa1e04e694fa7448,
-    type: 3}
-  poisonDuration: 10
-  poisonGrowCost: 100
 --- !u!114 &3482655607187208906
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -109,7 +62,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 19eca8e13ea42284f9bf22038691b3ee, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  currentMoney: 1000
+  farmerMovementEnabled: 1
+  progressBar: {fileID: 0}
+  notifyText: {fileID: 0}
+  currentMoney: 500
   moneyText: {fileID: 0}
   maxHealth: 100
   lerpSpeed: 2
@@ -117,6 +73,95 @@ MonoBehaviour:
   healthText: {fileID: 0}
   plagueAmount: 0
   plagueAmountText: {fileID: 0}
+--- !u!114 &5110197788201512163
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1106831262403932388}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 048f9cf821237df4492fa247d2b77692, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  interactSound: {fileID: 1106831262403932390}
+  sellSound: {fileID: 2250565703398179619}
+  pesticideSound: {fileID: 1106831262403932389}
+  infectedSellCostDivider: 2
+  cabbagePrefab: {fileID: 628592671, guid: bf04595713355ca4f9f1957afcbcccc8, type: 3}
+  cabbageText: {fileID: 0}
+  cabbageHealthImpact: 5
+  cabbageGrowTime: 1
+  cabbageGrowCost: 10
+  cabbageSellCost: 20
+  carrotPrefab: {fileID: 7771536404584503892, guid: c70d7a7df8ef9a440b10c735a6f7104e,
+    type: 3}
+  carrotText: {fileID: 0}
+  carrotHealthImpact: 10
+  carrotGrowTime: 2
+  carrotGrowCost: 25
+  carrotSellCost: 40
+  applePrefab: {fileID: 5872757744085482517, guid: 7dfe03f34fc8b7545906510ef8880db8,
+    type: 3}
+  appleText: {fileID: 0}
+  appleHealthImpact: 20
+  appleGrowTime: 4
+  appleGrowCost: 60
+  appleSellCost: 75
+  pesticidePrefab: {fileID: 2935957889742458676, guid: eedc60d2dd8d5ba4aa1e04e694fa7448,
+    type: 3}
+  pesticideText: {fileID: 0}
+  pesticideDuration: 10
+  pesticideGrowCost: 100
+--- !u!114 &7909627485060700079
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1106831262403932388}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4eb0d956a36e28247a151153b428e579, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  selectedCrop: 0
+  objList:
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  cabbage: {fileID: 0}
+  carrot: {fileID: 0}
+  apple: {fileID: 0}
+  pesticide: {fileID: 0}
+  cabbageArrow: {fileID: 0}
+  carrotArrow: {fileID: 0}
+  appleArrow: {fileID: 0}
+  pesticideArrow: {fileID: 0}
+  selectedCropSprite: {fileID: 21300000, guid: 22ecc373156d2244b87eac1c4a5a1028, type: 3}
+  selectedPesticideSprite: {fileID: 21300000, guid: 2d3414e2a5b78084e9b9f22ce67b0f07,
+    type: 3}
+--- !u!114 &3758137
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1106831262403932388}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d8805f2fe5486b54a948bf8b1c5ca925, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  crops: []
+  plaguePrefab: {fileID: 0}
+  startDelay: 1
+  spawnDelay: 0
+  spawnMinTime: 4
+  spawnMaxTime: 12
+  stop: 0
 --- !u!82 &1106831262403932390
 AudioSource:
   m_ObjectHideFlags: 0
@@ -227,6 +272,102 @@ AudioSource:
   m_PlayOnAwake: 0
   m_Volume: 1
   m_Pitch: 1.7
+  Loop: 0
+  Mute: 0
+  Spatialize: 0
+  SpatializePostEffects: 0
+  Priority: 128
+  DopplerLevel: 1
+  MinDistance: 1
+  MaxDistance: 500
+  Pan2D: 0
+  rolloffMode: 0
+  BypassEffects: 0
+  BypassListenerEffects: 0
+  BypassReverbZones: 0
+  rolloffCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    - serializedVersion: 3
+      time: 1
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  panLevelCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  spreadCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  reverbZoneMixCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+--- !u!82 &2250565703398179619
+AudioSource:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1106831262403932388}
+  m_Enabled: 1
+  serializedVersion: 4
+  OutputAudioMixerGroup: {fileID: 0}
+  m_audioClip: {fileID: 8300000, guid: fb88247db74d61d44b9db56192f41f80, type: 3}
+  m_PlayOnAwake: 0
+  m_Volume: 1
+  m_Pitch: 1
   Loop: 0
   Mute: 0
   Spatialize: 0

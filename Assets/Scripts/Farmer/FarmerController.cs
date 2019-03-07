@@ -11,31 +11,39 @@ public class FarmerController : MonoBehaviour {
 
     Animator anim;
     Rigidbody rb;
+    GameManager gameManager;
+    FarmerStats farmerStats;
 
-    // Use this for initialization
-    private void Start() {
+    private void Start() {        
         rb = GetComponent<Rigidbody>();
         anim = gameObject.transform.GetChild(0).GetComponent<Animator>();
+        gameManager = GameManager.instance;
+        farmerStats = gameManager.GetComponent<FarmerStats>();
     }
 
-    // Update is called once per frame
     private void FixedUpdate() {
-        Move();
+        if (farmerStats.farmerMovementEnabled) {
+            Move();
+        } else {
+            anim.SetBool("isIdle", true);
+            anim.SetBool("isWalkingFront", false);
+            anim.SetBool("isWalkingBack", false);
+        }
     }
 
     private void Move() {
-        float translation = Input.GetAxis("Vertical") * accelerationSpeed * Time.deltaTime;
-        float rotation = Input.GetAxis("Horizontal") * rotateSpeed * Time.deltaTime;
+        float translationFarmer = GlobalInputManager.MainHorizontalFarmer() * accelerationSpeed * Time.deltaTime;
+        float rotationFarmer = GlobalInputManager.MainVerticalFarmer() * rotateSpeed * Time.deltaTime;
 
-        transform.Translate(0, 0, translation);
-        transform.Rotate(0, rotation, 0);
+        transform.Translate(0, 0, translationFarmer);
+        transform.Rotate(0, rotationFarmer, 0);
 
-        if (Input.GetKey(KeyCode.W)) {
+        if (translationFarmer > 0) {
             anim.SetBool("isWalkingFront", true);
             anim.SetBool("isWalkingBack", false);
             anim.SetBool("isIdle", false);
         }
-        else if (Input.GetKey(KeyCode.S)) {
+        else if (translationFarmer < 0) {
             anim.SetBool("isWalkingFront", false);
             anim.SetBool("isWalkingBack", true);
             anim.SetBool("isIdle", false);

@@ -5,9 +5,15 @@ using UnityEngine;
 public class Cabbage : Interactable {
 
     public override void Interact() {
-        Debug.Log("Greatly interacting with: " + transform.name);
-        if (transform.childCount > 1) farmerStats.CurrentMoney += cropPlacer.cabbageSellCost / cropPlacer.infectedSellCostDivider;
-        else farmerStats.CurrentMoney += cropPlacer.cabbageSellCost;
+        foreach (Transform child in transform) {
+            if (child.name == "Plague") {
+                farmerStats.CurrentMoney += cropPlacement.cabbageSellCost / cropPlacement.infectedSellCostDivider;
+                farmerStats.plagueAmount -= 1;
+            } else {
+                farmerStats.CurrentMoney += cropPlacement.cabbageSellCost;
+            }
+        }
+
         gameObject.tag = "Untagged";
         Destroy(gameObject);
     }

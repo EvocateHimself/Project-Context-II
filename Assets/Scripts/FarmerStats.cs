@@ -2,14 +2,19 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using TMPro;
 
 public class FarmerStats : MonoBehaviour {
+
+    public bool farmerMovementEnabled = true;
+    public Image progressBar;
+    public TextMeshProUGUI notifyText;
 
     [Header("Farm Income")]
     [SerializeField]
     private float currentMoney = 50f;
     [SerializeField]
-    private Text moneyText;
+    private TextMeshProUGUI moneyText;
 
     [Header("Farm Health")]
     [SerializeField]
@@ -21,11 +26,11 @@ public class FarmerStats : MonoBehaviour {
     [SerializeField]
     private Image healthBar;
     [SerializeField]
-    private Text healthText;
+    private TextMeshProUGUI healthText;
 
     [Header("Plague")]
     public float plagueAmount;
-    public Text plagueAmountText;
+    public TextMeshProUGUI plagueAmountText;
 
     private float currentHealthValue;
 
@@ -106,13 +111,13 @@ public class FarmerStats : MonoBehaviour {
 
 
     public void HandleHealthbar() {
-        healthText.text = "Farm Health: " + CurrentHealth + "%";
+        healthText.text = CurrentHealth + "%";
         currentHealthValue = Map(CurrentHealth, 0, MaxHealth, 0, 1);
         healthBar.fillAmount = Mathf.Lerp(healthBar.fillAmount, currentHealthValue, Time.deltaTime * LerpSpeed);
     }
 
     public void HandleMoneybar() {
-        moneyText.text = "Money: " + CurrentMoney + "$";
+        moneyText.text = CurrentMoney.ToString();
         //currentHealthValue = Map(CurrentHealth, 0, MaxHealth, 0, 1);
     }
 

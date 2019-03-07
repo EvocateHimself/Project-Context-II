@@ -43,7 +43,7 @@ MonoBehaviour:
   ambientOcclusion:
     m_Enabled: 1
     m_Settings:
-      intensity: 1
+      intensity: 2.86
       radius: 0.3
       sampleCount: 10
       downsampling: 1
@@ -114,19 +114,19 @@ MonoBehaviour:
     m_Settings:
       tonemapping:
         tonemapper: 2
-        neutralBlackIn: 0.02
-        neutralWhiteIn: 13.5
-        neutralBlackOut: 0.008
-        neutralWhiteOut: 10
-        neutralWhiteLevel: 5.3
+        neutralBlackIn: 0.0171
+        neutralWhiteIn: 13.68
+        neutralBlackOut: 0.0025
+        neutralWhiteOut: 10.26
+        neutralWhiteLevel: 5.39
         neutralWhiteClip: 10
       basic:
-        postExposure: 0
-        temperature: 0
-        tint: 0
-        hueShift: 0
-        saturation: 1
-        contrast: 1
+        postExposure: 0.25
+        temperature: 2.9
+        tint: 3.9
+        hueShift: 1
+        saturation: 1.443
+        contrast: 1.048
       channelMixer:
         red: {x: 1, y: 0, z: 0}
         green: {x: 0, y: 1, z: 0}
@@ -135,9 +135,9 @@ MonoBehaviour:
       colorWheels:
         mode: 1
         log:
-          slope: {r: 1, g: 1, b: 1, a: 0}
-          power: {r: 1, g: 0.9593924, b: 0.77677184, a: 0}
-          offset: {r: 1, g: 1, b: 1, a: 0}
+          slope: {r: 1, g: 0.9785187, b: 0.73285735, a: 0}
+          power: {r: 1, g: 0.5174826, b: 0.7555599, a: 0}
+          offset: {r: 0.44888157, g: 0.6576959, b: 1, a: 0}
         linear:
           lift: {r: 0, g: 0, b: 0, a: 0}
           gamma: {r: 0, g: 0, b: 0, a: 0}
