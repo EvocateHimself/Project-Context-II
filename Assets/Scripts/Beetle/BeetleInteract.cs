@@ -9,10 +9,12 @@ public class BeetleInteract : MonoBehaviour {
 
     GameManager gameManager;
     FarmerStats farmerStats;
+    BeetleStats beetleStats;
 
     private void Start() {
         gameManager = GameManager.instance;
         farmerStats = gameManager.GetComponent<FarmerStats>();
+        beetleStats = gameManager.GetComponent<BeetleStats>();
     }
 
     private void Update() {
@@ -24,6 +26,7 @@ public class BeetleInteract : MonoBehaviour {
             if (GlobalInputManager.TriangleButtonBeetle() == true) {
                 foreach(Transform child in other.transform) {
                     if (child.name == "Plague") {
+                        beetleStats.CurrentStamina += beetleStats.eatPlagueBooster;
                         farmerStats.plagueAmount -= 1;
                         other.gameObject.tag = "Interactable";
                         eatSound.Play();

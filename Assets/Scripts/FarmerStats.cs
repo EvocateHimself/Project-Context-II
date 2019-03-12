@@ -22,7 +22,7 @@ public class FarmerStats : MonoBehaviour {
     [HideInInspector]
     private float currentHealth = 0f;
     [SerializeField]
-    private float lerpSpeed = 2f;
+    private float healthBarLerpSpeed = 2f;
     [SerializeField]
     private Image healthBar;
     [SerializeField]
@@ -66,11 +66,11 @@ public class FarmerStats : MonoBehaviour {
 
     public float LerpSpeed {
         get {
-            return lerpSpeed;
+            return healthBarLerpSpeed;
         }
 
         set {
-            lerpSpeed = value;
+            healthBarLerpSpeed = value;
         }
     }
 

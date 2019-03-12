@@ -24,14 +24,19 @@ public class CropDetector : MonoBehaviour {
 
     private void OnTriggerStay(Collider other) {
         if (other.tag == "Player") {
-            if (GlobalInputManager.CrossButtonFarmer() && !isUsed && !isPlanting) { // Place crops
-                StartCoroutine(ProgressCrops());
+            if (cycleCrop.selectedCrop == 0 && GlobalInputManager.CrossButtonFarmer() && !isUsed && !isPlanting) { // Place crops
+                StartCoroutine(ProgressCabbage());
+            }
+            if (cycleCrop.selectedCrop == 1 && GlobalInputManager.CrossButtonFarmer() && !isUsed && !isPlanting) { // Place crops
+                StartCoroutine(ProgressCarrot());
+            }
+            if (cycleCrop.selectedCrop == 2 && GlobalInputManager.CrossButtonFarmer() && !isUsed && !isPlanting) { // Place crops
+                StartCoroutine(ProgressApple());
             }
 
             if (GlobalInputManager.TriangleButtonFarmer() && isUsed) { // Pick up crops
                 // TO DO: Add to inventory/sell crop
-                //Destroy(gameObject.transform.GetChild(1).gameObject);
-                Interactable interactable = gameObject.transform.GetChild(1).GetComponent<Interactable>();
+                Interactable interactable = gameObject.transform.GetChild(2).GetComponent<Interactable>();
 
                 if (interactable != null) {
                     interactable.Interact();
@@ -61,67 +66,63 @@ public class CropDetector : MonoBehaviour {
         }
     }
 
-    private IEnumerator ProgressCrops() {
-        if (cycleCrop.selectedCrop == 0) { // Cabbage
-            if (farmerStats.CurrentMoney >= cropPlacement.cabbageGrowCost) {
-                startProgressCabbage = true;
-                isPlanting = true;
-                farmerStats.notifyText.text = "-" + cropPlacement.cabbageGrowCost + " coins";
-                yield return new WaitForSeconds(cropPlacement.cabbageGrowTime);
-                farmerStats.progressBar.gameObject.transform.parent.parent.gameObject.SetActive(false);
-                farmerStats.farmerMovementEnabled = true;
-                farmerStats.progressBar.fillAmount = 0;
-                startProgressCabbage = false;
-                isPlanting = false;
-                GameObject Crop = Instantiate(cropPlacement.cabbagePrefab, gameObject.transform.position, Quaternion.identity);
-                Crop.transform.parent = gameObject.transform;
-                farmerStats.CurrentMoney -= cropPlacement.cabbageGrowCost;
-                farmerStats.CurrentHealth += cropPlacement.cabbageHealthImpact;
-                cropPlacement.interactSound.Play();
-                isUsed = true;
-            }
-        }
-        if (cycleCrop.selectedCrop == 1) { // Carrot
-            if (farmerStats.CurrentMoney >= cropPlacement.carrotGrowCost) {
-                startProgressCarrot = true;
-                isPlanting = true;
-                farmerStats.notifyText.text = "-" + cropPlacement.carrotGrowCost + " coins";
-                yield return new WaitForSeconds(cropPlacement.carrotGrowTime);
-                farmerStats.progressBar.gameObject.transform.parent.parent.gameObject.SetActive(false);
-                farmerStats.farmerMovementEnabled = true;
-                farmerStats.progressBar.fillAmount = 0;
-                startProgressCarrot = false;
-                isPlanting = false;
-                GameObject Crop = Instantiate(cropPlacement.carrotPrefab, gameObject.transform.position, Quaternion.identity);
-                Crop.transform.parent = gameObject.transform;
-                farmerStats.CurrentMoney -= cropPlacement.carrotGrowCost;
-                farmerStats.CurrentHealth += cropPlacement.carrotHealthImpact;
-                cropPlacement.interactSound.Play();
-                isUsed = true;
-            }
-        }
-        if (cycleCrop.selectedCrop == 2) { // Apple
-            if (farmerStats.CurrentMoney >= cropPlacement.appleGrowCost) {
-                startProgressApple = true;
-                isPlanting = true;
-                farmerStats.notifyText.text = "-" + cropPlacement.appleGrowCost + " coins";
-                yield return new WaitForSeconds(cropPlacement.appleGrowTime);
-                farmerStats.progressBar.gameObject.transform.parent.parent.gameObject.SetActive(false);
-                farmerStats.farmerMovementEnabled = true;
-                farmerStats.progressBar.fillAmount = 0;
-                startProgressApple = false;
-                isPlanting = false;
-                GameObject Crop = Instantiate(cropPlacement.applePrefab, gameObject.transform.position, Quaternion.identity);
-                Crop.transform.parent = gameObject.transform;
-                farmerStats.CurrentMoney -= cropPlacement.appleGrowCost;
-                farmerStats.CurrentHealth += cropPlacement.appleHealthImpact;
-                cropPlacement.interactSound.Play();
-                isUsed = true;
-            }
+    private IEnumerator ProgressCabbage() { // Cabbage
+        if (farmerStats.CurrentMoney >= cropPlacement.cabbageGrowCost) {
+            startProgressCabbage = true;
+            isPlanting = true;
+            farmerStats.notifyText.text = "-" + cropPlacement.cabbageGrowCost + " coins";
+            yield return new WaitForSeconds(cropPlacement.cabbageGrowTime);
+            farmerStats.progressBar.gameObject.transform.parent.parent.gameObject.SetActive(false);
+            farmerStats.farmerMovementEnabled = true;
+            farmerStats.progressBar.fillAmount = 0;
+            startProgressCabbage = false;
+            isPlanting = false;
+            GameObject Crop = Instantiate(cropPlacement.cabbagePrefab, gameObject.transform.position, Quaternion.identity);
+            Crop.transform.parent = gameObject.transform;
+            farmerStats.CurrentMoney -= cropPlacement.cabbageGrowCost;
+            farmerStats.CurrentHealth += cropPlacement.cabbageHealthImpact;
+            cropPlacement.interactSound.Play();
+            isUsed = true;
         }
     }
 
-    private void PlaceCrops() {
-        
+    private IEnumerator ProgressCarrot() { // Carrot
+        if (farmerStats.CurrentMoney >= cropPlacement.carrotGrowCost) {
+            startProgressCarrot = true;
+            isPlanting = true;
+            farmerStats.notifyText.text = "-" + cropPlacement.carrotGrowCost + " coins";
+            yield return new WaitForSeconds(cropPlacement.carrotGrowTime);
+            farmerStats.progressBar.gameObject.transform.parent.parent.gameObject.SetActive(false);
+            farmerStats.farmerMovementEnabled = true;
+            farmerStats.progressBar.fillAmount = 0;
+            startProgressCarrot = false;
+            isPlanting = false;
+            GameObject Crop = Instantiate(cropPlacement.carrotPrefab, gameObject.transform.position, Quaternion.identity);
+            Crop.transform.parent = gameObject.transform;
+            farmerStats.CurrentMoney -= cropPlacement.carrotGrowCost;
+            farmerStats.CurrentHealth += cropPlacement.carrotHealthImpact;
+            cropPlacement.interactSound.Play();
+            isUsed = true;
+        }
+    }
+
+    private IEnumerator ProgressApple() { // Apple
+        if (farmerStats.CurrentMoney >= cropPlacement.appleGrowCost) {
+            startProgressApple = true;
+            isPlanting = true;
+            farmerStats.notifyText.text = "-" + cropPlacement.appleGrowCost + " coins";
+            yield return new WaitForSeconds(cropPlacement.appleGrowTime);
+            farmerStats.progressBar.gameObject.transform.parent.parent.gameObject.SetActive(false);
+            farmerStats.farmerMovementEnabled = true;
+            farmerStats.progressBar.fillAmount = 0;
+            startProgressApple = false;
+            isPlanting = false;
+            GameObject Crop = Instantiate(cropPlacement.applePrefab, gameObject.transform.position, Quaternion.identity);
+            Crop.transform.parent = gameObject.transform;
+            farmerStats.CurrentMoney -= cropPlacement.appleGrowCost;
+            farmerStats.CurrentHealth += cropPlacement.appleHealthImpact;
+            cropPlacement.interactSound.Play();
+            isUsed = true;
+        }
     }
 }

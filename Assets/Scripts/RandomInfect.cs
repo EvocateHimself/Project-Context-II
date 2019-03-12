@@ -28,7 +28,7 @@ public class RandomInfect : MonoBehaviour {
         gameManager = GameManager.instance;
         cropPlacer = gameManager.GetComponent<CropPlacement>();
         farmerStats = gameManager.GetComponent<FarmerStats>();
-
+        Random.InitState((int)System.DateTime.Now.Ticks); // Makes things more random
         StartCoroutine(PlagueSpawner());
     }
 

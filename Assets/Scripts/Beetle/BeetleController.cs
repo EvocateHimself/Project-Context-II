@@ -6,24 +6,44 @@ public class BeetleController : MonoBehaviour {
 
     [SerializeField]
     private float rotateSpeed = 5f;
-    [SerializeField]
-    private float accelerationSpeed = 5f;
+
+    public float accelerationSpeed = 5f;
     [SerializeField]
     private float ascendSpeed = 5f;
 
+    private float startAscendSpeed;
+
     Animator anim;
     Rigidbody rb;
+    GameManager gameManager;
+    BeetleStats beetleStats;
 
-	private void Start () {
+    private void Start () {
         rb = GetComponent<Rigidbody>();
         anim = gameObject.transform.GetChild(0).GetComponent<Animator>();
+        gameManager = GameManager.instance;
+        beetleStats = gameManager.GetComponent<BeetleStats>();
+
+        startAscendSpeed = ascendSpeed;
     }
 	
 	private void FixedUpdate () {
-        Move();
+        if (beetleStats.beetleMovementEnabled) {
+            Move();
+        }
+        else {
+            anim.SetBool("isIdle", true);
+            anim.SetBool("isWalking", false);
+            anim.SetBool("isFlying", false);
+        }
     }
 
     private void Move() {
+        if (beetleStats.CurrentStamina >= 20f) { accelerationSpeed = beetleStats.CurrentStamina / 8f; }
+        else { accelerationSpeed = 3f; }
+
+        if (beetleStats.CurrentFlight > 0) { ascendSpeed = startAscendSpeed; }
+        else { ascendSpeed = 0; }
 
         float translationBeetle = GlobalInputManager.MainHorizontalBeetle() * accelerationSpeed * Time.deltaTime;
         float rotationBeetle = GlobalInputManager.MainVerticalBeetle() * rotateSpeed * Time.deltaTime;
@@ -44,9 +64,11 @@ public class BeetleController : MonoBehaviour {
                 anim.SetBool("isWalking", false);
                 anim.SetBool("isIdle", false);
                 anim.SetBool("isFlying", true);
+                beetleStats.CurrentFlight -= ascendSpeed * Time.deltaTime;
             }
         } else if (ascensionBeetle != 0) {
             //anim.speed = ascensionBeetle * 5;
+            beetleStats.CurrentFlight -= ascendSpeed * Time.deltaTime;
             anim.SetBool("isWalking", false);
             anim.SetBool("isIdle", false);
             anim.SetBool("isFlying", true);

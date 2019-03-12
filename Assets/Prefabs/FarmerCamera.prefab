@@ -11,6 +11,7 @@ GameObject:
   - component: {fileID: 5947210323346141781}
   - component: {fileID: 5947210323346141778}
   - component: {fileID: 5947210323346141779}
+  - component: {fileID: 984375105915948249}
   - component: {fileID: 5947210323346141782}
   - component: {fileID: 5947210323346141777}
   - component: {fileID: 3819705913001940974}
@@ -86,7 +87,7 @@ AudioListener:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 5947210323346141776}
   m_Enabled: 1
---- !u!114 &5947210323346141782
+--- !u!114 &984375105915948249
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -94,6 +95,25 @@ MonoBehaviour:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 5947210323346141776}
   m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b9d465fb36bbb1e46868ccc044886a50, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  target: {fileID: 0}
+  camTransform: {fileID: 5947210323346141781}
+  distance: 15
+  yAngleMin: 10
+  yAngleMax: 65
+  sensitivityX: 1
+  sensitivityY: 0.5
+--- !u!114 &5947210323346141782
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5947210323346141776}
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 394268e95e83e444ea1643e4843e14b7, type: 3}
   m_Name: 

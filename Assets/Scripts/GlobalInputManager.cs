@@ -23,6 +23,22 @@ public class GlobalInputManager : MonoBehaviour {
         return Mathf.Clamp(r, -1.0f, 1.0f);
     }
 
+    public static float CamHorizontalFarmer() {
+        var farmer = InputManager.Devices[0];
+        float r = 0.0f;
+        r += farmer.RightStick.Y;
+        //r += Input.GetAxis("Mouse Y");
+        return Mathf.Clamp(r, -1.0f, 1.0f);
+    }
+
+    public static float CamVerticalFarmer() {
+        var farmer = InputManager.Devices[0];
+        float r = 0.0f;
+        r += farmer.RightStick.X;
+        //r += Input.GetAxis("Mouse X");
+        return Mathf.Clamp(r, -1.0f, 1.0f);
+    }
+
     public static float DPADHorizontalFarmer() {
         var farmer = InputManager.Devices[0];
         float r = 0.0f;
@@ -43,7 +59,7 @@ public class GlobalInputManager : MonoBehaviour {
 
     public static bool CrossButtonFarmer() {
         var farmer = InputManager.Devices[0];
-        return farmer.Action1.WasPressed;
+        return farmer.Action1;
     }
 
     // Beetle input mapping
@@ -64,6 +80,22 @@ public class GlobalInputManager : MonoBehaviour {
         return Mathf.Clamp(r, -1.0f, 1.0f);
     }
 
+    public static float CamHorizontalBeetle() {
+        var beetle = InputManager.Devices[1];
+        float r = 0.0f;
+        r += beetle.RightStick.Y;
+        //r += Input.GetAxis("Mouse Y");
+        return Mathf.Clamp(r, -1.0f, 1.0f);
+    }
+
+    public static float CamVerticalBeetle() {
+        var beetle = InputManager.Devices[1];
+        float r = 0.0f;
+        r += beetle.RightStick.X;
+        //r += Input.GetAxis("Mouse X");
+        return Mathf.Clamp(r, -1.0f, 1.0f);
+    }
+
     public static float RightTriggerBeetle() {
         var beetle = InputManager.Devices[1];
         float r = 0.0f;
@@ -73,8 +105,8 @@ public class GlobalInputManager : MonoBehaviour {
     }
 
     public static bool TriangleButtonBeetle() {
-        var farmer = InputManager.Devices[1];
-        return farmer.Action4;
+        var beetle = InputManager.Devices[1];
+        return beetle.Action4;
         //return Input.GetButtonDown("Triangle");
     }
 
