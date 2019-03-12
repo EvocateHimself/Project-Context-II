@@ -3,15 +3,25 @@ guid: 5be43e89aa8464e4a8093e938368073c
 ModelImporter:
   serializedVersion: 23
   fileIDToRecycleName:
-    100000: //RootNode
-    400000: //RootNode
+    100000: blades
+    100002: //RootNode
+    400000: blades
+    400002: //RootNode
     2100000: lambert4
     2100002: phong1
     2100004: lambert3
-    2300000: //RootNode
-    3300000: //RootNode
+    2300000: blades
+    2300002: //RootNode
+    3300000: blades
+    3300002: //RootNode
     4300000: pasted__pasted__pCube26
-  externalObjects: {}
+    4300002: blades
+  externalObjects:
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: phong1
+    second: {fileID: 2100000, guid: 815d6444b7fec6a499eaf9f5d9b46e6e, type: 2}
   materials:
     importMaterials: 1
     materialName: 0
