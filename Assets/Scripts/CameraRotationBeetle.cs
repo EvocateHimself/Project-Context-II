@@ -27,8 +27,8 @@ public class CameraRotationBeetle : MonoBehaviour {
     }
 
     private void Update() {
-        currentX += GlobalInputManager.CamVerticalBeetle() * sensitivityY;
-        currentY += -GlobalInputManager.CamHorizontalBeetle() * sensitivityX;
+        currentX += GlobalInputManager.CamVerticalBeetle() * sensitivityY * Time.deltaTime;
+        currentY += -GlobalInputManager.CamHorizontalBeetle() * sensitivityX * Time.deltaTime;
 
         currentY = Mathf.Clamp(currentY, yAngleMin, yAngleMax);
     }

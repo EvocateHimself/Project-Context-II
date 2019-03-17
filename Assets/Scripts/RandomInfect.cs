@@ -34,6 +34,8 @@ public class RandomInfect : MonoBehaviour {
 
     private void Update() {
         spawnDelay = Random.Range(spawnMinTime, spawnMaxTime);
+
+        // TO DO: Find replacement for findobjectswithtag
         crops = GameObject.FindGameObjectsWithTag("Interactable");
         randomCrop = Random.Range(0, crops.Length);
     }
@@ -49,7 +51,7 @@ public class RandomInfect : MonoBehaviour {
                 plague.transform.parent = crops[randomCrop].transform;
                 plague.name = "Plague";
                 farmerStats.plagueAmount += 1;
-                crops[randomCrop].tag = "Infected";
+                //crops[randomCrop].tag = "Infected";
             }
 
             yield return new WaitForSeconds(spawnDelay);

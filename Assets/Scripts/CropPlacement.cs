@@ -9,6 +9,8 @@ public class CropPlacement : MonoBehaviour {
     public AudioSource sellSound;
     public AudioSource pesticideSound;
     public float infectedSellCostDivider = 2;
+    [HideInInspector]
+    public bool isPlanting = false;
 
     [Header("Cabbage")]
     public GameObject cabbagePrefab;
@@ -38,12 +40,13 @@ public class CropPlacement : MonoBehaviour {
     public GameObject pesticidePrefab;
     public TextMeshProUGUI pesticideText;
     public float pesticideDuration = 10f;
-    public float pesticideGrowCost;
+    public float pesticideTime;
+    public float pesticideCost;
 
     private void Start() {
         cabbageText.text = cabbageGrowCost.ToString();
         carrotText.text = carrotGrowCost.ToString();
         appleText.text = appleGrowCost.ToString();
-        pesticideText.text = pesticideGrowCost.ToString();
+        pesticideText.text = pesticideCost.ToString();
     }
 }

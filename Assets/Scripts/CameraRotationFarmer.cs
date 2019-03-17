@@ -27,8 +27,8 @@ public class CameraRotationFarmer : MonoBehaviour {
     }
 
     private void Update() {
-        currentX += GlobalInputManager.CamVerticalFarmer() * sensitivityY;
-        currentY += -GlobalInputManager.CamHorizontalFarmer() * sensitivityX;
+        currentX += GlobalInputManager.CamVerticalFarmer() * sensitivityY * Time.deltaTime;
+        currentY += -GlobalInputManager.CamHorizontalFarmer() * sensitivityX * Time.deltaTime;
 
         currentY = Mathf.Clamp(currentY, yAngleMin, yAngleMax);
     }

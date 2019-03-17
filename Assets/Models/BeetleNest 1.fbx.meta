@@ -201,7 +201,22 @@ ModelImporter:
     4300000: polySurface44
     4300002: Rocks
     4300004: Grass
-  externalObjects: {}
+  externalObjects:
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: lambert2
+    second: {fileID: 2100000, guid: 844c14c6a02fd9c44be59913de8fabad, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: lambert3
+    second: {fileID: 2100000, guid: e1973c67734548542b7787ddc264d150, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: lambert4
+    second: {fileID: 2100000, guid: bd6a531746e8fa14984d5fe7b084a8b1, type: 2}
   materials:
     importMaterials: 1
     materialName: 0

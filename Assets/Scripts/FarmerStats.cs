@@ -6,9 +6,11 @@ using TMPro;
 
 public class FarmerStats : MonoBehaviour {
 
+    public GameObject farmerPrefab;
     public bool farmerMovementEnabled = true;
     public Image progressBar;
     public TextMeshProUGUI notifyText;
+    public float sellSpeed = 1.5f;
 
     [Header("Farm Income")]
     [SerializeField]

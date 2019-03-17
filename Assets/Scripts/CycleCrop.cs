@@ -97,11 +97,11 @@ public class CycleCrop : MonoBehaviour {
             pesticideArrow.SetActive(true);
         }
 
-        if (selectedCrop > 2) {
+        if (selectedCrop > 3) {
             selectedCrop = 0;
         }
         if (selectedCrop < 0) {
-            selectedCrop = 2;
+            selectedCrop = 3;
         }
     }
 

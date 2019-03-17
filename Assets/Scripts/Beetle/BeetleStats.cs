@@ -7,6 +7,9 @@ using TMPro;
 public class BeetleStats : MonoBehaviour {
 
     public bool beetleMovementEnabled = true;
+    public Image progressBar;
+    public TextMeshProUGUI notifyText;
+    public float eatSpeed = 2f;
 
     [Header("Stamina")]
     [SerializeField]

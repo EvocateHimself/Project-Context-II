@@ -63,9 +63,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 19eca8e13ea42284f9bf22038691b3ee, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  farmerPrefab: {fileID: 0}
   farmerMovementEnabled: 1
   progressBar: {fileID: 0}
   notifyText: {fileID: 0}
+  sellSpeed: 0.5
   currentMoney: 500
   moneyText: {fileID: 0}
   maxHealth: 100
@@ -87,6 +89,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   beetleMovementEnabled: 1
+  progressBar: {fileID: 0}
+  notifyText: {fileID: 0}
+  eatSpeed: 1.5
   maxStamina: 100
   eatPlagueBooster: 6
   eatResourcesBooster: 4
@@ -113,6 +118,7 @@ MonoBehaviour:
   sellSound: {fileID: 2250565703398179619}
   pesticideSound: {fileID: 1106831262403932389}
   infectedSellCostDivider: 2
+  isPlanting: 0
   cabbagePrefab: {fileID: 628592671, guid: bf04595713355ca4f9f1957afcbcccc8, type: 3}
   cabbageText: {fileID: 0}
   cabbageHealthImpact: 5
@@ -133,11 +139,11 @@ MonoBehaviour:
   appleGrowTime: 4
   appleGrowCost: 60
   appleSellCost: 75
-  pesticidePrefab: {fileID: 2935957889742458676, guid: eedc60d2dd8d5ba4aa1e04e694fa7448,
-    type: 3}
+  pesticidePrefab: {fileID: 0}
   pesticideText: {fileID: 0}
-  pesticideDuration: 10
-  pesticideGrowCost: 100
+  pesticideDuration: 15
+  pesticideTime: 1.5
+  pesticideCost: 100
 --- !u!114 &7909627485060700079
 MonoBehaviour:
   m_ObjectHideFlags: 0
