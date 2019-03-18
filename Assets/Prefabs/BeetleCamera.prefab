@@ -99,11 +99,11 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   target: {fileID: 0}
   camTransform: {fileID: 5290645398610769632}
-  distance: 12
+  distance: 8
   yAngleMin: 10
   yAngleMax: 50
-  sensitivityX: 95
-  sensitivityY: 100
+  sensitivityX: 105
+  sensitivityY: 115
 --- !u!114 &5290645398610769635
 MonoBehaviour:
   m_ObjectHideFlags: 0
