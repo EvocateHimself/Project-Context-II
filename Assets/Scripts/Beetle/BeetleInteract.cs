@@ -30,7 +30,7 @@ public class BeetleInteract : MonoBehaviour {
     }
 
     private void OnTriggerStay(Collider other) {
-        if (other.tag == "Infected") {
+        if (other.tag == "Interactable") {
             if (GlobalInputManager.TriangleButtonBeetle() == true) {
                 crop = other;
                 StartCoroutine(EatPlague());

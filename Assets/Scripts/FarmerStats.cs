@@ -78,8 +78,10 @@ public class FarmerStats : MonoBehaviour {
 
 
     // Initialize object variables
-    private void Awake() {
+    private void Start() {
         //CurrentHealth = MaxHealth;
+        notifyText.gameObject.transform.parent.gameObject.SetActive(false);
+        progressBar.gameObject.transform.parent.parent.gameObject.SetActive(false);
     }
 
 

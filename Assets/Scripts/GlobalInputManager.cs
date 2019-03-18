@@ -62,6 +62,11 @@ public class GlobalInputManager : MonoBehaviour {
         return farmer.Action1;
     }
 
+    public static bool CrossButtonFarmerShort() {
+        var farmer = InputManager.Devices[0];
+        return farmer.Action1.WasPressed;
+    }
+
     public static bool CircleButtonFarmer() {
         var farmer = InputManager.Devices[0];
         return farmer.Action2.WasPressed;

@@ -18,7 +18,7 @@ public class PlacePesticide : MonoBehaviour {
 
     private void Update() {
         // TO DO: place pesticide
-        if (cycleCrop.selectedCrop == 3 && GlobalInputManager.CircleButtonFarmer() && !cropPlacement.isPlanting) {
+        if (cycleCrop.selectedCrop == 3 && GlobalInputManager.CrossButtonFarmerShort() && !cropPlacement.isPlanting) {
             StartCoroutine(PlacePesticideCan(cropPlacement.pesticideCost, cropPlacement.pesticideTime, cropPlacement.pesticidePrefab));
         }
     }
@@ -31,6 +31,7 @@ public class PlacePesticide : MonoBehaviour {
 
             while (farmerStats.progressBar.fillAmount < 1.0f) {
                 farmerStats.notifyText.text = "-" + pesticideCost + " coins";
+                farmerStats.notifyText.gameObject.transform.parent.gameObject.SetActive(true);
                 farmerStats.progressBar.gameObject.transform.parent.parent.gameObject.SetActive(true);
                 farmerStats.progressBar.fillAmount += 1.0f / processingTime * Time.deltaTime;
                 farmerStats.farmerMovementEnabled = false;
@@ -38,6 +39,7 @@ public class PlacePesticide : MonoBehaviour {
                 yield return new WaitForEndOfFrame();
             }
 
+            farmerStats.notifyText.gameObject.transform.parent.gameObject.SetActive(false);
             farmerStats.progressBar.gameObject.transform.parent.parent.gameObject.SetActive(false);
             farmerStats.farmerMovementEnabled = true;
             farmerStats.progressBar.fillAmount = 0;
@@ -47,7 +49,6 @@ public class PlacePesticide : MonoBehaviour {
 
             yield return new WaitForSeconds(cropPlacement.pesticideDuration);
             pesticide.GetComponent<SphereCollider>().enabled = false;
-            
         }
     }
 }

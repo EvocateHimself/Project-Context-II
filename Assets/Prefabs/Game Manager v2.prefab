@@ -68,7 +68,7 @@ MonoBehaviour:
   progressBar: {fileID: 0}
   notifyText: {fileID: 0}
   sellSpeed: 0.5
-  currentMoney: 500
+  currentMoney: 250
   moneyText: {fileID: 0}
   maxHealth: 100
   healthBarLerpSpeed: 2
@@ -131,17 +131,17 @@ MonoBehaviour:
   carrotHealthImpact: 10
   carrotGrowTime: 2
   carrotGrowCost: 25
-  carrotSellCost: 40
+  carrotSellCost: 60
   applePrefab: {fileID: 5872757744085482517, guid: 7dfe03f34fc8b7545906510ef8880db8,
     type: 3}
   appleText: {fileID: 0}
   appleHealthImpact: 20
   appleGrowTime: 4
-  appleGrowCost: 60
-  appleSellCost: 75
-  pesticidePrefab: {fileID: 0}
+  appleGrowCost: 120
+  appleSellCost: 300
+  pesticidePrefab: {fileID: 622529113, guid: a33c4c188311e9747aec08efa0f56f15, type: 3}
   pesticideText: {fileID: 0}
-  pesticideDuration: 15
+  pesticideDuration: 60
   pesticideTime: 1.5
   pesticideCost: 100
 --- !u!114 &7909627485060700079
@@ -186,7 +186,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   crops: []
-  plaguePrefab: {fileID: 0}
+  plaguePrefab: {fileID: 5595355807967290370, guid: 71ad7c19bf87f4d4baa60f111a27d4f7,
+    type: 3}
   startDelay: 1
   spawnDelay: 0
   spawnMinTime: 4

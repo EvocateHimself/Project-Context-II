@@ -44,7 +44,7 @@ public class RandomInfect : MonoBehaviour {
         yield return new WaitForSeconds(startDelay);
 
         while (!stop) {
-            if (crops.Length > 0 && crops[randomCrop].transform.childCount == 1) {
+            if (crops.Length > 0 && !crops[randomCrop].transform.Find("Plague")) {
                 Vector3 plaguePos = new Vector3(crops[randomCrop].transform.position.x, 1, crops[randomCrop].transform.position.z);
 
                 GameObject plague = Instantiate(plaguePrefab, plaguePos, plaguePrefab.transform.rotation);

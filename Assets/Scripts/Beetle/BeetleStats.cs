@@ -111,6 +111,7 @@ public class BeetleStats : MonoBehaviour {
         CurrentFlight = MaxFlight;
         InvokeRepeating("RegenerateStamina", 0f, 2f);
         InvokeRepeating("RegenerateFlight", 0f, 0.5f);
+        progressBar.gameObject.transform.parent.parent.gameObject.SetActive(false);
     }
 
 

@@ -4,6 +4,9 @@ using UnityEngine;
 
 public class CropDetector : MonoBehaviour {
 
+    public enum CropType { Cabbage, Carrot, Apple }
+    public CropType allowedCropType;
+
     bool isUsed = false;
     bool isComplete = false;
 
@@ -21,18 +24,28 @@ public class CropDetector : MonoBehaviour {
 
     private void OnTriggerStay(Collider other) {
         if (other.tag == "Player") {
-            if (cycleCrop.selectedCrop == 0 && GlobalInputManager.CrossButtonFarmer() && !isUsed && !cropPlacement.isPlanting) {
+            // Place cabbage
+            if (cycleCrop.selectedCrop == 0 && allowedCropType == CropType.Cabbage && GlobalInputManager.CrossButtonFarmer() && !isUsed && !cropPlacement.isPlanting) {
                 StartCoroutine(PlaceCrop(cropPlacement.cabbageGrowCost, cropPlacement.cabbageGrowTime, cropPlacement.cabbagePrefab));
             }
-            if (cycleCrop.selectedCrop == 1 && GlobalInputManager.CrossButtonFarmer() && !isUsed && !cropPlacement.isPlanting) {
+            // Place carrot
+            else if (cycleCrop.selectedCrop == 1 && allowedCropType == CropType.Carrot && GlobalInputManager.CrossButtonFarmer() && !isUsed && !cropPlacement.isPlanting) {
                 StartCoroutine(PlaceCrop(cropPlacement.carrotGrowCost, cropPlacement.carrotGrowTime, cropPlacement.carrotPrefab));
-
             }
-            if (cycleCrop.selectedCrop == 2 && GlobalInputManager.CrossButtonFarmer() && !isUsed && !cropPlacement.isPlanting) {
+            // Place apple tree
+            else if (cycleCrop.selectedCrop == 2 && allowedCropType == CropType.Apple && GlobalInputManager.CrossButtonFarmer() && !isUsed && !cropPlacement.isPlanting) {
                 StartCoroutine(PlaceCrop(cropPlacement.appleGrowCost, cropPlacement.appleGrowTime, cropPlacement.applePrefab));
             }
+            // Show warning if on wrong farming ground
+            else if ((cycleCrop.selectedCrop == 0 && allowedCropType != CropType.Cabbage && GlobalInputManager.CrossButtonFarmer() && !cropPlacement.isPlanting) ||
+                    (cycleCrop.selectedCrop == 1 && allowedCropType != CropType.Carrot && GlobalInputManager.CrossButtonFarmer() && !cropPlacement.isPlanting) ||
+                    (cycleCrop.selectedCrop == 2 && allowedCropType != CropType.Apple && GlobalInputManager.CrossButtonFarmer() && !cropPlacement.isPlanting)) {
 
-            if (GlobalInputManager.TriangleButtonFarmer() && isUsed && !cropPlacement.isPlanting) { // Pick up crops
+                StartCoroutine(Warning());
+            }
+
+            // Pick up crops
+            if (GlobalInputManager.TriangleButtonFarmer() && isUsed && !cropPlacement.isPlanting) {
                 Interactable interactable = gameObject.transform.GetChild(2).GetComponent<Interactable>();
 
                 if (interactable != null) {
@@ -61,6 +74,7 @@ public class CropDetector : MonoBehaviour {
             while (farmerStats.progressBar.fillAmount < 1.0f && crop.transform.localScale.y < 1.0f) {
                 cropPlacement.isPlanting = true;
                 farmerStats.notifyText.text = "-" + cropCost + " coins";
+                farmerStats.notifyText.gameObject.transform.parent.gameObject.SetActive(true);
                 farmerStats.progressBar.gameObject.transform.parent.parent.gameObject.SetActive(true);
                 farmerStats.progressBar.fillAmount += 1.0f / processingTime * Time.deltaTime;
                 farmerStats.farmerMovementEnabled = false;
@@ -71,6 +85,7 @@ public class CropDetector : MonoBehaviour {
                 yield return new WaitForEndOfFrame();
             }
 
+            farmerStats.notifyText.gameObject.transform.parent.gameObject.SetActive(false);
             farmerStats.progressBar.gameObject.transform.parent.parent.gameObject.SetActive(false);
             farmerStats.farmerMovementEnabled = true;
             farmerStats.progressBar.fillAmount = 0;
@@ -81,5 +96,12 @@ public class CropDetector : MonoBehaviour {
             cropPlacement.interactSound.Play();
             crop.tag = "Interactable";
         }
+    }
+
+    private IEnumerator Warning() {
+        farmerStats.notifyText.text = "Cannot place that here!";
+        farmerStats.notifyText.gameObject.transform.parent.gameObject.SetActive(true);
+        yield return new WaitForSeconds(1f);
+        farmerStats.notifyText.gameObject.transform.parent.gameObject.SetActive(false);
     }
 }

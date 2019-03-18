@@ -104,8 +104,8 @@ MonoBehaviour:
   distance: 20
   yAngleMin: 10
   yAngleMax: 65
-  sensitivityX: 2
-  sensitivityY: 2.5
+  sensitivityX: 105
+  sensitivityY: 115
 --- !u!114 &5947210323346141782
 MonoBehaviour:
   m_ObjectHideFlags: 0
