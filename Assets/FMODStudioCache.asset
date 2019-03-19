@@ -12,9 +12,76 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d32cf7c32a3ed8347bac48ef5ed56d82, type: 3}
   m_Name: FMODStudioCache
   m_EditorClassIdentifier: 
-  EditorBanks: []
-  EditorEvents: []
-  MasterBanks: []
-  StringsBanks: []
-  stringsBankWriteTime: 0
+  EditorBanks:
+  - {fileID: 114649445995247424}
+  - {fileID: 114928118974884190}
+  EditorEvents:
+  - {fileID: 114450452701661900}
+  MasterBanks:
+  - {fileID: 114928118974884190}
+  StringsBanks:
+  - {fileID: 114649445995247424}
+  stringsBankWriteTime: 636886035210000000
   cacheVersion: 3
+--- !u!114 &114450452701661900
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Path: event:/Music
+  guid: 632b2f1d93082146a36898d44dd189d9
+  Banks:
+  - {fileID: 114928118974884190}
+  IsStream: 1
+  Is3D: 0
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 0
+  MaxDistance: 0
+  Length: 124823
+--- !u!114 &114649445995247424
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c18180ecb35941f4682ae60107b85b7c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Path: Assets/Audio/Fmod Build/Desktop/Master Bank.strings.bank
+  lastModified: 636886035210000000
+  LoadResult: 0
+  FileSizes:
+  - Name: 
+    Value: 716
+  Exists: 1
+--- !u!114 &114928118974884190
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c18180ecb35941f4682ae60107b85b7c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Path: /Users/Bastiaan/Desktop/HKU Jaar 3/Game Jam Sessions/Work Files/Project-Context-II/Assets/Audio/Fmod
+    Build/Desktop/Master Bank.bank
+  lastModified: 636886035210000000
+  LoadResult: 0
+  FileSizes:
+  - Name: 
+    Value: 1686336
+  Exists: 1
