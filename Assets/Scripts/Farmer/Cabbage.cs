@@ -5,13 +5,11 @@ using UnityEngine;
 public class Cabbage : Interactable {
 
     EvolveCrop evolveCrop;
-    RandomInfect randomInfect;
 
     private void Start() {
         gameManager = GameManager.instance;
         cropPlacement = gameManager.GetComponent<CropPlacement>();
         farmerStats = gameManager.GetComponent<FarmerStats>();
-        randomInfect = gameManager.GetComponent<RandomInfect>();
         evolveCrop = GetComponent<EvolveCrop>();
     }
 
@@ -53,7 +51,6 @@ public class Cabbage : Interactable {
 
         cropPlacement.sellSound.pitch = Random.Range(0.9f, 1.1f);
         cropPlacement.sellSound.Play();
-        randomInfect.crops.Remove(gameObject);
         Destroy(gameObject);
     }
 }

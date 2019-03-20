@@ -9586,6 +9586,14 @@ PrefabInstance:
       propertyPath: farmerCamera
       value: 
       objectReference: {fileID: 1002040662}
+    - target: {fileID: 608727846, guid: 164a4b6b7bf8dbe4da7a42cdc9fdf258, type: 3}
+      propertyPath: m_LocalScale.y
+      value: 0.25
+      objectReference: {fileID: 0}
+    - target: {fileID: 543391236, guid: 164a4b6b7bf8dbe4da7a42cdc9fdf258, type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: 1.91
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 164a4b6b7bf8dbe4da7a42cdc9fdf258, type: 3}
 --- !u!4 &1106086999 stripped

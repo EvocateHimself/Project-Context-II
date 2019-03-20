@@ -14,14 +14,12 @@ public class CropDetector : MonoBehaviour {
     CropPlacement cropPlacement;
     FarmerStats farmerStats;
     CycleCrop cycleCrop;
-    RandomInfect randomInfect;
 
     private void Start() {
         gameManager = GameManager.instance;
         cropPlacement = gameManager.GetComponent<CropPlacement>();
         farmerStats = gameManager.GetComponent<FarmerStats>();
         cycleCrop = gameManager.GetComponent<CycleCrop>();
-        randomInfect = gameManager.GetComponent<RandomInfect>();
     }
 
     private void OnTriggerStay(Collider other) {
@@ -96,7 +94,6 @@ public class CropDetector : MonoBehaviour {
             farmerStats.CurrentMoney -= cropCost;
             //farmerStats.CurrentHealth += cropPlacement.cabbageHealthImpact;
             cropPlacement.interactSound.Play();
-            randomInfect.crops.Add(crop);
             crop.tag = "Interactable";
         }
     }
