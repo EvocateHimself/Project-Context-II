@@ -13,8 +13,10 @@ public class FarmerInteract : MonoBehaviour {
     private void Start() {
         gameManager = GameManager.instance;
         cropPlacer = gameManager.GetComponent<CropPlacer>();
+
     }
 
     private void Update() {
+        
     }
 }

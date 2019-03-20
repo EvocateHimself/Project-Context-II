@@ -52,7 +52,8 @@ public class BeetleInteract : MonoBehaviour {
 
                 beetleStats.CurrentStamina += beetleStats.eatPlagueBooster;
                 farmerStats.plagueAmount -= 1;
-                eatSound.Play();
+                //eatSound.Play();
+                FMODUnity.RuntimeManager.PlayOneShot("event:/Kever/Eat Plague");
 
                 crop.gameObject.tag = "Interactable";
 
