@@ -64,6 +64,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   farmerPrefab: {fileID: 0}
+  farmerAnim: {fileID: 0}
   farmerMovementEnabled: 1
   progressBar: {fileID: 0}
   notifyText: {fileID: 0}

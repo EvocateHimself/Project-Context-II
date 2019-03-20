@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class RandomInfect : MonoBehaviour {
 
-    public GameObject[] crops;
+    public List<GameObject> crops = new List<GameObject>();
     [SerializeField]
     private GameObject plaguePrefab;
     [SerializeField]
@@ -36,15 +36,14 @@ public class RandomInfect : MonoBehaviour {
         spawnDelay = Random.Range(spawnMinTime, spawnMaxTime);
 
         // TO DO: Find replacement for findobjectswithtag
-        crops = GameObject.FindGameObjectsWithTag("Interactable");
-        randomCrop = Random.Range(0, crops.Length);
+        randomCrop = Random.Range(0, crops.Count);
     }
 
     private IEnumerator PlagueSpawner() {
         yield return new WaitForSeconds(startDelay);
 
         while (!stop) {
-            if (crops.Length > 0 && !crops[randomCrop].transform.Find("Plague")) {
+            if (crops.Count > 0 && !crops[randomCrop].transform.Find("Plague")) {
                 Vector3 plaguePos = new Vector3(crops[randomCrop].transform.position.x, 1, crops[randomCrop].transform.position.z);
 
                 GameObject plague = Instantiate(plaguePrefab, plaguePos, plaguePrefab.transform.rotation);

@@ -73,6 +73,7 @@ public class BeetleController : MonoBehaviour {
             anim.SetBool("isIdle", false);
             anim.SetBool("isFlying", true);
         } 
+        
         else {
             anim.SetBool("isWalking", false);
             anim.SetBool("isIdle", true);

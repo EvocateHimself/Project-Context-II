@@ -5,12 +5,14 @@ using UnityEngine;
 public class Carrot : Interactable {
 
     EvolveCrop evolveCrop;
+    RandomInfect randomInfect;
 
     private void Start() {
         gameManager = GameManager.instance;
         cropPlacement = gameManager.GetComponent<CropPlacement>();
         farmerStats = gameManager.GetComponent<FarmerStats>();
         evolveCrop = GetComponent<EvolveCrop>();
+        randomInfect = gameManager.GetComponent<RandomInfect>();
     }
 
     public override void Interact() {
@@ -48,8 +50,10 @@ public class Carrot : Interactable {
         farmerStats.progressBar.fillAmount = 0;
         cropPlacement.isPlanting = false;
 
-        cropPlacement.sellSound.pitch = Random.Range(0.9f, 1.1f);
-        cropPlacement.sellSound.Play();
+        //cropPlacement.sellSound.pitch = Random.Range(0.9f, 1.1f);
+        //cropPlacement.sellSound.Play();
+        FMODUnity.RuntimeManager.PlayOneShot("event:/Farmer/Coins");
+        randomInfect.crops.Remove(gameObject);
         Destroy(gameObject);
     }
 }

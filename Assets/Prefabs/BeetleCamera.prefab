@@ -14,6 +14,7 @@ GameObject:
   - component: {fileID: 5380994933165665136}
   - component: {fileID: 5290645398610769635}
   - component: {fileID: 1318365841}
+  - component: {fileID: 935400396}
   m_Layer: 2
   m_Name: BeetleCamera
   m_TagString: MainCamera
@@ -99,11 +100,11 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   target: {fileID: 0}
   camTransform: {fileID: 5290645398610769632}
-  distance: 12
+  distance: 8
   yAngleMin: 10
   yAngleMax: 50
-  sensitivityX: 95
-  sensitivityY: 100
+  sensitivityX: 105
+  sensitivityY: 115
 --- !u!114 &5290645398610769635
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -135,3 +136,16 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   profile: {fileID: 11400000, guid: dcff1b5bcf8a5b54480919369d4b4874, type: 2}
+--- !u!114 &935400396
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5290645398610769663}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 86c6556701af9e04380698b89f691b6e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  ListenerNumber: 0

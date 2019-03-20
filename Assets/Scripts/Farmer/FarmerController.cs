@@ -9,14 +9,12 @@ public class FarmerController : MonoBehaviour {
     [SerializeField]
     private float accelerationSpeed = 5f;
 
-    Animator anim;
     Rigidbody rb;
     GameManager gameManager;
     FarmerStats farmerStats;
 
     private void Start() {        
         rb = GetComponent<Rigidbody>();
-        anim = gameObject.transform.GetChild(0).GetComponent<Animator>();
         gameManager = GameManager.instance;
         farmerStats = gameManager.GetComponent<FarmerStats>();
     }
@@ -25,9 +23,10 @@ public class FarmerController : MonoBehaviour {
         if (farmerStats.farmerMovementEnabled) {
             Move();
         } else {
-            anim.SetBool("isIdle", true);
-            anim.SetBool("isWalkingFront", false);
-            anim.SetBool("isWalkingBack", false);
+            farmerStats.farmerAnim.SetBool("isIdle", true);
+            farmerStats.farmerAnim.SetBool("isWalkingFront", false);
+            farmerStats.farmerAnim.SetBool("isWalkingBack", false);
+            farmerStats.farmerAnim.SetBool("isPlanting", false);
         }
     }
 
@@ -39,19 +38,22 @@ public class FarmerController : MonoBehaviour {
         transform.Rotate(0, rotationFarmer, 0);
 
         if (translationFarmer > 0) {
-            anim.SetBool("isWalkingFront", true);
-            anim.SetBool("isWalkingBack", false);
-            anim.SetBool("isIdle", false);
+            farmerStats.farmerAnim.SetBool("isWalkingFront", true);
+            farmerStats.farmerAnim.SetBool("isWalkingBack", false);
+            farmerStats.farmerAnim.SetBool("isIdle", false);
+            farmerStats.farmerAnim.SetBool("isPlanting", false);
         }
         else if (translationFarmer < 0) {
-            anim.SetBool("isWalkingFront", false);
-            anim.SetBool("isWalkingBack", true);
-            anim.SetBool("isIdle", false);
+            farmerStats.farmerAnim.SetBool("isWalkingFront", false);
+            farmerStats.farmerAnim.SetBool("isWalkingBack", true);
+            farmerStats.farmerAnim.SetBool("isIdle", false);
+            farmerStats.farmerAnim.SetBool("isPlanting", false);
         }
         else {
-            anim.SetBool("isWalkingFront", false);
-            anim.SetBool("isWalkingBack", false);
-            anim.SetBool("isIdle", true);
+            farmerStats.farmerAnim.SetBool("isWalkingFront", false);
+            farmerStats.farmerAnim.SetBool("isWalkingBack", false);
+            farmerStats.farmerAnim.SetBool("isIdle", true);
+            farmerStats.farmerAnim.SetBool("isPlanting", false);
         }
     }
 }

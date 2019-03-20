@@ -6697,6 +6697,10 @@ PrefabInstance:
       propertyPath: target
       value: 
       objectReference: {fileID: 1106086999}
+    - target: {fileID: 935400396, guid: 23fc9584802bf1949b3d0d2ceb8b4eaa, type: 3}
+      propertyPath: m_Enabled
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 23fc9584802bf1949b3d0d2ceb8b4eaa, type: 3}
 --- !u!1001 &816652551
@@ -7839,25 +7843,6 @@ Transform:
     type: 3}
   m_PrefabInstance: {fileID: 1760791839}
   m_PrefabAsset: {fileID: 0}
---- !u!1 &935400390 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 5290645398610769663, guid: 23fc9584802bf1949b3d0d2ceb8b4eaa,
-    type: 3}
-  m_PrefabInstance: {fileID: 814642568}
-  m_PrefabAsset: {fileID: 0}
---- !u!114 &935400396
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 935400390}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 86c6556701af9e04380698b89f691b6e, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  ListenerNumber: 0
 --- !u!1001 &940746817
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -8922,6 +8907,12 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 6982217682144983839, guid: 9abb81e86f6d36b42bb7a278056bdd18,
     type: 3}
   m_PrefabInstance: {fileID: 883472633}
+  m_PrefabAsset: {fileID: 0}
+--- !u!95 &1040899740 stripped
+Animator:
+  m_CorrespondingSourceObject: {fileID: 5680557329349141521, guid: 4dfe15ff30308744689b7e51c446db1a,
+    type: 3}
+  m_PrefabInstance: {fileID: 1532348201}
   m_PrefabAsset: {fileID: 0}
 --- !u!1 &1044247808
 GameObject:
@@ -12828,6 +12819,24 @@ Transform:
     type: 3}
   m_PrefabInstance: {fileID: 844188719}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &1500681991 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 5680557329356527191, guid: 4dfe15ff30308744689b7e51c446db1a,
+    type: 3}
+  m_PrefabInstance: {fileID: 1532348201}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &1500681993
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1500681991}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 93832201899d35f4a9fd76cb79b6492f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &1505567086
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -13345,20 +13354,11 @@ PrefabInstance:
       propertyPath: farmerCamera
       value: 
       objectReference: {fileID: 2068482276}
-    - target: {fileID: 491693237, guid: 4dfe15ff30308744689b7e51c446db1a, type: 3}
-      propertyPath: m_LocalScale.y
-      value: 0.25
-      objectReference: {fileID: 0}
     - target: {fileID: 7301810664508963582, guid: 4dfe15ff30308744689b7e51c446db1a,
         type: 3}
       propertyPath: farmerCamera
       value: 
       objectReference: {fileID: 2068482276}
-    - target: {fileID: 2898966047593401713, guid: 4dfe15ff30308744689b7e51c446db1a,
-        type: 3}
-      propertyPath: m_AnchoredPosition.y
-      value: 1.4
-      objectReference: {fileID: 0}
     - target: {fileID: 4392781923771353992, guid: 4dfe15ff30308744689b7e51c446db1a,
         type: 3}
       propertyPath: m_havePropertiesChanged
@@ -18914,6 +18914,11 @@ PrefabInstance:
       propertyPath: farmerPrefab
       value: 
       objectReference: {fileID: 1561945124}
+    - target: {fileID: 3482655607187208906, guid: 8147c35c63315224bb9006ae50f5998d,
+        type: 3}
+      propertyPath: farmerAnim
+      value: 
+      objectReference: {fileID: 1040899740}
     - target: {fileID: 3482655607187208906, guid: 8147c35c63315224bb9006ae50f5998d,
         type: 3}
       propertyPath: progressBar

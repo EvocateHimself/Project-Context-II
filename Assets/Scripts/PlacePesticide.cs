@@ -45,7 +45,7 @@ public class PlacePesticide : MonoBehaviour {
             farmerStats.progressBar.fillAmount = 0;
 
             farmerStats.CurrentMoney -= pesticideCost;
-            cropPlacement.pesticideSound.Play();
+            FMODUnity.RuntimeManager.PlayOneShot("event:/Farmer/Drop Pesticide");
 
             yield return new WaitForSeconds(cropPlacement.pesticideDuration);
             pesticide.GetComponent<SphereCollider>().enabled = false;

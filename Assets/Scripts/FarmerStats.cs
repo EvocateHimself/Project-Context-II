@@ -7,6 +7,7 @@ using TMPro;
 public class FarmerStats : MonoBehaviour {
 
     public GameObject farmerPrefab;
+    public Animator farmerAnim;
     public bool farmerMovementEnabled = true;
     public Image progressBar;
     public TextMeshProUGUI notifyText;

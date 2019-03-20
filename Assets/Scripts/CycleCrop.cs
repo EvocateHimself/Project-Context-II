@@ -65,7 +65,7 @@ public class CycleCrop : MonoBehaviour {
             carrotArrow.SetActive(false);
             appleArrow.SetActive(false);
             pesticideArrow.SetActive(false);
-        } 
+        }
         else if (selectedCrop == 1) {
             cabbage.sprite = defaultCropSprite;
             carrot.sprite = selectedCropSprite;
@@ -75,7 +75,7 @@ public class CycleCrop : MonoBehaviour {
             carrotArrow.SetActive(true);
             appleArrow.SetActive(false);
             pesticideArrow.SetActive(false);
-        } 
+        }
         else if (selectedCrop == 2) {
             cabbage.sprite = defaultCropSprite;
             carrot.sprite = defaultCropSprite;
@@ -110,6 +110,9 @@ public class CycleCrop : MonoBehaviour {
         yield return new WaitForSeconds(0.01f);
         if (value == Dpad.Right) selectedCrop++;
         if (value == Dpad.Left) selectedCrop--;
+
+        if (selectedCrop == 0 || selectedCrop == 1 || selectedCrop == 2 || selectedCrop == 4) FMODUnity.RuntimeManager.PlayOneShot("event:/UI/Scroll");
+        else if (selectedCrop == 3 || selectedCrop == -1) FMODUnity.RuntimeManager.PlayOneShot("event:/UI/Scroll Pesticide");
 
         StopCoroutine("DpadControl");
     }

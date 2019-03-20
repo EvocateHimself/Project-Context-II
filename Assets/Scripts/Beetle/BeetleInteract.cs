@@ -4,9 +4,6 @@ using UnityEngine;
 
 public class BeetleInteract : MonoBehaviour {
 
-    [SerializeField]
-    private AudioSource eatSound;
-
     private Collider crop;
 
     bool startEating = false;
@@ -45,19 +42,18 @@ public class BeetleInteract : MonoBehaviour {
                 beetleStats.notifyText.text = "+" + beetleStats.eatPlagueBooster + " stamina";
 
                 yield return new WaitForSeconds(beetleStats.eatSpeed);
-                beetleStats.progressBar.gameObject.transform.parent.parent.gameObject.SetActive(false);
-                beetleStats.beetleMovementEnabled = true;
-                beetleStats.progressBar.fillAmount = 0;
-                startEating = false;
-
-                beetleStats.CurrentStamina += beetleStats.eatPlagueBooster;
-                farmerStats.plagueAmount -= 1;
-                //eatSound.Play();
-                FMODUnity.RuntimeManager.PlayOneShot("event:/Kever/Eat Plague");
-
-                crop.gameObject.tag = "Interactable";
-
+                
                 if (child != null) {
+                    beetleStats.progressBar.gameObject.transform.parent.parent.gameObject.SetActive(false);
+                    beetleStats.beetleMovementEnabled = true;
+                    beetleStats.progressBar.fillAmount = 0;
+                    startEating = false;
+
+                    beetleStats.CurrentStamina += beetleStats.eatPlagueBooster;
+                    farmerStats.plagueAmount -= 1;
+
+                    crop.gameObject.tag = "Interactable";
+                    FMODUnity.RuntimeManager.PlayOneShot("event:/Kever/Eat Plague");
                     Destroy(child.gameObject);
                 }
             }
