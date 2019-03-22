@@ -9407,6 +9407,7 @@ GameObject:
   - component: {fileID: 622529117}
   - component: {fileID: 622529116}
   - component: {fileID: 622529115}
+  - component: {fileID: 689971624066510720}
   - component: {fileID: 622529114}
   m_Layer: 2
   m_Name: Pesticide
@@ -9458,6 +9459,19 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bcde4b33816f2e642bf5c9c785835b8f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &689971624066510720
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 622529113}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6a5bf2d5a716e5447acbe485e78a3f45, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  beetle: {fileID: 0}
 --- !u!54 &622529114
 Rigidbody:
   m_ObjectHideFlags: 0

@@ -6,7 +6,12 @@ using TMPro;
 
 public class BeetleStats : MonoBehaviour {
 
+    [HideInInspector]
     public bool beetleMovementEnabled = true;
+    [HideInInspector]
+    public bool isWalkingInPesticide = false;
+    [HideInInspector]
+    public float beetleWalkInPesticideSpeed = 100f;
     public Image progressBar;
     public TextMeshProUGUI notifyText;
     public float eatSpeed = 2f;
@@ -14,13 +19,7 @@ public class BeetleStats : MonoBehaviour {
     [Header("Stamina")]
     [SerializeField]
     private float maxStamina = 100f;
-    [HideInInspector]
     private float currentStamina = 0f;
-
-    public float eatPlagueBooster = 3f;
-
-    public float eatResourcesBooster = 2f;
-
     [SerializeField]
     private float staminaBarLerpSpeed = 2f;
     [SerializeField]
@@ -63,7 +62,6 @@ public class BeetleStats : MonoBehaviour {
     [Header("Flight Meter")]
     [SerializeField]
     private float maxFlight = 100f;
-    [HideInInspector]
     private float currentFlight = 0f;
     [SerializeField]
     private float flightBarLerpSpeed = 2f;
@@ -104,13 +102,84 @@ public class BeetleStats : MonoBehaviour {
         }
     }
 
+    [Header("Resources & Food")]
+    public float eatPlagueBooster = 3f;
+    [HideInInspector]
+    public float eatFlowerbedBooster;
+    public float eatFlowerbedMinBooster = 1f;
+    public float eatFlowerbedMaxBooster = 3f;
+    
+    private float maxFood = 10f;
+    private float currentFood = 1f;
+    public float flowerbedRespawnTime;
+    [SerializeField]
+    private Image foodBar;
+    [SerializeField]
+    private float maxResources = 100f;
+    private float currentResources = 0f;
+    [SerializeField]
+    private float resourceBarLerpSpeed = 2f;
+    [SerializeField]
+    private Image resourceBar;
+
+    public Image moodStatusBar;
+    public Sprite moodStatusHappy;
+    public Sprite moodStatusSad;
+    public Sprite moodStatusPoisoned;
+
+    private float currentFoodValue;
+    private float currentResourcesValue;
+
+    public float CurrentFood {
+        get {
+            return currentFood;
+        }
+
+        set {
+            currentFood = Mathf.Clamp(value, 0, MaxFood);
+        }
+    }
+
+    public float MaxFood {
+        get {
+            return maxFood;
+        }
+
+        set {
+            maxFood = value;
+        }
+    }
+
+    public float CurrentResources {
+        get {
+            return currentResources;
+        }
+
+        set {
+            currentResources = Mathf.Clamp(value, 0, MaxResources);
+        }
+    }
+
+    public float MaxResources {
+        get {
+            return maxResources;
+        }
+
+        set {
+            maxResources = value;
+        }
+    }
 
     // Initialize object variables
     private void Start() {
         CurrentStamina = MaxStamina;
         CurrentFlight = MaxFlight;
+        CurrentFood = 0;
+        CurrentResources = 0;
+        moodStatusBar.sprite = moodStatusHappy;
         InvokeRepeating("RegenerateStamina", 0f, 2f);
         InvokeRepeating("RegenerateFlight", 0f, 0.5f);
+        InvokeRepeating("DecreaseResources", 0f, 2f);
         progressBar.gameObject.transform.parent.parent.gameObject.SetActive(false);
     }
 
@@ -119,7 +188,12 @@ public class BeetleStats : MonoBehaviour {
     public virtual void Update() {
         HandleStaminaBar();
         HandleFlightBar();
-        //HandlePesticidebar();
+        HandleFoodBar();
+        HandleResourcesBar();
+    }
+
+    private void DecreaseResources() {
+        CurrentResources -= 1f;
     }
 
     private void RegenerateStamina() {
@@ -129,12 +203,6 @@ public class BeetleStats : MonoBehaviour {
     private void RegenerateFlight() {
         CurrentFlight += 1f;
     }
-
-    // Do something if the player is dead
-    public virtual void Die() {
-        Debug.Log(transform.name + " died.");
-    }
-
 
     public void HandleStaminaBar() {
         staminaText.text = CurrentStamina.ToString("F0") + "%";
@@ -146,6 +214,16 @@ public class BeetleStats : MonoBehaviour {
         flightText.text = CurrentFlight.ToString("F0") + "%";
         currentFlightValue = Map(CurrentFlight, 0, MaxFlight, 0, 1);
         flightBar.fillAmount = Mathf.Lerp(flightBar.fillAmount, currentFlightValue, Time.deltaTime * LerpSpeedFlight);
+    }
+
+    public void HandleFoodBar() {
+        currentFoodValue = Map(CurrentFood, 0, MaxFood, 0, 1);
+        foodBar.fillAmount = currentFoodValue;
+    }
+
+    public void HandleResourcesBar() {
+        currentResourcesValue = Map(CurrentResources, 0, MaxResources, 0, 0.8f);
+        resourceBar.fillAmount = Mathf.Lerp(resourceBar.fillAmount, currentResourcesValue, Time.deltaTime * resourceBarLerpSpeed);
     }
 
     /*

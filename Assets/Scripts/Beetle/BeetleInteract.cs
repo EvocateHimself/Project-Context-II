@@ -7,6 +7,7 @@ public class BeetleInteract : MonoBehaviour {
     private Collider crop;
 
     bool startEating = false;
+    bool hasEaten = false;
 
     GameManager gameManager;
     FarmerStats farmerStats;
@@ -16,9 +17,12 @@ public class BeetleInteract : MonoBehaviour {
         gameManager = GameManager.instance;
         farmerStats = gameManager.GetComponent<FarmerStats>();
         beetleStats = gameManager.GetComponent<BeetleStats>();
+        Random.InitState((int)System.DateTime.Now.Ticks); // Makes things more random
     }
 
     private void Update() {
+        beetleStats.eatFlowerbedBooster = Random.Range(beetleStats.eatFlowerbedMinBooster, beetleStats.eatFlowerbedMaxBooster);
+
         if (startEating) {
             beetleStats.progressBar.gameObject.transform.parent.parent.gameObject.SetActive(true);
             beetleStats.progressBar.fillAmount += 1.0f / beetleStats.eatSpeed * Time.deltaTime;
@@ -27,17 +31,31 @@ public class BeetleInteract : MonoBehaviour {
     }
 
     private void OnTriggerStay(Collider other) {
-        if (other.tag == "Interactable") {
+        crop = other;
+
+        if (other.tag == "Interactable" && !hasEaten) { // Crops
             if (GlobalInputManager.TriangleButtonBeetle() == true) {
-                crop = other;
                 StartCoroutine(EatPlague());
             }
         }
+
+        if (other.tag == "FlowerBed" && !hasEaten) { // Flowerbed
+            if (GlobalInputManager.TriangleButtonBeetle() == true) {
+                StartCoroutine(EatFood());
+            }
+        }
+
+        //if (other.tag == "Nest" && !hasEaten) { // Flowerbed
+        //    if (GlobalInputManager.TriangleButtonBeetle() == true) {
+        //        StartCoroutine(StoreResourcesInNest());
+        //    }
+        //}
     }
 
     private IEnumerator EatPlague() { // Cabbage
         foreach (Transform child in crop.transform) {
             if (child.name == "Plague") {
+                hasEaten = true;
                 startEating = true;
                 beetleStats.notifyText.text = "+" + beetleStats.eatPlagueBooster + " stamina";
 
@@ -51,10 +69,82 @@ public class BeetleInteract : MonoBehaviour {
 
                     beetleStats.CurrentStamina += beetleStats.eatPlagueBooster;
                     farmerStats.plagueAmount -= 1;
+                    beetleStats.CurrentFood += beetleStats.eatPlagueBooster;
 
                     crop.gameObject.tag = "Interactable";
                     FMODUnity.RuntimeManager.PlayOneShot("event:/Kever/Eat Plague");
                     Destroy(child.gameObject);
+                    hasEaten = false;
+                }
+            }
+        }
+    }
+
+    private IEnumerator EatFood() {
+        foreach (Transform child in crop.transform) {
+            if (child.name == "Insect") {
+                if (child.gameObject.activeInHierarchy) {
+                    hasEaten = true;
+                    startEating = true;
+                    beetleStats.notifyText.text = "+" + Mathf.RoundToInt(beetleStats.eatFlowerbedBooster) + " stamina";
+                    int eatFoodBoosterToInt = Mathf.RoundToInt(beetleStats.eatFlowerbedBooster);
+
+                    yield return new WaitForSeconds(beetleStats.eatSpeed);
+
+                    if (child != null) {
+                        beetleStats.progressBar.gameObject.transform.parent.parent.gameObject.SetActive(false);
+                        beetleStats.beetleMovementEnabled = true;
+                        beetleStats.progressBar.fillAmount = 0;
+                        startEating = false;
+
+                        Debug.Log("How many times does it eat?");
+
+                        beetleStats.CurrentStamina += eatFoodBoosterToInt;
+                        beetleStats.CurrentFood += eatFoodBoosterToInt;
+
+                        FMODUnity.RuntimeManager.PlayOneShot("event:/Kever/Eat Plague");
+                        child.gameObject.SetActive(false);
+
+                        yield return new WaitForSeconds(beetleStats.flowerbedRespawnTime);
+
+                        child.gameObject.SetActive(true);
+                        hasEaten = false;
+                    }
+                }
+            }
+        }
+    }
+
+    private IEnumerator StoreResourcesInNest() {
+        foreach (Transform child in crop.transform) {
+            if (child.name == "Insect") {
+                if (child.gameObject.activeInHierarchy) {
+                    hasEaten = true;
+                    startEating = true;
+                    beetleStats.notifyText.text = "+" + Mathf.RoundToInt(beetleStats.eatFlowerbedBooster) + " stamina";
+                    int eatFoodBoosterToInt = Mathf.RoundToInt(beetleStats.eatFlowerbedBooster);
+
+                    yield return new WaitForSeconds(beetleStats.eatSpeed);
+
+                    if (child != null) {
+                        beetleStats.progressBar.gameObject.transform.parent.parent.gameObject.SetActive(false);
+                        beetleStats.beetleMovementEnabled = true;
+                        beetleStats.progressBar.fillAmount = 0;
+                        startEating = false;
+
+                        Debug.Log("How many times does it eat?");
+
+                        beetleStats.CurrentStamina += eatFoodBoosterToInt;
+                        beetleStats.CurrentFood += eatFoodBoosterToInt;
+
+                        FMODUnity.RuntimeManager.PlayOneShot("event:/Kever/Eat Plague");
+                        child.gameObject.SetActive(false);
+
+                        yield return new WaitForSeconds(beetleStats.flowerbedRespawnTime);
+
+                        child.gameObject.SetActive(true);
+                        hasEaten = false;
+                    }
                 }
             }
         }

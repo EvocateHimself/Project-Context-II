@@ -9,13 +9,12 @@ public class RandomInfect : MonoBehaviour {
     private GameObject plaguePrefab;
     [SerializeField]
     private int startDelay;
-    [SerializeField]
     private float spawnDelay;
     [SerializeField]
     private float spawnMinTime;
     [SerializeField]
     private float spawnMaxTime;
-    [SerializeField]
+    [HideInInspector]
     private bool stop;
 
     int randomCrop;

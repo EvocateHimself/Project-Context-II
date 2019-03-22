@@ -8,6 +8,7 @@ public class FarmerStats : MonoBehaviour {
 
     public GameObject farmerPrefab;
     public Animator farmerAnim;
+    [HideInInspector]
     public bool farmerMovementEnabled = true;
     public Image progressBar;
     public TextMeshProUGUI notifyText;

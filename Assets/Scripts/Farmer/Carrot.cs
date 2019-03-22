@@ -20,18 +20,24 @@ public class Carrot : Interactable {
     }
 
     private IEnumerator SellCrop() {
-        if (transform.Find("Plague") && evolveCrop.currentPhase == 2) {
-            farmerStats.notifyText.text = "+" + cropPlacement.carrotSellCost / cropPlacement.infectedSellCostDivider + " coins";
-            farmerStats.CurrentMoney += cropPlacement.carrotSellCost / cropPlacement.infectedSellCostDivider;
-            farmerStats.plagueAmount -= 1;
+        Transform plague = transform.Find("Plague");
+
+        if (plague != null) {
+            if (evolveCrop.currentPhase == 2) {
+                farmerStats.notifyText.text = "+" + cropPlacement.carrotSellCost / cropPlacement.infectedSellCostDivider + " coins";
+            }
+            else {
+                farmerStats.notifyText.text = "+" + 0 + " coins";
+            }
         }
-        else if (evolveCrop.currentPhase == 2) {
-            farmerStats.notifyText.text = "+" + cropPlacement.carrotSellCost + " coins";
-            farmerStats.CurrentMoney += cropPlacement.carrotSellCost;
-        }
+
         else {
-            farmerStats.notifyText.text = "+" + 0 + " coins";
-            farmerStats.CurrentMoney += 0;
+            if (evolveCrop.currentPhase == 2) {
+                farmerStats.notifyText.text = "+" + cropPlacement.carrotSellCost + " coins";
+            }
+            else {
+                farmerStats.notifyText.text = "+" + 0 + " coins";
+            }
         }
 
         while (farmerStats.progressBar.fillAmount < 1.0f) {
@@ -42,6 +48,26 @@ public class Carrot : Interactable {
             cropPlacement.isPlanting = true;
 
             yield return new WaitForEndOfFrame();
+        }
+
+        if (plague != null) {
+            farmerStats.plagueAmount -= 1;
+
+            if (evolveCrop.currentPhase == 2) {
+                farmerStats.CurrentMoney += cropPlacement.carrotSellCost / cropPlacement.infectedSellCostDivider;
+            }
+            else {
+                farmerStats.CurrentMoney += 0;
+            }
+        }
+
+        else {
+            if (evolveCrop.currentPhase == 2) {
+                farmerStats.CurrentMoney += cropPlacement.carrotSellCost;
+            }
+            else {
+                farmerStats.CurrentMoney += 0;
+            }
         }
 
         farmerStats.notifyText.gameObject.transform.parent.gameObject.SetActive(false);

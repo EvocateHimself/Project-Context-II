@@ -10,6 +10,9 @@ TagManager:
   - InteractableClean
   - Farm
   - Infected
+  - FlowerBed
+  - Beetle
+  - Nest
   layers:
   - Default
   - TransparentFX

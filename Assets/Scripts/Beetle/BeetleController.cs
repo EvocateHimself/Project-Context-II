@@ -39,8 +39,21 @@ public class BeetleController : MonoBehaviour {
     }
 
     private void Move() {
-        if (beetleStats.CurrentStamina >= 20f) { accelerationSpeed = beetleStats.CurrentStamina / 8f; }
-        else { accelerationSpeed = 3f; }
+        if (beetleStats.CurrentStamina >= 20f) {
+            accelerationSpeed = beetleStats.CurrentStamina / 8f;
+
+            if (beetleStats.isWalkingInPesticide) {
+                accelerationSpeed = beetleStats.beetleWalkInPesticideSpeed;
+            }
+        }
+
+        else {
+            accelerationSpeed = 3f;
+
+            if (beetleStats.isWalkingInPesticide) {
+                accelerationSpeed = beetleStats.beetleWalkInPesticideSpeed;
+            }
+        }
 
         if (beetleStats.CurrentFlight > 0) { ascendSpeed = startAscendSpeed; }
         else { ascendSpeed = 0; }

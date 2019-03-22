@@ -446,8 +446,8 @@ MonoBehaviour:
   - {fileID: 4486529805370878342}
   - {fileID: 700916202638192677}
   - {fileID: 767186980493163186}
-  minEvolutionDelay: 60
-  maxEvolutionDelay: 120
+  minEvolutionDelay: 10
+  maxEvolutionDelay: 15
 --- !u!135 &8547375446882162670
 SphereCollider:
   m_ObjectHideFlags: 0

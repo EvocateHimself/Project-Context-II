@@ -5,9 +5,6 @@ using TMPro;
 
 public class CropPlacement : MonoBehaviour {
 
-    public AudioSource interactSound;
-    public AudioSource sellSound;
-    public AudioSource pesticideSound;
     public float infectedSellCostDivider = 2;
     [HideInInspector]
     public bool isPlanting = false;

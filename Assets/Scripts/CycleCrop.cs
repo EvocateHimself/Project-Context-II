@@ -17,12 +17,14 @@ public class CycleCrop : MonoBehaviour {
     [SerializeField]
     private GameObject cabbageArrow, carrotArrow, appleArrow, pesticideArrow;
     [SerializeField]
-    private Sprite selectedCropSprite, selectedPesticideSprite;
+    private Sprite selectedCabbageSprite, selectedCarrotSprite, selectedAppleSprite, selectedPesticideSprite;
 
-    private Sprite defaultCropSprite, defaultPesticideSprite;
+    private Sprite defaultCabbageSprite, defaultCarrotSprite, defaultAppleSprite, defaultPesticideSprite;
 
     private void Start() {
-        defaultCropSprite = cabbage.sprite;
+        defaultCabbageSprite = cabbage.sprite;
+        defaultCarrotSprite = carrot.sprite;
+        defaultAppleSprite = apple.sprite;
         defaultPesticideSprite = pesticide.sprite;
     }
 
@@ -57,9 +59,9 @@ public class CycleCrop : MonoBehaviour {
 
     private void CheckCrops() {
         if (selectedCrop == 0) {
-            cabbage.sprite = selectedCropSprite;
-            carrot.sprite = defaultCropSprite;
-            apple.sprite = defaultCropSprite;
+            cabbage.sprite = selectedCabbageSprite;
+            carrot.sprite = defaultCarrotSprite;
+            apple.sprite = defaultAppleSprite;
             pesticide.sprite = defaultPesticideSprite;
             cabbageArrow.SetActive(true);
             carrotArrow.SetActive(false);
@@ -67,9 +69,9 @@ public class CycleCrop : MonoBehaviour {
             pesticideArrow.SetActive(false);
         }
         else if (selectedCrop == 1) {
-            cabbage.sprite = defaultCropSprite;
-            carrot.sprite = selectedCropSprite;
-            apple.sprite = defaultCropSprite;
+            cabbage.sprite = defaultCabbageSprite;
+            carrot.sprite = selectedCarrotSprite;
+            apple.sprite = defaultAppleSprite;
             pesticide.sprite = defaultPesticideSprite;
             cabbageArrow.SetActive(false);
             carrotArrow.SetActive(true);
@@ -77,9 +79,9 @@ public class CycleCrop : MonoBehaviour {
             pesticideArrow.SetActive(false);
         }
         else if (selectedCrop == 2) {
-            cabbage.sprite = defaultCropSprite;
-            carrot.sprite = defaultCropSprite;
-            apple.sprite = selectedCropSprite;
+            cabbage.sprite = defaultCabbageSprite;
+            carrot.sprite = defaultCarrotSprite;
+            apple.sprite = selectedAppleSprite;
             pesticide.sprite = defaultPesticideSprite;
             cabbageArrow.SetActive(false);
             carrotArrow.SetActive(false);
@@ -87,9 +89,9 @@ public class CycleCrop : MonoBehaviour {
             pesticideArrow.SetActive(false);
         }
         else if (selectedCrop == 3) {
-            cabbage.sprite = defaultCropSprite;
-            carrot.sprite = defaultCropSprite;
-            apple.sprite = defaultCropSprite;
+            cabbage.sprite = defaultCabbageSprite;
+            carrot.sprite = defaultCarrotSprite;
+            apple.sprite = defaultAppleSprite;
             pesticide.sprite = selectedPesticideSprite;
             cabbageArrow.SetActive(false);
             carrotArrow.SetActive(false);

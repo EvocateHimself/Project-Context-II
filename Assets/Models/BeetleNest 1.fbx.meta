@@ -201,6 +201,9 @@ ModelImporter:
     4300000: polySurface44
     4300002: Rocks
     4300004: Grass
+    6400000: Grass
+    6400002: polySurface44
+    6400004: Rocks
   externalObjects:
   - first:
       type: UnityEngine:Material
@@ -249,7 +252,7 @@ ModelImporter:
     lODScreenPercentages: []
     globalScale: 1
     meshCompression: 0
-    addColliders: 0
+    addColliders: 1
     useSRGBMaterialColor: 1
     importVisibility: 1
     importBlendShapes: 1
