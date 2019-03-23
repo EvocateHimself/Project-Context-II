@@ -8,11 +8,14 @@ public class RandomInfect : MonoBehaviour {
     [SerializeField]
     private GameObject plaguePrefab;
     [SerializeField]
+    [Unit("seconds")]
     private int startDelay;
     private float spawnDelay;
     [SerializeField]
+    [Unit("seconds")]
     private float spawnMinTime;
     [SerializeField]
+    [Unit("seconds")]
     private float spawnMaxTime;
     [HideInInspector]
     private bool stop;

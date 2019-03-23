@@ -12,32 +12,41 @@ public class CropPlacement : MonoBehaviour {
     [Header("Cabbage")]
     public GameObject cabbagePrefab;
     public TextMeshProUGUI cabbageText;
-    public float cabbageHealthImpact;
+    [Unit("seconds")]
     public float cabbageGrowTime;
+    [Unit("coins")]
     public float cabbageGrowCost;
+    [Unit("coins")]
     public float cabbageSellCost;
 
     [Header("Carrot")]
     public GameObject carrotPrefab;
     public TextMeshProUGUI carrotText;
-    public float carrotHealthImpact;
+    [Unit("seconds")]
     public float carrotGrowTime;
+    [Unit("coins")]
     public float carrotGrowCost;
+    [Unit("coins")]
     public float carrotSellCost;
 
     [Header("Apple")]
     public GameObject applePrefab;
     public TextMeshProUGUI appleText;
-    public float appleHealthImpact;
+    [Unit("seconds")]
     public float appleGrowTime;
+    [Unit("coins")]
     public float appleGrowCost;
+    [Unit("coins")]
     public float appleSellCost;
 
     [Header("Pesticide")]
     public GameObject pesticidePrefab;
     public TextMeshProUGUI pesticideText;
+    [Unit("seconds")]
+    public float pesticidePlaceTime;
+    [Unit("seconds")]
     public float pesticideDuration = 10f;
-    public float pesticideTime;
+    [Unit("coins")]
     public float pesticideCost;
 
     private void Start() {

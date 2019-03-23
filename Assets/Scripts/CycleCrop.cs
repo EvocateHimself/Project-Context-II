@@ -9,6 +9,7 @@ public class CycleCrop : MonoBehaviour {
     private bool flag = true;
     Dpad control = Dpad.None;
 
+    [HideInInspector]
     public int selectedCrop = 0;
     public GameObject[] objList;
 

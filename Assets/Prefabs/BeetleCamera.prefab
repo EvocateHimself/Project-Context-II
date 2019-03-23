@@ -12,7 +12,6 @@ GameObject:
   - component: {fileID: 5290645398610769633}
   - component: {fileID: 5290645398610769662}
   - component: {fileID: 5380994933165665136}
-  - component: {fileID: 5290645398610769635}
   - component: {fileID: 1318365841}
   - component: {fileID: 935400396}
   m_Layer: 2
@@ -105,24 +104,6 @@ MonoBehaviour:
   yAngleMax: 50
   sensitivityX: 105
   sensitivityY: 115
---- !u!114 &5290645398610769635
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5290645398610769663}
-  m_Enabled: 0
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 394268e95e83e444ea1643e4843e14b7, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  target: {fileID: 0}
-  distance: 5
-  height: 1.5
-  rotationDamping: 2
-  heightDamping: 0
-  zoomRatio: 4
 --- !u!114 &1318365841
 MonoBehaviour:
   m_ObjectHideFlags: 0

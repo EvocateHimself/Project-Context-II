@@ -13,8 +13,8 @@ GameObject:
   - component: {fileID: 3482655607187208906}
   - component: {fileID: 4490589618697128735}
   - component: {fileID: 5110197788201512163}
-  - component: {fileID: 7909627485060700079}
   - component: {fileID: 3758137}
+  - component: {fileID: 7909627485060700079}
   m_Layer: 0
   m_Name: Game Manager v2
   m_TagString: Untagged
@@ -93,20 +93,23 @@ MonoBehaviour:
   notifyText: {fileID: 0}
   eatSpeed: 1.5
   maxStamina: 100
+  staminaRegenerationSpeed: 2
   staminaBarLerpSpeed: 2
   staminaBar: {fileID: 0}
   staminaText: {fileID: 0}
   maxFlight: 100
+  flightRegenerationSpeed: 0.5
   flightBarLerpSpeed: 2
   flightBar: {fileID: 0}
   flightText: {fileID: 0}
-  eatPlagueBooster: 3
-  eatFlowerbedBooster: 0
-  eatFlowerbedMinBooster: 1
-  eatFlowerbedMaxBooster: 3
+  plagueFood: 3
+  flowerbedFood: 0
+  flowerbedMinFood: 1
+  flowerbedMaxFood: 3
   flowerbedRespawnTime: 5
   foodBar: {fileID: 0}
   maxResources: 100
+  resourcesDecreaseSpeed: 5
   resourceBarLerpSpeed: 2
   resourceBar: {fileID: 0}
   moodStatusBar: {fileID: 0}
@@ -129,29 +132,44 @@ MonoBehaviour:
   isPlanting: 0
   cabbagePrefab: {fileID: 628592671, guid: bf04595713355ca4f9f1957afcbcccc8, type: 3}
   cabbageText: {fileID: 0}
-  cabbageHealthImpact: 5
   cabbageGrowTime: 1
   cabbageGrowCost: 10
   cabbageSellCost: 20
   carrotPrefab: {fileID: 7771536404584503892, guid: c70d7a7df8ef9a440b10c735a6f7104e,
     type: 3}
   carrotText: {fileID: 0}
-  carrotHealthImpact: 10
   carrotGrowTime: 2
   carrotGrowCost: 25
   carrotSellCost: 60
   applePrefab: {fileID: 5872757744085482517, guid: 7dfe03f34fc8b7545906510ef8880db8,
     type: 3}
   appleText: {fileID: 0}
-  appleHealthImpact: 20
   appleGrowTime: 4
   appleGrowCost: 120
   appleSellCost: 300
   pesticidePrefab: {fileID: 622529113, guid: a33c4c188311e9747aec08efa0f56f15, type: 3}
   pesticideText: {fileID: 0}
+  pesticidePlaceTime: 1
   pesticideDuration: 60
-  pesticideTime: 1.5
   pesticideCost: 100
+--- !u!114 &3758137
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1106831262403932388}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d8805f2fe5486b54a948bf8b1c5ca925, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  crops: []
+  plaguePrefab: {fileID: 5595355807967290370, guid: 71ad7c19bf87f4d4baa60f111a27d4f7,
+    type: 3}
+  startDelay: 1
+  spawnMinTime: 4
+  spawnMaxTime: 12
 --- !u!114 &7909627485060700079
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -186,21 +204,3 @@ MonoBehaviour:
     type: 3}
   selectedPesticideSprite: {fileID: 21300000, guid: b798a1d4a7bd87245b4305cad2d82b56,
     type: 3}
---- !u!114 &3758137
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1106831262403932388}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: d8805f2fe5486b54a948bf8b1c5ca925, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  crops: []
-  plaguePrefab: {fileID: 5595355807967290370, guid: 71ad7c19bf87f4d4baa60f111a27d4f7,
-    type: 3}
-  startDelay: 1
-  spawnMinTime: 4
-  spawnMaxTime: 12

@@ -39,7 +39,7 @@ public class FlowerBed : MonoBehaviour {
         foreach (Transform child in crop.transform) {
             if (child.name == "Plague") {
                 startEating = true;
-                beetleStats.notifyText.text = "+" + beetleStats.eatPlagueBooster + " stamina";
+                beetleStats.notifyText.text = "+" + beetleStats.plagueFood + " stamina";
 
                 yield return new WaitForSeconds(beetleStats.eatSpeed);
 
@@ -49,9 +49,9 @@ public class FlowerBed : MonoBehaviour {
                     beetleStats.progressBar.fillAmount = 0;
                     startEating = false;
 
-                    beetleStats.CurrentStamina += beetleStats.eatPlagueBooster;
+                    beetleStats.CurrentStamina += beetleStats.plagueFood;
                     farmerStats.plagueAmount -= 1;
-                    beetleStats.CurrentFood += beetleStats.eatPlagueBooster;
+                    beetleStats.CurrentFood += beetleStats.plagueFood;
 
                     crop.gameObject.tag = "Interactable";
                     FMODUnity.RuntimeManager.PlayOneShot("event:/Kever/Eat Plague");

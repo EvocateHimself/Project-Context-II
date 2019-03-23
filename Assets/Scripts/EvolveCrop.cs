@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class EvolveCrop : MonoBehaviour {
 
+    [HideInInspector]
     public int currentPhase = 0;
     bool hasEvolved = false;
 
@@ -12,6 +13,7 @@ public class EvolveCrop : MonoBehaviour {
 
     private float evolutionDelayOne, evolutionDelayTwo;
     [SerializeField]
+    [Unit("seconds")]
     private float minEvolutionDelay, maxEvolutionDelay;
 
     private void Start() {

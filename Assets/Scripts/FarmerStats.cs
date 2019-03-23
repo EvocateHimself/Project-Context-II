@@ -12,27 +12,32 @@ public class FarmerStats : MonoBehaviour {
     public bool farmerMovementEnabled = true;
     public Image progressBar;
     public TextMeshProUGUI notifyText;
+    [Unit("seconds")]
     public float sellSpeed = 1.5f;
 
     [Header("Farm Income")]
     [SerializeField]
+    [Unit("coins")]
     private float currentMoney = 50f;
     [SerializeField]
     private TextMeshProUGUI moneyText;
 
     [Header("Farm Health")]
     [SerializeField]
+    [Unit("health")]
     private float maxHealth = 100f;
     [HideInInspector]
     private float currentHealth = 0f;
     [SerializeField]
+    [Unit("seconds")]
     private float healthBarLerpSpeed = 2f;
     [SerializeField]
     private Image healthBar;
     [SerializeField]
     private TextMeshProUGUI healthText;
 
-    [Header("Plague")]
+    
+    [HideInInspector]
     public float plagueAmount;
     public TextMeshProUGUI plagueAmountText;
 

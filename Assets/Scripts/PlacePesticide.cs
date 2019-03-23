@@ -19,7 +19,7 @@ public class PlacePesticide : MonoBehaviour {
     private void Update() {
         // TO DO: place pesticide
         if (cycleCrop.selectedCrop == 3 && GlobalInputManager.CrossButtonFarmerShort() && !cropPlacement.isPlanting) {
-            StartCoroutine(PlacePesticideCan(cropPlacement.pesticideCost, cropPlacement.pesticideTime, cropPlacement.pesticidePrefab));
+            StartCoroutine(PlacePesticideCan(cropPlacement.pesticideCost, cropPlacement.pesticidePlaceTime, cropPlacement.pesticidePrefab));
         }
     }
 

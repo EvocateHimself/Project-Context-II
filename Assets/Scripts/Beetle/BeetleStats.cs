@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEditor;
 using UnityEngine.UI;
 using TMPro;
 
@@ -14,13 +15,19 @@ public class BeetleStats : MonoBehaviour {
     public float beetleWalkInPesticideSpeed = 100f;
     public Image progressBar;
     public TextMeshProUGUI notifyText;
+    [Unit("seconds")]
     public float eatSpeed = 2f;
 
     [Header("Stamina")]
     [SerializeField]
+    [Unit("stamina")]
     private float maxStamina = 100f;
     private float currentStamina = 0f;
     [SerializeField]
+    [Unit("seconds")]
+    private float staminaRegenerationSpeed = 2f;
+    [SerializeField]
+    [Unit("seconds")]
     private float staminaBarLerpSpeed = 2f;
     [SerializeField]
     private Image staminaBar;
@@ -61,9 +68,14 @@ public class BeetleStats : MonoBehaviour {
 
     [Header("Flight Meter")]
     [SerializeField]
+    [Unit("flight")]
     private float maxFlight = 100f;
     private float currentFlight = 0f;
     [SerializeField]
+    [Unit("seconds")]
+    private float flightRegenerationSpeed = 0.5f;
+    [SerializeField]
+    [Unit("seconds")]
     private float flightBarLerpSpeed = 2f;
     [SerializeField]
     private Image flightBar;
@@ -103,21 +115,31 @@ public class BeetleStats : MonoBehaviour {
     }
 
     [Header("Resources & Food")]
-    public float eatPlagueBooster = 3f;
+    [Unit("food")]
+    public float plagueFood = 3f;
     [HideInInspector]
-    public float eatFlowerbedBooster;
-    public float eatFlowerbedMinBooster = 1f;
-    public float eatFlowerbedMaxBooster = 3f;
+    [Unit("food")]
+    public float flowerbedFood;
+    [Unit("min food")]
+    public float flowerbedMinFood = 1f;
+    [Unit("max food")]
+    public float flowerbedMaxFood = 3f;
     
     private float maxFood = 10f;
     private float currentFood = 1f;
+    [Unit("seconds")]
     public float flowerbedRespawnTime;
     [SerializeField]
     private Image foodBar;
     [SerializeField]
+    [Unit("resources")]
     private float maxResources = 100f;
     private float currentResources = 0f;
     [SerializeField]
+    [Unit("seconds")]
+    private float resourcesDecreaseSpeed = 5f;
+    [SerializeField]
+    [Unit("seconds")]
     private float resourceBarLerpSpeed = 2f;
     [SerializeField]
     private Image resourceBar;
@@ -177,9 +199,9 @@ public class BeetleStats : MonoBehaviour {
         CurrentFood = 0;
         CurrentResources = 0;
         moodStatusBar.sprite = moodStatusHappy;
-        InvokeRepeating("RegenerateStamina", 0f, 2f);
-        InvokeRepeating("RegenerateFlight", 0f, 0.5f);
-        InvokeRepeating("DecreaseResources", 0f, 2f);
+        InvokeRepeating("RegenerateStamina", 0f, staminaRegenerationSpeed);
+        InvokeRepeating("RegenerateFlight", 0f, flightRegenerationSpeed);
+        InvokeRepeating("DecreaseResources", 0f, resourcesDecreaseSpeed);
         progressBar.gameObject.transform.parent.parent.gameObject.SetActive(false);
     }
 
