@@ -66,7 +66,7 @@ MonoBehaviour:
   progressBar: {fileID: 0}
   notifyText: {fileID: 0}
   sellSpeed: 0.5
-  currentMoney: 250
+  currentMoney: 10000
   moneyText: {fileID: 0}
   maxHealth: 100
   healthBarLerpSpeed: 2
@@ -92,25 +92,28 @@ MonoBehaviour:
   progressBar: {fileID: 0}
   notifyText: {fileID: 0}
   eatSpeed: 1.5
+  storeResourcesSpeed: 2
   maxStamina: 100
+  staminaCarryFoodImpact: 10
   staminaRegenerationSpeed: 2
-  staminaBarLerpSpeed: 2
+  staminaBarLerpSpeed: 5
   staminaBar: {fileID: 0}
   staminaText: {fileID: 0}
   maxFlight: 100
   flightRegenerationSpeed: 0.5
-  flightBarLerpSpeed: 2
+  flightBarLerpSpeed: 5
   flightBar: {fileID: 0}
   flightText: {fileID: 0}
   plagueFood: 3
   flowerbedFood: 0
   flowerbedMinFood: 1
   flowerbedMaxFood: 3
+  foodBarLerpSpeed: 10
   flowerbedRespawnTime: 5
   foodBar: {fileID: 0}
   maxResources: 100
   resourcesDecreaseSpeed: 5
-  resourceBarLerpSpeed: 2
+  resourceBarLerpSpeed: 5
   resourceBar: {fileID: 0}
   moodStatusBar: {fileID: 0}
   moodStatusHappy: {fileID: 21300000, guid: 3bc70a57dd7035f4c96928bf3ec2c5c3, type: 3}

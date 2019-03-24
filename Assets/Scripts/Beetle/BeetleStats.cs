@@ -17,17 +17,21 @@ public class BeetleStats : MonoBehaviour {
     public TextMeshProUGUI notifyText;
     [Unit("seconds")]
     public float eatSpeed = 2f;
+    [Unit("seconds")]
+    public float storeResourcesSpeed = 2f;
+    private float originalEatSpeed;
 
     [Header("Stamina")]
     [SerializeField]
     [Unit("stamina")]
     private float maxStamina = 100f;
     private float currentStamina = 0f;
+    [Unit("stamina")]
+    public float staminaCarryFoodImpact = 10f;
     [SerializeField]
     [Unit("seconds")]
     private float staminaRegenerationSpeed = 2f;
     [SerializeField]
-    [Unit("seconds")]
     private float staminaBarLerpSpeed = 2f;
     [SerializeField]
     private Image staminaBar;
@@ -75,7 +79,6 @@ public class BeetleStats : MonoBehaviour {
     [Unit("seconds")]
     private float flightRegenerationSpeed = 0.5f;
     [SerializeField]
-    [Unit("seconds")]
     private float flightBarLerpSpeed = 2f;
     [SerializeField]
     private Image flightBar;
@@ -127,6 +130,8 @@ public class BeetleStats : MonoBehaviour {
     
     private float maxFood = 10f;
     private float currentFood = 1f;
+    [SerializeField]
+    private float foodBarLerpSpeed = 10f;
     [Unit("seconds")]
     public float flowerbedRespawnTime;
     [SerializeField]
@@ -139,7 +144,6 @@ public class BeetleStats : MonoBehaviour {
     [Unit("seconds")]
     private float resourcesDecreaseSpeed = 5f;
     [SerializeField]
-    [Unit("seconds")]
     private float resourceBarLerpSpeed = 2f;
     [SerializeField]
     private Image resourceBar;
@@ -198,6 +202,7 @@ public class BeetleStats : MonoBehaviour {
         CurrentFlight = MaxFlight;
         CurrentFood = 0;
         CurrentResources = 0;
+        originalEatSpeed = eatSpeed;
         moodStatusBar.sprite = moodStatusHappy;
         InvokeRepeating("RegenerateStamina", 0f, staminaRegenerationSpeed);
         InvokeRepeating("RegenerateFlight", 0f, flightRegenerationSpeed);
@@ -212,6 +217,7 @@ public class BeetleStats : MonoBehaviour {
         HandleFlightBar();
         HandleFoodBar();
         HandleResourcesBar();
+        eatSpeed = originalEatSpeed - (CurrentResources / 75f);
     }
 
     private void DecreaseResources() {
@@ -240,7 +246,7 @@ public class BeetleStats : MonoBehaviour {
 
     public void HandleFoodBar() {
         currentFoodValue = Map(CurrentFood, 0, MaxFood, 0, 1);
-        foodBar.fillAmount = currentFoodValue;
+        foodBar.fillAmount = Mathf.Lerp(foodBar.fillAmount, currentFoodValue, Time.deltaTime * foodBarLerpSpeed);
     }
 
     public void HandleResourcesBar() {
