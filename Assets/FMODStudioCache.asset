@@ -13,8 +13,13 @@ MonoBehaviour:
   m_Name: FMODStudioCache
   m_EditorClassIdentifier: 
   EditorBanks:
+<<<<<<< Updated upstream
   - {fileID: 114627852762311352}
   - {fileID: 114743552876845096}
+=======
+  - {fileID: 114364340678750660}
+  - {fileID: 114781546819639238}
+>>>>>>> Stashed changes
   EditorEvents:
   - {fileID: 114981306098459296}
   - {fileID: 114309289852035876}
@@ -30,10 +35,17 @@ MonoBehaviour:
   - {fileID: 114523856711947198}
   - {fileID: 114912725835939978}
   MasterBanks:
+<<<<<<< Updated upstream
   - {fileID: 114743552876845096}
   StringsBanks:
   - {fileID: 114627852762311352}
   stringsBankWriteTime: 636890361947490322
+=======
+  - {fileID: 114781546819639238}
+  StringsBanks:
+  - {fileID: 114364340678750660}
+  stringsBankWriteTime: 636891265520000000
+>>>>>>> Stashed changes
   cacheVersion: 3
 --- !u!114 &114067730765906434
 MonoBehaviour:
@@ -70,7 +82,11 @@ MonoBehaviour:
   Path: event:/Kever/Kever Steps
   guid: 490a3f5cb118794f81f9f1869ee6641a
   Banks:
+<<<<<<< Updated upstream
   - {fileID: 114743552876845096}
+=======
+  - {fileID: 114781546819639238}
+>>>>>>> Stashed changes
   IsStream: 0
   Is3D: 0
   IsOneShot: 1
@@ -97,6 +113,25 @@ MonoBehaviour:
   - Name: 
     Value: 6116864
   Exists: 0
+--- !u!114 &114364340678750660
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c18180ecb35941f4682ae60107b85b7c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Path: Assets/Audio/Fmod Build/Desktop/Master Bank.strings.bank
+  lastModified: 636891265520000000
+  LoadResult: 0
+  FileSizes:
+  - Name: 
+    Value: 1284
+  Exists: 1
 --- !u!114 &114381837123534562
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -112,7 +147,11 @@ MonoBehaviour:
   Path: event:/Farmer/Coins
   guid: be6a0218a45e9940a599e82242c387c2
   Banks:
+<<<<<<< Updated upstream
   - {fileID: 114743552876845096}
+=======
+  - {fileID: 114781546819639238}
+>>>>>>> Stashed changes
   IsStream: 0
   Is3D: 0
   IsOneShot: 1
@@ -135,7 +174,11 @@ MonoBehaviour:
   Path: event:/Farmer/Plant Carrot
   guid: 72df7dfcf9860440a89978ff8c24f8e4
   Banks:
+<<<<<<< Updated upstream
   - {fileID: 114743552876845096}
+=======
+  - {fileID: 114781546819639238}
+>>>>>>> Stashed changes
   IsStream: 0
   Is3D: 0
   IsOneShot: 1
@@ -177,7 +220,11 @@ MonoBehaviour:
   Path: event:/Farmer/Plant Apple
   guid: 5736435bfb265e40ae6670bad7ca816e
   Banks:
+<<<<<<< Updated upstream
   - {fileID: 114743552876845096}
+=======
+  - {fileID: 114781546819639238}
+>>>>>>> Stashed changes
   IsStream: 0
   Is3D: 0
   IsOneShot: 1
@@ -200,7 +247,11 @@ MonoBehaviour:
   Path: event:/Farmer/Footsteps
   guid: dc2a191152eaf94fb43077e44b701551
   Banks:
+<<<<<<< Updated upstream
   - {fileID: 114743552876845096}
+=======
+  - {fileID: 114781546819639238}
+>>>>>>> Stashed changes
   IsStream: 0
   Is3D: 0
   IsOneShot: 1
@@ -223,7 +274,11 @@ MonoBehaviour:
   Path: event:/Kever/Eat Plague
   guid: 4ec9126d3bff154dbe327fe7951d158c
   Banks:
+<<<<<<< Updated upstream
   - {fileID: 114743552876845096}
+=======
+  - {fileID: 114781546819639238}
+>>>>>>> Stashed changes
   IsStream: 0
   Is3D: 0
   IsOneShot: 1
@@ -285,7 +340,11 @@ MonoBehaviour:
   Path: event:/UI/Scroll Pesticide
   guid: b530dd4aa8b71141ab1a48863a6faa65
   Banks:
+<<<<<<< Updated upstream
   - {fileID: 114743552876845096}
+=======
+  - {fileID: 114781546819639238}
+>>>>>>> Stashed changes
   IsStream: 0
   Is3D: 0
   IsOneShot: 1
@@ -327,7 +386,11 @@ MonoBehaviour:
   Path: event:/Music + Ambience
   guid: 632b2f1d93082146a36898d44dd189d9
   Banks:
+<<<<<<< Updated upstream
   - {fileID: 114743552876845096}
+=======
+  - {fileID: 114781546819639238}
+>>>>>>> Stashed changes
   IsStream: 1
   Is3D: 0
   IsOneShot: 0
@@ -335,6 +398,26 @@ MonoBehaviour:
   MinDistance: 0
   MaxDistance: 0
   Length: 290000
+--- !u!114 &114781546819639238
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c18180ecb35941f4682ae60107b85b7c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Path: /Users/Bastiaan/Desktop/HKU Jaar 3/Game Jam Sessions/Work Files/Project-Context-II/Assets/Audio/Fmod
+    Build/Desktop/Master Bank.bank
+  lastModified: 636891265520000000
+  LoadResult: 0
+  FileSizes:
+  - Name: 
+    Value: 6179648
+  Exists: 1
 --- !u!114 &114899387954370038
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -370,7 +453,11 @@ MonoBehaviour:
   Path: event:/Kever/Flight
   guid: e6295989ae896b4db7c117509a49db5d
   Banks:
+<<<<<<< Updated upstream
   - {fileID: 114743552876845096}
+=======
+  - {fileID: 114781546819639238}
+>>>>>>> Stashed changes
   IsStream: 1
   Is3D: 0
   IsOneShot: 1
@@ -412,7 +499,11 @@ MonoBehaviour:
   Path: event:/Farmer/Plant Crop
   guid: a437192159922f47a982a5b3641b9e9d
   Banks:
+<<<<<<< Updated upstream
   - {fileID: 114743552876845096}
+=======
+  - {fileID: 114781546819639238}
+>>>>>>> Stashed changes
   IsStream: 0
   Is3D: 0
   IsOneShot: 1
@@ -435,7 +526,11 @@ MonoBehaviour:
   Path: event:/Kever/Take Off
   guid: dc137fcf35c78d44998dab94d480824e
   Banks:
+<<<<<<< Updated upstream
   - {fileID: 114743552876845096}
+=======
+  - {fileID: 114781546819639238}
+>>>>>>> Stashed changes
   IsStream: 0
   Is3D: 0
   IsOneShot: 1
@@ -458,7 +553,11 @@ MonoBehaviour:
   Path: event:/Farmer/Drop Pesticide
   guid: 4469e20820f63141ba30cf989096265c
   Banks:
+<<<<<<< Updated upstream
   - {fileID: 114743552876845096}
+=======
+  - {fileID: 114781546819639238}
+>>>>>>> Stashed changes
   IsStream: 0
   Is3D: 0
   IsOneShot: 1
@@ -481,7 +580,11 @@ MonoBehaviour:
   Path: event:/UI/Scroll
   guid: 901fb1e97fdfad4188c43504b6c0584c
   Banks:
+<<<<<<< Updated upstream
   - {fileID: 114743552876845096}
+=======
+  - {fileID: 114781546819639238}
+>>>>>>> Stashed changes
   IsStream: 0
   Is3D: 0
   IsOneShot: 1
