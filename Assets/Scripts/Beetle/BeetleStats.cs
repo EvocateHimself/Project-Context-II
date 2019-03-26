@@ -222,6 +222,14 @@ public class BeetleStats : MonoBehaviour {
         HandleFoodBar();
         HandleResourcesBar();
         eatSpeed = originalEatSpeed - (CurrentResources / 75f);
+
+        if (CurrentFlight <= 20 || CurrentStamina <= 20) {
+            moodStatusBar.sprite = moodStatusSad;
+
+            if (isWalkingInPesticide) { moodStatusBar.sprite = moodStatusPoisoned; }
+        }
+        else if (isWalkingInPesticide) { moodStatusBar.sprite = moodStatusPoisoned; }
+        else { moodStatusBar.sprite = moodStatusHappy; }
     }
 
     private void DecreaseResources() {
