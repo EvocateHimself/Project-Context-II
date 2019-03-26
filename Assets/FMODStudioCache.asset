@@ -13,61 +13,29 @@ MonoBehaviour:
   m_Name: FMODStudioCache
   m_EditorClassIdentifier: 
   EditorBanks:
-<<<<<<< Updated upstream
-  - {fileID: 114627852762311352}
-  - {fileID: 114743552876845096}
-=======
-  - {fileID: 114364340678750660}
-  - {fileID: 114781546819639238}
->>>>>>> Stashed changes
+  - {fileID: 114520744286169086}
+  - {fileID: 114637582834577236}
   EditorEvents:
-  - {fileID: 114981306098459296}
-  - {fileID: 114309289852035876}
-  - {fileID: 114540729409247096}
-  - {fileID: 114502158343094928}
-  - {fileID: 114744066337850956}
-  - {fileID: 114399099747954572}
-  - {fileID: 114984926430456378}
-  - {fileID: 114937617707900168}
-  - {fileID: 114709025875280104}
-  - {fileID: 114381837123534562}
-  - {fileID: 114941408669903536}
-  - {fileID: 114523856711947198}
-  - {fileID: 114912725835939978}
+  - {fileID: 114633580976886330}
+  - {fileID: 114067937770518582}
+  - {fileID: 114298085675127492}
+  - {fileID: 114540809518816986}
+  - {fileID: 114493720871692862}
+  - {fileID: 114945038863654660}
+  - {fileID: 114493811781377832}
+  - {fileID: 114874896850612468}
+  - {fileID: 114602055633503730}
+  - {fileID: 114776661040447774}
+  - {fileID: 114174850087671950}
+  - {fileID: 114859735057719826}
+  - {fileID: 114140209681933038}
   MasterBanks:
-<<<<<<< Updated upstream
-  - {fileID: 114743552876845096}
+  - {fileID: 114637582834577236}
   StringsBanks:
-  - {fileID: 114627852762311352}
-  stringsBankWriteTime: 636890361947490322
-=======
-  - {fileID: 114781546819639238}
-  StringsBanks:
-  - {fileID: 114364340678750660}
-  stringsBankWriteTime: 636891265520000000
->>>>>>> Stashed changes
+  - {fileID: 114520744286169086}
+  stringsBankWriteTime: 636886861565042781
   cacheVersion: 3
---- !u!114 &114067730765906434
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: c18180ecb35941f4682ae60107b85b7c, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  Path: C:\Users\kevin\Documents\GitHub\Project-Context-II\Assets\Audio\Fmod Build\Desktop\Master
-    Bank.bank
-  lastModified: 636890455005785423
-  LoadResult: 0
-  FileSizes:
-  - Name: 
-    Value: 6179648
-  Exists: 0
---- !u!114 &114309289852035876
+--- !u!114 &114067937770518582
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -82,11 +50,7 @@ MonoBehaviour:
   Path: event:/Kever/Kever Steps
   guid: 490a3f5cb118794f81f9f1869ee6641a
   Banks:
-<<<<<<< Updated upstream
-  - {fileID: 114743552876845096}
-=======
-  - {fileID: 114781546819639238}
->>>>>>> Stashed changes
+  - {fileID: 114637582834577236}
   IsStream: 0
   Is3D: 0
   IsOneShot: 1
@@ -94,45 +58,7 @@ MonoBehaviour:
   MinDistance: 0
   MaxDistance: 0
   Length: 400
---- !u!114 &114314466312766218
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: c18180ecb35941f4682ae60107b85b7c, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  Path: D:\GitHub\Project-Context-II\Assets\Audio\Fmod Build\Desktop\Master Bank.bank
-  lastModified: 636890361948400036
-  LoadResult: 0
-  FileSizes:
-  - Name: 
-    Value: 6116864
-  Exists: 0
---- !u!114 &114364340678750660
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: c18180ecb35941f4682ae60107b85b7c, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  Path: Assets/Audio/Fmod Build/Desktop/Master Bank.strings.bank
-  lastModified: 636891265520000000
-  LoadResult: 0
-  FileSizes:
-  - Name: 
-    Value: 1284
-  Exists: 1
---- !u!114 &114381837123534562
+--- !u!114 &114140209681933038
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -144,14 +70,33 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Path: event:/Farmer/Coins
-  guid: be6a0218a45e9940a599e82242c387c2
+  Path: event:/Kever/Flight
+  guid: e6295989ae896b4db7c117509a49db5d
   Banks:
-<<<<<<< Updated upstream
-  - {fileID: 114743552876845096}
-=======
-  - {fileID: 114781546819639238}
->>>>>>> Stashed changes
+  - {fileID: 114637582834577236}
+  IsStream: 1
+  Is3D: 0
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 0
+  MaxDistance: 0
+  Length: 10388
+--- !u!114 &114174850087671950
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Path: event:/Kever/Take Off
+  guid: dc137fcf35c78d44998dab94d480824e
+  Banks:
+  - {fileID: 114637582834577236}
   IsStream: 0
   Is3D: 0
   IsOneShot: 1
@@ -159,107 +104,7 @@ MonoBehaviour:
   MinDistance: 0
   MaxDistance: 0
   Length: 2958
---- !u!114 &114399099747954572
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  Path: event:/Farmer/Plant Carrot
-  guid: 72df7dfcf9860440a89978ff8c24f8e4
-  Banks:
-<<<<<<< Updated upstream
-  - {fileID: 114743552876845096}
-=======
-  - {fileID: 114781546819639238}
->>>>>>> Stashed changes
-  IsStream: 0
-  Is3D: 0
-  IsOneShot: 1
-  Parameters: []
-  MinDistance: 0
-  MaxDistance: 0
-  Length: 5730
---- !u!114 &114489693835009558
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: c18180ecb35941f4682ae60107b85b7c, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  Path: D:\GitHub\Project-Context-II\Assets\Audio\Fmod Build\Desktop\Master Bank.bank
-  lastModified: 636890361948400036
-  LoadResult: 0
-  FileSizes:
-  - Name: 
-    Value: 6116864
-  Exists: 1
---- !u!114 &114502158343094928
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  Path: event:/Farmer/Plant Apple
-  guid: 5736435bfb265e40ae6670bad7ca816e
-  Banks:
-<<<<<<< Updated upstream
-  - {fileID: 114743552876845096}
-=======
-  - {fileID: 114781546819639238}
->>>>>>> Stashed changes
-  IsStream: 0
-  Is3D: 0
-  IsOneShot: 1
-  Parameters: []
-  MinDistance: 0
-  MaxDistance: 0
-  Length: 6995
---- !u!114 &114523856711947198
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  Path: event:/Farmer/Footsteps
-  guid: dc2a191152eaf94fb43077e44b701551
-  Banks:
-<<<<<<< Updated upstream
-  - {fileID: 114743552876845096}
-=======
-  - {fileID: 114781546819639238}
->>>>>>> Stashed changes
-  IsStream: 0
-  Is3D: 0
-  IsOneShot: 1
-  Parameters: []
-  MinDistance: 0
-  MaxDistance: 0
-  Length: 700
---- !u!114 &114540729409247096
+--- !u!114 &114298085675127492
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -274,11 +119,7 @@ MonoBehaviour:
   Path: event:/Kever/Eat Plague
   guid: 4ec9126d3bff154dbe327fe7951d158c
   Banks:
-<<<<<<< Updated upstream
-  - {fileID: 114743552876845096}
-=======
-  - {fileID: 114781546819639238}
->>>>>>> Stashed changes
+  - {fileID: 114637582834577236}
   IsStream: 0
   Is3D: 0
   IsOneShot: 1
@@ -286,92 +127,7 @@ MonoBehaviour:
   MinDistance: 0
   MaxDistance: 0
   Length: 1038
---- !u!114 &114627852762311352
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: c18180ecb35941f4682ae60107b85b7c, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  Path: Assets\Audio\Fmod Build\Desktop\Master Bank.strings.bank
-  lastModified: 636890361947490322
-  LoadResult: 0
-  FileSizes:
-  - Name: 
-    Value: 1284
-  Exists: 1
---- !u!114 &114700732329228392
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: c18180ecb35941f4682ae60107b85b7c, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  Path: C:\Users\kevin\Documents\GitHub\Project-Context-II\Assets\Audio\Fmod Build\Desktop\Master
-    Bank.bank
-  lastModified: 636886861565351956
-  LoadResult: 0
-  FileSizes:
-  - Name: 
-    Value: 5561888
-  Exists: 0
---- !u!114 &114709025875280104
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  Path: event:/UI/Scroll Pesticide
-  guid: b530dd4aa8b71141ab1a48863a6faa65
-  Banks:
-<<<<<<< Updated upstream
-  - {fileID: 114743552876845096}
-=======
-  - {fileID: 114781546819639238}
->>>>>>> Stashed changes
-  IsStream: 0
-  Is3D: 0
-  IsOneShot: 1
-  Parameters: []
-  MinDistance: 0
-  MaxDistance: 0
-  Length: 1322
---- !u!114 &114743552876845096
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: c18180ecb35941f4682ae60107b85b7c, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  Path: D:\GitHub\Project-Context-II\Assets\Audio\Fmod Build\Desktop\Master Bank.bank
-  lastModified: 636890463269748750
-  LoadResult: 0
-  FileSizes:
-  - Name: 
-    Value: 6179648
-  Exists: 1
---- !u!114 &114744066337850956
+--- !u!114 &114493720871692862
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -386,11 +142,7 @@ MonoBehaviour:
   Path: event:/Music + Ambience
   guid: 632b2f1d93082146a36898d44dd189d9
   Banks:
-<<<<<<< Updated upstream
-  - {fileID: 114743552876845096}
-=======
-  - {fileID: 114781546819639238}
->>>>>>> Stashed changes
+  - {fileID: 114637582834577236}
   IsStream: 1
   Is3D: 0
   IsOneShot: 0
@@ -398,7 +150,30 @@ MonoBehaviour:
   MinDistance: 0
   MaxDistance: 0
   Length: 290000
---- !u!114 &114781546819639238
+--- !u!114 &114493811781377832
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Path: event:/UI/Scroll
+  guid: 901fb1e97fdfad4188c43504b6c0584c
+  Banks:
+  - {fileID: 114637582834577236}
+  IsStream: 0
+  Is3D: 0
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 0
+  MaxDistance: 0
+  Length: 1472
+--- !u!114 &114520744286169086
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -410,15 +185,83 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c18180ecb35941f4682ae60107b85b7c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Path: /Users/Bastiaan/Desktop/HKU Jaar 3/Game Jam Sessions/Work Files/Project-Context-II/Assets/Audio/Fmod
-    Build/Desktop/Master Bank.bank
-  lastModified: 636891265520000000
+  Path: Assets\Audio\Fmod Build\Desktop\Master Bank.strings.bank
+  lastModified: 636886861565042781
   LoadResult: 0
   FileSizes:
   - Name: 
-    Value: 6179648
+    Value: 1284
   Exists: 1
---- !u!114 &114899387954370038
+--- !u!114 &114540809518816986
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Path: event:/Farmer/Plant Apple
+  guid: 5736435bfb265e40ae6670bad7ca816e
+  Banks:
+  - {fileID: 114637582834577236}
+  IsStream: 0
+  Is3D: 0
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 0
+  MaxDistance: 0
+  Length: 6995
+--- !u!114 &114602055633503730
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Path: event:/UI/Scroll Pesticide
+  guid: b530dd4aa8b71141ab1a48863a6faa65
+  Banks:
+  - {fileID: 114637582834577236}
+  IsStream: 0
+  Is3D: 0
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 0
+  MaxDistance: 0
+  Length: 1322
+--- !u!114 &114633580976886330
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Path: event:/Farmer/Drop Pesticide
+  guid: 4469e20820f63141ba30cf989096265c
+  Banks:
+  - {fileID: 114637582834577236}
+  IsStream: 0
+  Is3D: 0
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 0
+  MaxDistance: 0
+  Length: 4384
+--- !u!114 &114637582834577236
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -438,7 +281,7 @@ MonoBehaviour:
   - Name: 
     Value: 6179648
   Exists: 1
---- !u!114 &114912725835939978
+--- !u!114 &114776661040447774
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -450,22 +293,18 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Path: event:/Kever/Flight
-  guid: e6295989ae896b4db7c117509a49db5d
+  Path: event:/Farmer/Coins
+  guid: be6a0218a45e9940a599e82242c387c2
   Banks:
-<<<<<<< Updated upstream
-  - {fileID: 114743552876845096}
-=======
-  - {fileID: 114781546819639238}
->>>>>>> Stashed changes
-  IsStream: 1
+  - {fileID: 114637582834577236}
+  IsStream: 0
   Is3D: 0
   IsOneShot: 1
   Parameters: []
   MinDistance: 0
   MaxDistance: 0
-  Length: 10388
---- !u!114 &114928955784802390
+  Length: 2958
+--- !u!114 &114859735057719826
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -474,17 +313,21 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: c18180ecb35941f4682ae60107b85b7c, type: 3}
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Path: D:\GitHub\Project-Context-II\Assets\Audio\Fmod Build\Desktop\Master Bank.bank
-  lastModified: 636890463269748750
-  LoadResult: 0
-  FileSizes:
-  - Name: 
-    Value: 6179648
-  Exists: 1
---- !u!114 &114937617707900168
+  Path: event:/Farmer/Footsteps
+  guid: dc2a191152eaf94fb43077e44b701551
+  Banks:
+  - {fileID: 114637582834577236}
+  IsStream: 0
+  Is3D: 0
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 0
+  MaxDistance: 0
+  Length: 700
+--- !u!114 &114874896850612468
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -499,11 +342,7 @@ MonoBehaviour:
   Path: event:/Farmer/Plant Crop
   guid: a437192159922f47a982a5b3641b9e9d
   Banks:
-<<<<<<< Updated upstream
-  - {fileID: 114743552876845096}
-=======
-  - {fileID: 114781546819639238}
->>>>>>> Stashed changes
+  - {fileID: 114637582834577236}
   IsStream: 0
   Is3D: 0
   IsOneShot: 1
@@ -511,7 +350,7 @@ MonoBehaviour:
   MinDistance: 0
   MaxDistance: 0
   Length: 2720
---- !u!114 &114941408669903536
+--- !u!114 &114945038863654660
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -523,72 +362,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Path: event:/Kever/Take Off
-  guid: dc137fcf35c78d44998dab94d480824e
+  Path: event:/Farmer/Plant Carrot
+  guid: 72df7dfcf9860440a89978ff8c24f8e4
   Banks:
-<<<<<<< Updated upstream
-  - {fileID: 114743552876845096}
-=======
-  - {fileID: 114781546819639238}
->>>>>>> Stashed changes
+  - {fileID: 114637582834577236}
   IsStream: 0
   Is3D: 0
   IsOneShot: 1
   Parameters: []
   MinDistance: 0
   MaxDistance: 0
-  Length: 2958
---- !u!114 &114981306098459296
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  Path: event:/Farmer/Drop Pesticide
-  guid: 4469e20820f63141ba30cf989096265c
-  Banks:
-<<<<<<< Updated upstream
-  - {fileID: 114743552876845096}
-=======
-  - {fileID: 114781546819639238}
->>>>>>> Stashed changes
-  IsStream: 0
-  Is3D: 0
-  IsOneShot: 1
-  Parameters: []
-  MinDistance: 0
-  MaxDistance: 0
-  Length: 4384
---- !u!114 &114984926430456378
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  Path: event:/UI/Scroll
-  guid: 901fb1e97fdfad4188c43504b6c0584c
-  Banks:
-<<<<<<< Updated upstream
-  - {fileID: 114743552876845096}
-=======
-  - {fileID: 114781546819639238}
->>>>>>> Stashed changes
-  IsStream: 0
-  Is3D: 0
-  IsOneShot: 1
-  Parameters: []
-  MinDistance: 0
-  MaxDistance: 0
-  Length: 1472
+  Length: 5730

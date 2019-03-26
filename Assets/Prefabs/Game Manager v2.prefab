@@ -15,6 +15,7 @@ GameObject:
   - component: {fileID: 5110197788201512163}
   - component: {fileID: 3758137}
   - component: {fileID: 7909627485060700079}
+  - component: {fileID: 1101901551}
   m_Layer: 0
   m_Name: Game Manager v2
   m_TagString: Untagged
@@ -63,10 +64,14 @@ MonoBehaviour:
   farmerPrefab: {fileID: 0}
   farmerAnim: {fileID: 0}
   farmerMovementEnabled: 1
+  placeUI: {fileID: 0}
+  cannotPlaceUI: {fileID: 0}
+  notEnoughCoinsUI: {fileID: 0}
+  coinsParticle: {fileID: 0}
   progressBar: {fileID: 0}
   notifyText: {fileID: 0}
   sellSpeed: 0.5
-  currentMoney: 10000
+  currentMoney: 2000
   moneyText: {fileID: 0}
   maxHealth: 100
   healthBarLerpSpeed: 2
@@ -89,8 +94,13 @@ MonoBehaviour:
   beetleMovementEnabled: 1
   isWalkingInPesticide: 0
   beetleWalkInPesticideSpeed: 2
+  eatUI: {fileID: 0}
+  nestUI: {fileID: 0}
+  nestFullUI: {fileID: 0}
   progressBar: {fileID: 0}
   notifyText: {fileID: 0}
+  progressBarNest: {fileID: 0}
+  notifyTextNest: {fileID: 0}
   eatSpeed: 1.5
   storeResourcesSpeed: 2
   maxStamina: 100
@@ -187,7 +197,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   selectedCrop: 0
   objList:
-  - {fileID: 0}
+  - {fileID: 628592671, guid: bf04595713355ca4f9f1957afcbcccc8, type: 3}
   - {fileID: 0}
   - {fileID: 0}
   - {fileID: 0}
@@ -207,3 +217,22 @@ MonoBehaviour:
     type: 3}
   selectedPesticideSprite: {fileID: 21300000, guid: b798a1d4a7bd87245b4305cad2d82b56,
     type: 3}
+--- !u!95 &1101901551
+Animator:
+  serializedVersion: 3
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1106831262403932388}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 8afcf8c9222f5f141a2aad55a96f1272, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0

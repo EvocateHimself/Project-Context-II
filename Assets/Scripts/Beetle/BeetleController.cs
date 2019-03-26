@@ -68,19 +68,24 @@ public class BeetleController : MonoBehaviour {
         rb.AddForce(transform.up * ascensionBeetle, ForceMode.Acceleration);
 
         if (translationBeetle != 0) {
-            //anim.speed = translationBeetle * 40;
+            anim.speed = translationBeetle * 20;
             anim.SetBool("isWalking", true);
             anim.SetBool("isIdle", false);
             anim.SetBool("isFlying", false);
 
+            if (translationBeetle < 0) {
+                anim.speed = -translationBeetle * 20;
+            }
+
             if (ascensionBeetle != 0) {
+                anim.speed = ascensionBeetle * 2;
                 anim.SetBool("isWalking", false);
                 anim.SetBool("isIdle", false);
                 anim.SetBool("isFlying", true);
                 beetleStats.CurrentFlight -= ascendSpeed * Time.deltaTime;
             }
         } else if (ascensionBeetle != 0) {
-            //anim.speed = ascensionBeetle * 5;
+            anim.speed = ascensionBeetle * 2;
             beetleStats.CurrentFlight -= ascendSpeed * Time.deltaTime;
             anim.SetBool("isWalking", false);
             anim.SetBool("isIdle", false);

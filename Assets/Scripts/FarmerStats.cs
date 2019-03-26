@@ -10,6 +10,8 @@ public class FarmerStats : MonoBehaviour {
     public Animator farmerAnim;
     [HideInInspector]
     public bool farmerMovementEnabled = true;
+    public Animator placeUI, cannotPlaceUI, notEnoughCoinsUI;
+    public ParticleSystem coinsParticle;
     public Image progressBar;
     public TextMeshProUGUI notifyText;
     [Unit("seconds")]
@@ -83,14 +85,11 @@ public class FarmerStats : MonoBehaviour {
         }
     }
 
-
     // Initialize object variables
     private void Start() {
         //CurrentHealth = MaxHealth;
-        notifyText.gameObject.transform.parent.gameObject.SetActive(false);
-        progressBar.gameObject.transform.parent.parent.gameObject.SetActive(false);
+        progressBar.fillAmount = 0;
     }
-
 
     // Update is called once per frame
     public virtual void Update() {

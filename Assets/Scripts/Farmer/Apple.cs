@@ -24,25 +24,25 @@ public class Apple : Interactable {
 
         if (plague != null) {
             if (evolveCrop.currentPhase == 2) {
-                farmerStats.notifyText.text = "+" + cropPlacement.appleSellCost / cropPlacement.infectedSellCostDivider + " coins";
+                farmerStats.notifyText.text = "+" + cropPlacement.appleSellCost / cropPlacement.infectedSellCostDivider;
             }
             else {
-                farmerStats.notifyText.text = "+" + 0 + " coins";
+                farmerStats.notifyText.text = "+" + 0;
             }
         }
 
         else {
             if (evolveCrop.currentPhase == 2) {
-                farmerStats.notifyText.text = "+" + cropPlacement.appleSellCost + " coins";
+                farmerStats.notifyText.text = "+" + cropPlacement.appleSellCost;
             }
             else {
-                farmerStats.notifyText.text = "+" + 0 + " coins";
+                farmerStats.notifyText.text = "+" + 0;
             }
         }
 
         while (farmerStats.progressBar.fillAmount < 1.0f) {
-            farmerStats.notifyText.gameObject.transform.parent.gameObject.SetActive(true);
-            farmerStats.progressBar.gameObject.transform.parent.parent.gameObject.SetActive(true);
+            farmerStats.progressBar.color = new Color32(69, 226, 35, 255);
+            farmerStats.placeUI.Play("OpenPlaceBoard");
             farmerStats.progressBar.fillAmount += 1.0f / farmerStats.sellSpeed * Time.deltaTime;
             farmerStats.farmerMovementEnabled = false;
             cropPlacement.isPlanting = true;
@@ -70,8 +70,11 @@ public class Apple : Interactable {
             }
         }
 
-        farmerStats.notifyText.gameObject.transform.parent.gameObject.SetActive(false);
-        farmerStats.progressBar.gameObject.transform.parent.parent.gameObject.SetActive(false);
+        farmerStats.placeUI.Play("ClosePlaceBoard");
+        if (!farmerStats.coinsParticle.isPlaying) farmerStats.coinsParticle.Play();
+        if (farmerStats.coinsParticle.isPlaying) farmerStats.coinsParticle.Stop();
+        if (farmerStats.coinsParticle.isPlaying) farmerStats.coinsParticle.Stop();
+        if (!farmerStats.coinsParticle.isPlaying) farmerStats.coinsParticle.Play();
         farmerStats.farmerMovementEnabled = true;
         farmerStats.progressBar.fillAmount = 0;
         cropPlacement.isPlanting = false;

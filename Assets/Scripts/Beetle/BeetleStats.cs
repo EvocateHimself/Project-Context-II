@@ -13,8 +13,11 @@ public class BeetleStats : MonoBehaviour {
     public bool isWalkingInPesticide = false;
     [HideInInspector]
     public float beetleWalkInPesticideSpeed = 100f;
+    public Animator eatUI, nestUI, nestFullUI;
     public Image progressBar;
     public TextMeshProUGUI notifyText;
+    public Image progressBarNest;
+    public TextMeshProUGUI notifyTextNest;
     [Unit("seconds")]
     public float eatSpeed = 2f;
     [Unit("seconds")]
@@ -198,6 +201,8 @@ public class BeetleStats : MonoBehaviour {
 
     // Initialize object variables
     private void Start() {
+        progressBar.fillAmount = 0;
+        progressBarNest.fillAmount = 0;
         CurrentStamina = MaxStamina;
         CurrentFlight = MaxFlight;
         CurrentFood = 0;
@@ -207,7 +212,6 @@ public class BeetleStats : MonoBehaviour {
         InvokeRepeating("RegenerateStamina", 0f, staminaRegenerationSpeed);
         InvokeRepeating("RegenerateFlight", 0f, flightRegenerationSpeed);
         InvokeRepeating("DecreaseResources", 0f, resourcesDecreaseSpeed);
-        progressBar.gameObject.transform.parent.parent.gameObject.SetActive(false);
     }
 
 
@@ -247,6 +251,10 @@ public class BeetleStats : MonoBehaviour {
     public void HandleFoodBar() {
         currentFoodValue = Map(CurrentFood, 0, MaxFood, 0, 1);
         foodBar.fillAmount = Mathf.Lerp(foodBar.fillAmount, currentFoodValue, Time.deltaTime * foodBarLerpSpeed);
+
+        if (CurrentFood >= 10) {
+            nestFullUI.Play("OpenNestFull");
+        }
     }
 
     public void HandleResourcesBar() {

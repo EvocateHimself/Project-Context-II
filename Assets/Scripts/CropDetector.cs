@@ -77,9 +77,9 @@ public class CropDetector : MonoBehaviour {
 
             while (farmerStats.progressBar.fillAmount < 1.0f && crop.transform.localScale.y < 1.0f) {
                 cropPlacement.isPlanting = true;
-                farmerStats.notifyText.text = "-" + cropCost + " coins";
-                farmerStats.notifyText.gameObject.transform.parent.gameObject.SetActive(true);
-                farmerStats.progressBar.gameObject.transform.parent.parent.gameObject.SetActive(true);
+                farmerStats.progressBar.color = new Color32(226, 35, 38, 255);
+                farmerStats.notifyText.text = "-" + cropCost;
+                farmerStats.placeUI.Play("OpenPlaceBoard");
                 farmerStats.progressBar.fillAmount += 1.0f / processingTime * Time.deltaTime;
                 farmerStats.farmerMovementEnabled = false;
 
@@ -89,8 +89,7 @@ public class CropDetector : MonoBehaviour {
                 yield return new WaitForEndOfFrame();
             }
 
-            farmerStats.notifyText.gameObject.transform.parent.gameObject.SetActive(false);
-            farmerStats.progressBar.gameObject.transform.parent.parent.gameObject.SetActive(false);
+            farmerStats.placeUI.Play("ClosePlaceBoard");
             farmerStats.farmerMovementEnabled = true;
             farmerStats.progressBar.fillAmount = 0;
             cropPlacement.isPlanting = false;
@@ -100,12 +99,17 @@ public class CropDetector : MonoBehaviour {
             randomInfect.crops.Add(crop);
             crop.tag = "Interactable";
         }
+
+        else {
+            farmerStats.notEnoughCoinsUI.Play("OpenNotEnoughCoinsBoard");
+            yield return new WaitForSeconds(1f);
+            farmerStats.notEnoughCoinsUI.Play("CloseNotEnoughCoinsBoard");
+        }
     }
 
     private IEnumerator Warning() {
-        farmerStats.notifyText.text = "Cannot place that here!";
-        farmerStats.notifyText.gameObject.transform.parent.gameObject.SetActive(true);
+        farmerStats.cannotPlaceUI.Play("OpenCannotPlaceBoard");
         yield return new WaitForSeconds(1f);
-        farmerStats.notifyText.gameObject.transform.parent.gameObject.SetActive(false);
+        farmerStats.cannotPlaceUI.Play("CloseCannotPlaceBoard");
     }
 }

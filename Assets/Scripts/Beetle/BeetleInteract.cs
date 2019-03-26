@@ -25,14 +25,14 @@ public class BeetleInteract : MonoBehaviour {
         beetleStats.flowerbedFood = Random.Range(beetleStats.flowerbedMinFood, beetleStats.flowerbedMaxFood);
 
         if (startEating) {
-            beetleStats.progressBar.gameObject.transform.parent.parent.gameObject.SetActive(true);
+            beetleStats.eatUI.Play("OpenEatBoard");
             beetleStats.progressBar.fillAmount += 1.0f / beetleStats.eatSpeed * Time.deltaTime;
             beetleStats.beetleMovementEnabled = false;
         }
 
         if (startStoring) {
-            beetleStats.progressBar.gameObject.transform.parent.parent.gameObject.SetActive(true);
-            beetleStats.progressBar.fillAmount += 1.0f / beetleStats.storeResourcesSpeed * Time.deltaTime;
+            beetleStats.nestUI.Play("OpenNestBoard");
+            beetleStats.progressBarNest.fillAmount += 1.0f / beetleStats.storeResourcesSpeed * Time.deltaTime;
             beetleStats.beetleMovementEnabled = false;
         }
     }
@@ -69,13 +69,14 @@ public class BeetleInteract : MonoBehaviour {
         foreach (Transform child in crop.transform) {
             if (child.name == "Plague") {
                 hasEaten = true;
-                beetleStats.notifyText.text = "+" + beetleStats.plagueFood + " food";
+                beetleStats.progressBar.color = new Color32(69, 226, 35, 255); // green
+                beetleStats.notifyText.text = "+" + beetleStats.plagueFood;
                 startEating = true;
 
                 yield return new WaitForSeconds(beetleStats.eatSpeed);
                 
                 if (child != null) {
-                    beetleStats.progressBar.gameObject.transform.parent.parent.gameObject.SetActive(false);
+                    beetleStats.eatUI.Play("CloseEatBoard");
                     beetleStats.beetleMovementEnabled = true;
                     beetleStats.progressBar.fillAmount = 0;
                     startEating = false;
@@ -100,14 +101,14 @@ public class BeetleInteract : MonoBehaviour {
             if (child.name == "Insect") {
                 if (child.gameObject.activeInHierarchy) {
                     hasEaten = true;
-                    beetleStats.notifyText.text = "+" + Mathf.RoundToInt(beetleStats.flowerbedFood) + " food";
+                    beetleStats.notifyText.text = "+" + Mathf.RoundToInt(beetleStats.flowerbedFood);
                     startEating = true;
                     int eatFoodBoosterToInt = Mathf.RoundToInt(beetleStats.flowerbedFood);
 
                     yield return new WaitForSeconds(beetleStats.eatSpeed);
 
                     if (child != null) {
-                        beetleStats.progressBar.gameObject.transform.parent.parent.gameObject.SetActive(false);
+                        beetleStats.eatUI.Play("CloseEatBoard");
                         beetleStats.beetleMovementEnabled = true;
                         beetleStats.progressBar.fillAmount = 0;
                         startEating = false;
@@ -130,14 +131,16 @@ public class BeetleInteract : MonoBehaviour {
 
     private IEnumerator StoreResourcesInNest() {
         hasEaten = true;
-        beetleStats.notifyText.text = "Storing " + beetleStats.CurrentFood + " resources in nest";
+        beetleStats.progressBarNest.color = new Color32(255, 192, 0, 255); // green
+        beetleStats.notifyTextNest.text = "+" + beetleStats.CurrentFood;
         startStoring = true;
 
         yield return new WaitForSeconds(beetleStats.storeResourcesSpeed);
 
-        beetleStats.progressBar.gameObject.transform.parent.parent.gameObject.SetActive(false);
+        beetleStats.nestUI.Play("CloseNestBoard");
+        beetleStats.nestFullUI.Play("CloseNestFull");
         beetleStats.beetleMovementEnabled = true;
-        beetleStats.progressBar.fillAmount = 0;
+        beetleStats.progressBarNest.fillAmount = 0;
         startStoring = false;
 
         beetleStats.CurrentResources += beetleStats.CurrentFood;

@@ -30,17 +30,16 @@ public class PlacePesticide : MonoBehaviour {
             GameObject pesticide = Instantiate(pesticidePrefab, position, Quaternion.identity);
 
             while (farmerStats.progressBar.fillAmount < 1.0f) {
-                farmerStats.notifyText.text = "-" + pesticideCost + " coins";
-                farmerStats.notifyText.gameObject.transform.parent.gameObject.SetActive(true);
-                farmerStats.progressBar.gameObject.transform.parent.parent.gameObject.SetActive(true);
+                farmerStats.notifyText.text = "-" + pesticideCost;
+                farmerStats.progressBar.color = new Color32(226, 35, 38, 255);
+                farmerStats.placeUI.Play("OpenPlaceBoard");
                 farmerStats.progressBar.fillAmount += 1.0f / processingTime * Time.deltaTime;
                 farmerStats.farmerMovementEnabled = false;
 
                 yield return new WaitForEndOfFrame();
             }
 
-            farmerStats.notifyText.gameObject.transform.parent.gameObject.SetActive(false);
-            farmerStats.progressBar.gameObject.transform.parent.parent.gameObject.SetActive(false);
+            farmerStats.placeUI.Play("ClosePlaceBoard");
             farmerStats.farmerMovementEnabled = true;
             farmerStats.progressBar.fillAmount = 0;
 
