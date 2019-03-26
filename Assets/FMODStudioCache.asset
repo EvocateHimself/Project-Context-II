@@ -32,11 +32,12 @@ MonoBehaviour:
   - {fileID: 114913468969209802}
   - {fileID: 114019415591561320}
   - {fileID: 114212923180437876}
+  - {fileID: 114455080005163196}
   MasterBanks:
   - {fileID: 114346792326856822}
   StringsBanks:
   - {fileID: 114303705010604042}
-  stringsBankWriteTime: 636891953830000000
+  stringsBankWriteTime: 636892315800000000
   cacheVersion: 3
 --- !u!114 &114019415591561320
 MonoBehaviour:
@@ -189,11 +190,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Path: Assets/Audio/Fmod Build/Desktop/Master Bank.strings.bank
-  lastModified: 636891953830000000
+  lastModified: 636892315800000000
   LoadResult: 0
   FileSizes:
   - Name: 
-    Value: 1448
+    Value: 1482
   Exists: 1
 --- !u!114 &114346792326856822
 MonoBehaviour:
@@ -209,12 +210,35 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Path: /Users/Bastiaan/Desktop/HKU Jaar 3/Game Jam Sessions/Work Files/Project-Context-II/Assets/Audio/Fmod
     Build/Desktop/Master Bank.bank
-  lastModified: 636891953830000000
+  lastModified: 636892315800000000
   LoadResult: 0
   FileSizes:
   - Name: 
-    Value: 6127552
+    Value: 6152288
   Exists: 1
+--- !u!114 &114455080005163196
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Path: event:/Kever/OEF
+  guid: 43efdaebdc35204c9011e467db04a4c4
+  Banks:
+  - {fileID: 114346792326856822}
+  IsStream: 0
+  Is3D: 0
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 0
+  MaxDistance: 0
+  Length: 351
 --- !u!114 &114493720871692862
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -260,7 +284,7 @@ MonoBehaviour:
   Parameters: []
   MinDistance: 0
   MaxDistance: 0
-  Length: 1472
+  Length: 1405
 --- !u!114 &114520744286169086
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -391,7 +415,7 @@ MonoBehaviour:
   Parameters: []
   MinDistance: 0
   MaxDistance: 0
-  Length: 1000
+  Length: 1350
 --- !u!114 &114859735057719826
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -437,7 +461,7 @@ MonoBehaviour:
   Parameters: []
   MinDistance: 0
   MaxDistance: 0
-  Length: 2720
+  Length: 2284
 --- !u!114 &114913468969209802
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -483,4 +507,4 @@ MonoBehaviour:
   Parameters: []
   MinDistance: 0
   MaxDistance: 0
-  Length: 5730
+  Length: 4400
