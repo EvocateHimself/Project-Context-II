@@ -184,7 +184,7 @@ MonoBehaviour:
   applePrefab: {fileID: 5872757744085482517, guid: 7dfe03f34fc8b7545906510ef8880db8,
     type: 3}
   appleText: {fileID: 0}
-  appleGrowTime: 6
+  appleGrowTime: 4
   appleGrowCost: 40
   appleSellCost: 60
   pesticidePrefab: {fileID: 622529113, guid: a33c4c188311e9747aec08efa0f56f15, type: 3}
