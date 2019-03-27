@@ -21,6 +21,7 @@ public class Carrot : Interactable {
 
     private IEnumerator SellCrop() {
         Transform plague = transform.Find("Plague");
+        FMODUnity.RuntimeManager.PlayOneShot("event:/Farmer/Coins");
 
         if (plague != null) {
             if (evolveCrop.currentPhase == 2) {
@@ -79,9 +80,6 @@ public class Carrot : Interactable {
         farmerStats.progressBar.fillAmount = 0;
         cropPlacement.isPlanting = false;
 
-        //cropPlacement.sellSound.pitch = Random.Range(0.9f, 1.1f);
-        //cropPlacement.sellSound.Play();
-        FMODUnity.RuntimeManager.PlayOneShot("event:/Farmer/Coins");
         randomInfect.crops.Remove(gameObject);
         Destroy(gameObject);
     }

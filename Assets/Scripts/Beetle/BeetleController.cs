@@ -13,6 +13,11 @@ public class BeetleController : MonoBehaviour {
 
     private float startAscendSpeed;
 
+    private FMOD.Studio.EventInstance KeverFlight;
+
+    bool playingSound = false;
+    bool isFlying = false;
+
     Animator anim;
     Rigidbody rb;
     GameManager gameManager;
@@ -26,8 +31,24 @@ public class BeetleController : MonoBehaviour {
 
         startAscendSpeed = ascendSpeed;
     }
-	
-	private void FixedUpdate () {
+
+    private void Update() {
+        if (!playingSound) {
+            if (GlobalInputManager.RightTriggerBeetle() != 0 && isFlying) {
+                KeverFlight = FMODUnity.RuntimeManager.CreateInstance("event:/Kever/Flight");
+                KeverFlight.start();
+
+                playingSound = true;
+            }
+        }
+
+        if (GlobalInputManager.RightTriggerBeetle() == 0 && !isFlying) {
+            playingSound = false;
+            KeverFlight.stop(FMOD.Studio.STOP_MODE.ALLOWFADEOUT);
+        }
+    }
+
+    private void FixedUpdate () {
         if (beetleStats.beetleMovementEnabled) {
             Move();
         }
@@ -68,6 +89,7 @@ public class BeetleController : MonoBehaviour {
         rb.AddForce(transform.up * ascensionBeetle, ForceMode.Acceleration);
 
         if (translationBeetle != 0) {
+            isFlying = false;
             anim.speed = translationBeetle * 20;
             anim.SetBool("isWalking", true);
             anim.SetBool("isIdle", false);
@@ -75,24 +97,30 @@ public class BeetleController : MonoBehaviour {
 
             if (translationBeetle < 0) {
                 anim.speed = -translationBeetle * 20;
+                isFlying = false;
             }
 
             if (ascensionBeetle != 0) {
+                isFlying = true;
                 anim.speed = ascensionBeetle * 2;
                 anim.SetBool("isWalking", false);
                 anim.SetBool("isIdle", false);
                 anim.SetBool("isFlying", true);
                 beetleStats.CurrentFlight -= ascendSpeed * Time.deltaTime;
             }
-        } else if (ascensionBeetle != 0) {
+        }
+
+        else if (ascensionBeetle != 0) {
+            isFlying = true;
             anim.speed = ascensionBeetle * 2;
             beetleStats.CurrentFlight -= ascendSpeed * Time.deltaTime;
             anim.SetBool("isWalking", false);
             anim.SetBool("isIdle", false);
             anim.SetBool("isFlying", true);
-        } 
-        
+        }
+
         else {
+            isFlying = false;
             anim.SetBool("isWalking", false);
             anim.SetBool("isIdle", true);
             anim.SetBool("isFlying", false);

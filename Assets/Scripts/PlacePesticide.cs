@@ -28,6 +28,7 @@ public class PlacePesticide : MonoBehaviour {
 
             Vector3 position = new Vector3(transform.position.x, transform.position.y - 1.3f, transform.position.z);
             GameObject pesticide = Instantiate(pesticidePrefab, position, Quaternion.identity);
+            FMODUnity.RuntimeManager.PlayOneShot("event:/Farmer/Drop Pesticide");
 
             while (farmerStats.progressBar.fillAmount < 1.0f) {
                 farmerStats.notifyText.text = "-" + pesticideCost;
@@ -45,7 +46,6 @@ public class PlacePesticide : MonoBehaviour {
 
             farmerStats.CurrentMoney -= pesticideCost;
             farmerStats.totalPesticideUsed += 1;
-            FMODUnity.RuntimeManager.PlayOneShot("event:/Farmer/Drop Pesticide");
 
             yield return new WaitForSeconds(cropPlacement.pesticideDuration);
             pesticide.GetComponent<SphereCollider>().enabled = false;

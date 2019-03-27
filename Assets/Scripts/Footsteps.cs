@@ -7,4 +7,9 @@ public class Footsteps : MonoBehaviour {
     private void Step() {
         FMODUnity.RuntimeManager.PlayOneShot("event:/Farmer/Footsteps");
     }
+
+    private void Fly() {
+        //FMODUnity.RuntimeManager.PlayOneShot("event:/Kever/Take Off");
+        
+    }
 }

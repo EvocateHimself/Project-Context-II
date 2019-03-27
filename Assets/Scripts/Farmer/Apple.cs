@@ -21,6 +21,7 @@ public class Apple : Interactable {
 
     private IEnumerator SellCrop() {
         Transform plague = transform.Find("Plague");
+        FMODUnity.RuntimeManager.PlayOneShot("event:/Farmer/Coins");
 
         if (plague != null) {
             if (evolveCrop.currentPhase == 2) {
@@ -78,8 +79,6 @@ public class Apple : Interactable {
         farmerStats.farmerMovementEnabled = true;
         farmerStats.progressBar.fillAmount = 0;
         cropPlacement.isPlanting = false;
-
-        FMODUnity.RuntimeManager.PlayOneShot("event:/Farmer/Coins");
 
         randomInfect.crops.Remove(gameObject);
         Destroy(gameObject);

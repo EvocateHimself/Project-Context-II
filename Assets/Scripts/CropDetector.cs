@@ -113,8 +113,11 @@ public class CropDetector : MonoBehaviour {
     }
 
     private IEnumerator Warning() {
+        cropPlacement.isPlanting = true;
         farmerStats.cannotPlaceUI.Play("OpenCannotPlaceBoard");
+        FMODUnity.RuntimeManager.PlayOneShot("event:/Farmer/Can't place that here");
         yield return new WaitForSeconds(1f);
         farmerStats.cannotPlaceUI.Play("CloseCannotPlaceBoard");
+        cropPlacement.isPlanting = false;
     }
 }
