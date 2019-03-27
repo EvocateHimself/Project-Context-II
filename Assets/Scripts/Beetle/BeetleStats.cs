@@ -7,6 +7,13 @@ using TMPro;
 
 public class BeetleStats : MonoBehaviour {
 
+    // END SCREEN STATS
+    public GameObject endScreenBeetle;
+    [HideInInspector]
+    public float totalFlowerbedsEaten, totalPlagueEaten;
+    [HideInInspector]
+    public float totalResources;
+
     [HideInInspector]
     public bool beetleMovementEnabled = true;
     [HideInInspector]
@@ -222,6 +229,7 @@ public class BeetleStats : MonoBehaviour {
         HandleFoodBar();
         HandleResourcesBar();
         eatSpeed = originalEatSpeed - (CurrentResources / 75f);
+        totalResources = CurrentResources;
 
         if (CurrentFlight <= 20 || CurrentStamina <= 20) {
             moodStatusBar.sprite = moodStatusSad;

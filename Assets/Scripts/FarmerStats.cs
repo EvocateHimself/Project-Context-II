@@ -6,6 +6,15 @@ using TMPro;
 
 public class FarmerStats : MonoBehaviour {
 
+    // END SCREEN STATS
+    public GameObject endScreenFarmer;
+    [HideInInspector]
+    public float totalCoins;
+    [HideInInspector]
+    public float totalCabbagesPlanted, totalCarrotsPlanted, totalApplesPlanted, totalPesticideUsed;
+    [HideInInspector]
+    public float totalBugs;
+
     public GameObject farmerPrefab;
     public Animator farmerAnim;
     [HideInInspector]
@@ -89,6 +98,7 @@ public class FarmerStats : MonoBehaviour {
     private void Start() {
         //CurrentHealth = MaxHealth;
         progressBar.fillAmount = 0;
+        endScreenFarmer.SetActive(false);
     }
 
     // Update is called once per frame
@@ -96,6 +106,8 @@ public class FarmerStats : MonoBehaviour {
         HandleHealthbar();
         HandleMoneybar();
         HandlePesticidebar();
+
+        totalCoins = CurrentMoney;
     }
 
 

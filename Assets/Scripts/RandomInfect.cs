@@ -52,6 +52,7 @@ public class RandomInfect : MonoBehaviour {
                 plague.transform.parent = crops[randomCrop].transform;
                 plague.name = "Plague";
                 farmerStats.plagueAmount += 1;
+                farmerStats.totalBugs += 1;
                 //crops[randomCrop].tag = "Infected";
             }
 
