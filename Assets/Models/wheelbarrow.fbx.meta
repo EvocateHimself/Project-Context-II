@@ -17,6 +17,8 @@ ModelImporter:
     3300002: //RootNode
     4300000: pCube13
     4300002: pCube7
+    6400000: pCube7
+    6400002: //RootNode
   externalObjects: {}
   materials:
     importMaterials: 1
@@ -50,7 +52,7 @@ ModelImporter:
     lODScreenPercentages: []
     globalScale: 1
     meshCompression: 0
-    addColliders: 0
+    addColliders: 1
     useSRGBMaterialColor: 1
     importVisibility: 1
     importBlendShapes: 1
