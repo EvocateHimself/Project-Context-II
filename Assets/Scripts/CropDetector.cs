@@ -29,15 +29,15 @@ public class CropDetector : MonoBehaviour {
         if (other.tag == "Player") {
             // Place cabbage
             if (cycleCrop.selectedCrop == 0 && allowedCropType == CropType.Cabbage && GlobalInputManager.CrossButtonFarmer() && !isUsed && !cropPlacement.isPlanting) {
-                StartCoroutine(PlaceCrop(cropPlacement.cabbageGrowCost, cropPlacement.cabbageGrowTime, cropPlacement.cabbagePrefab, "event:/Farmer/Plant Crop"));
+                StartCoroutine(PlaceCrop("Cabbage", cropPlacement.cabbageGrowCost, cropPlacement.cabbageGrowTime, cropPlacement.cabbagePrefab, "event:/Farmer/Plant Crop"));
             }
             // Place carrot
             else if (cycleCrop.selectedCrop == 1 && allowedCropType == CropType.Carrot && GlobalInputManager.CrossButtonFarmer() && !isUsed && !cropPlacement.isPlanting) {
-                StartCoroutine(PlaceCrop(cropPlacement.carrotGrowCost, cropPlacement.carrotGrowTime, cropPlacement.carrotPrefab, "event:/Farmer/Plant Carrot"));
+                StartCoroutine(PlaceCrop("Carrot", cropPlacement.carrotGrowCost, cropPlacement.carrotGrowTime, cropPlacement.carrotPrefab, "event:/Farmer/Plant Carrot"));
             }
             // Place apple tree
             else if (cycleCrop.selectedCrop == 2 && allowedCropType == CropType.Apple && GlobalInputManager.CrossButtonFarmer() && !isUsed && !cropPlacement.isPlanting) {
-                StartCoroutine(PlaceCrop(cropPlacement.appleGrowCost, cropPlacement.appleGrowTime, cropPlacement.applePrefab, "event:/Farmer/Plant Apple"));
+                StartCoroutine(PlaceCrop("Apple", cropPlacement.appleGrowCost, cropPlacement.appleGrowTime, cropPlacement.applePrefab, "event:/Farmer/Plant Apple"));
             }
             // Show warning if on wrong farming ground
             else if ((cycleCrop.selectedCrop == 0 && allowedCropType != CropType.Cabbage && GlobalInputManager.CrossButtonFarmer() && !cropPlacement.isPlanting) ||
@@ -60,7 +60,7 @@ public class CropDetector : MonoBehaviour {
     }
 
     // Place crop
-    private IEnumerator PlaceCrop(float cropCost, float processingTime, GameObject cropPrefab, string audioEvent) {
+    private IEnumerator PlaceCrop(string cropType, float cropCost, float processingTime, GameObject cropPrefab, string audioEvent) {
         if (farmerStats.CurrentMoney >= cropCost) {
 
             isUsed = true;
@@ -95,9 +95,14 @@ public class CropDetector : MonoBehaviour {
             cropPlacement.isPlanting = false;
 
             farmerStats.CurrentMoney -= cropCost;
+            cropType += 1;
             //farmerStats.CurrentHealth += cropPlacement.cabbageHealthImpact;
             randomInfect.crops.Add(crop);
             crop.tag = "Interactable";
+
+            if (cropType.Contains("Cabbage")) { farmerStats.totalCabbagesPlanted += 1; }
+            else if (cropType.Contains("Carrot")) { farmerStats.totalCarrotsPlanted += 1; }
+            else if (cropType.Contains("Apple")) { farmerStats.totalApplesPlanted += 1; }
         }
 
         else {

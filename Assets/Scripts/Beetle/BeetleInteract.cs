@@ -86,6 +86,7 @@ public class BeetleInteract : MonoBehaviour {
 
                     farmerStats.plagueAmount -= 1;
                     beetleStats.CurrentFood += beetleStats.plagueFood;
+                    beetleStats.totalPlagueEaten += 1;
 
                     crop.gameObject.tag = "Interactable";
                     FMODUnity.RuntimeManager.PlayOneShot("event:/Kever/Eat Plague");
@@ -115,6 +116,7 @@ public class BeetleInteract : MonoBehaviour {
 
                         beetleStats.CurrentStamina -= eatFoodBoosterToInt * beetleStats.staminaCarryFoodImpact;
                         beetleStats.CurrentFood += eatFoodBoosterToInt;
+                        beetleStats.totalFlowerbedsEaten += 1;
 
                         FMODUnity.RuntimeManager.PlayOneShot("event:/Kever/Eat Plague");
                         child.gameObject.SetActive(false);
