@@ -74,8 +74,8 @@ MonoBehaviour:
   - {fileID: 5094047729022829829}
   - {fileID: 4754866471737517143}
   - {fileID: 7185693165091215139}
-  minEvolutionDelay: 10
-  maxEvolutionDelay: 15
+  minEvolutionDelay: 20
+  maxEvolutionDelay: 65
 --- !u!135 &7297154347222364728
 SphereCollider:
   m_ObjectHideFlags: 0

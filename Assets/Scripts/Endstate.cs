@@ -71,11 +71,13 @@ public class Endstate : MonoBehaviour {
 
             // Restart game
             if (selectState == 0 && GlobalInputManager.CrossButtonFarmer()) {
+                FMODUnity.RuntimeManager.PlayOneShot("event:/UI/PressButton");
                 Scene scene = SceneManager.GetActiveScene(); SceneManager.LoadScene(scene.name);
             }
 
             // Quit game
             else if (selectState == 1 && GlobalInputManager.CrossButtonFarmer()) {
+                FMODUnity.RuntimeManager.PlayOneShot("event:/UI/PressButton");
                 Application.Quit();
             }
         }

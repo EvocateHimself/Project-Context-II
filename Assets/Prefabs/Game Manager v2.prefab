@@ -255,9 +255,9 @@ MonoBehaviour:
   selectedCrop: 0
   objList:
   - {fileID: 628592671, guid: bf04595713355ca4f9f1957afcbcccc8, type: 3}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
+  - {fileID: 7771536404584503892, guid: c70d7a7df8ef9a440b10c735a6f7104e, type: 3}
+  - {fileID: 5872757744085482517, guid: 7dfe03f34fc8b7545906510ef8880db8, type: 3}
+  - {fileID: 622529113, guid: a33c4c188311e9747aec08efa0f56f15, type: 3}
   cabbage: {fileID: 0}
   carrot: {fileID: 0}
   apple: {fileID: 0}

@@ -109,7 +109,7 @@ GameObject:
   - component: {fileID: 1393546650}
   - component: {fileID: 1393546649}
   m_Layer: 13
-  m_Name: ProgressSliderRed
+  m_Name: ProgressSliderNest
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -257,7 +257,7 @@ GameObject:
   - component: {fileID: 1867498774}
   - component: {fileID: 1867498773}
   m_Layer: 13
-  m_Name: NotifyText
+  m_Name: NotifyTextNest
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -705,7 +705,7 @@ GameObject:
   - component: {fileID: 4486748527099093287}
   - component: {fileID: 3763679210289469975}
   m_Layer: 13
-  m_Name: NotifyText
+  m_Name: NotifyTextEat
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1121,7 +1121,7 @@ GameObject:
   - component: {fileID: 2864577346898445178}
   - component: {fileID: 8741807689847258864}
   m_Layer: 13
-  m_Name: ProgressSliderRed
+  m_Name: ProgressSliderEat
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1587,6 +1587,10 @@ PrefabInstance:
       propertyPath: m_LocalScale.z
       value: 0.26374048
       objectReference: {fileID: 0}
+    - target: {fileID: 9500000, guid: d39be5d258d024448bf230a937b84689, type: 3}
+      propertyPath: m_Controller
+      value: 
+      objectReference: {fileID: 9100000, guid: f13e60f44b41ea04ab3ee2ae419262a1, type: 2}
     - target: {fileID: 2300072, guid: d39be5d258d024448bf230a937b84689, type: 3}
       propertyPath: m_Materials.Array.data[0]
       value: 
@@ -1595,10 +1599,6 @@ PrefabInstance:
       propertyPath: m_Materials.Array.data[0]
       value: 
       objectReference: {fileID: 2100000, guid: 507064bda95269e46851af7bfe1eb1a4, type: 2}
-    - target: {fileID: 9500000, guid: d39be5d258d024448bf230a937b84689, type: 3}
-      propertyPath: m_Controller
-      value: 
-      objectReference: {fileID: 9100000, guid: f13e60f44b41ea04ab3ee2ae419262a1, type: 2}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: d39be5d258d024448bf230a937b84689, type: 3}
 --- !u!4 &5101150381098834530 stripped

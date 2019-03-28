@@ -40,6 +40,7 @@ public class BeetleInteract : MonoBehaviour {
     private void OnTriggerEnter(Collider other) {
         if (other.tag == "Player") {
             // Oof
+            FMODUnity.RuntimeManager.PlayOneShot("event:/Kever/OEF");
         }
     }
 

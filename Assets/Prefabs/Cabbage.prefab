@@ -72,8 +72,8 @@ MonoBehaviour:
   phasePrefabs:
   - {fileID: 7426673983009821512}
   - {fileID: 5948726820769521886}
-  minEvolutionDelay: 10
-  maxEvolutionDelay: 15
+  minEvolutionDelay: 25
+  maxEvolutionDelay: 50
 --- !u!135 &2742579667791422046
 SphereCollider:
   m_ObjectHideFlags: 0
