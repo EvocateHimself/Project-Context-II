@@ -47,6 +47,13 @@ public class GlobalInputManager : MonoBehaviour {
         return Mathf.Clamp(r, -1.0f, 1.0f);
     }
 
+    public static float DPADVerticalFarmer() {
+        var farmer = InputManager.Devices[0];
+        float r = 0.0f;
+        r += farmer.Direction.Y;
+        return Mathf.Clamp(r, -1.0f, 1.0f);
+    }
+
     public static Vector3 MainJoystickFarmer() {
         return new Vector3(MainHorizontalFarmer(), 0, MainVerticalFarmer());
     }
@@ -118,6 +125,13 @@ public class GlobalInputManager : MonoBehaviour {
         var beetle = InputManager.Devices[1];
         return beetle.Action4;
         //return Input.GetButtonDown("Triangle");
+    }
+
+    public static float DPADVerticalBeetle() {
+        var farmer = InputManager.Devices[1];
+        float r = 0.0f;
+        r += farmer.Direction.Y;
+        return Mathf.Clamp(r, -1.0f, 1.0f);
     }
 
     public static Vector3 MainJoystickBeetle() {

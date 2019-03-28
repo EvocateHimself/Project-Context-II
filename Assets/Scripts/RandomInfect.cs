@@ -18,7 +18,7 @@ public class RandomInfect : MonoBehaviour {
     [Unit("seconds")]
     private float spawnMaxTime;
     [HideInInspector]
-    private bool stop;
+    public bool stop;
 
     int randomCrop;
 

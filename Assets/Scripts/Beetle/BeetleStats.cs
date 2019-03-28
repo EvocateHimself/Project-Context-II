@@ -208,6 +208,7 @@ public class BeetleStats : MonoBehaviour {
 
     // Initialize object variables
     private void Start() {
+        endScreenBeetle.SetActive(false);
         progressBar.fillAmount = 0;
         progressBarNest.fillAmount = 0;
         CurrentStamina = MaxStamina;

@@ -12,12 +12,22 @@ public class DayTimer : MonoBehaviour {
     [Unit("days")]
     [SerializeField]
     private float amountOfDays = 3f;
+
     [SerializeField]
-    private TextMeshProUGUI dayTextFarmer, dayTextBeetle;
+    private TextMeshProUGUI dayTextFarmer;
+    [SerializeField]
+    private TextMeshProUGUI dayTextBeetle;
+
     [HideInInspector]
     private float currentDays;
 
+    GameManager gameManager;
+    Endstate endState;
+
     private void Start() {
+        gameManager = GameManager.instance;
+        endState = gameManager.GetComponent<Endstate>();
+
         InvokeRepeating("CountdownDays", secondsInDay, secondsInDay);
     }
 
@@ -28,6 +38,7 @@ public class DayTimer : MonoBehaviour {
     private void Update() {
         if (currentDays == amountOfDays) {
             CancelInvoke("CountdownDays");
+            endState.hasEnded = true;
             timerEnded();
         }
 
@@ -36,7 +47,6 @@ public class DayTimer : MonoBehaviour {
     }
 
     private void timerEnded() {
-        // start endscreen
-        Debug.Log("finish!");
+        endState.EndGame();
     }
 }
