@@ -161,12 +161,12 @@ MonoBehaviour:
   storeResourcesSpeed: 2
   maxStamina: 100
   staminaCarryFoodImpact: 8
-  staminaRegenerationSpeed: 2
+  staminaRegenerationSpeed: 1
   staminaBarLerpSpeed: 5
   staminaBar: {fileID: 0}
   staminaText: {fileID: 0}
   maxFlight: 100
-  flightRegenerationSpeed: 0.5
+  flightRegenerationSpeed: 0.2
   flightBarLerpSpeed: 5
   flightBar: {fileID: 0}
   flightText: {fileID: 0}
@@ -216,7 +216,7 @@ MonoBehaviour:
   appleGrowTime: 4
   appleGrowCost: 40
   appleSellCost: 60
-  pesticidePrefab: {fileID: 622529113, guid: a33c4c188311e9747aec08efa0f56f15, type: 3}
+  pesticidePrefab: {fileID: 0}
   pesticideText: {fileID: 0}
   pesticidePlaceTime: 1
   pesticideDuration: 30
